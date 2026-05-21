@@ -1,0 +1,43 @@
+# ── Python ────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# ── Virtual Environment ───────────────────────────────────────────────────
+.venv/
+venv/
+env/
+ENV/
+
+# ── Environment Variables (JANGAN pernah di-commit) ───────────────────────
+.env
+
+# ── Database & Data Sensitif ─────────────────────────────────────────────
+*.db
+*.sqlite3
+
+# ── SUS Response Data (data pribadi responden) ────────────────────────────
+sus_responses.json
+
+# ── OS Files ──────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── IDE ───────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── Logs ──────────────────────────────────────────────────────────────────
+*.log
+
+# ── Build ─────────────────────────────────────────────────────────────────
+dist/
+build/
+*.egg-info/

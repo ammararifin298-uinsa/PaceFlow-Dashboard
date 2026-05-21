@@ -1,0 +1,1022 @@
+season,round,race_name,position,driver_id,driver_name,constructor_id,constructor,q1,q2,q3
+2024,1,Bahrain Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:30.031,1:29.374,1:29.179
+2024,1,Bahrain Grand Prix,2,leclerc,Charles Leclerc,ferrari,Ferrari,1:30.243,1:29.165,1:29.407
+2024,1,Bahrain Grand Prix,3,russell,George Russell,mercedes,Mercedes,1:30.350,1:29.922,1:29.485
+2024,1,Bahrain Grand Prix,4,sainz,Carlos Sainz,ferrari,Ferrari,1:29.909,1:29.573,1:29.507
+2024,1,Bahrain Grand Prix,5,perez,Sergio Pérez,red_bull,Red Bull,1:30.221,1:29.932,1:29.537
+2024,1,Bahrain Grand Prix,6,alonso,Fernando Alonso,aston_martin,Aston Martin,1:30.179,1:29.801,1:29.542
+2024,1,Bahrain Grand Prix,7,norris,Lando Norris,mclaren,McLaren,1:30.143,1:29.941,1:29.614
+2024,1,Bahrain Grand Prix,8,piastri,Oscar Piastri,mclaren,McLaren,1:30.531,1:30.122,1:29.683
+2024,1,Bahrain Grand Prix,9,hamilton,Lewis Hamilton,mercedes,Mercedes,1:30.451,1:29.718,1:29.710
+2024,1,Bahrain Grand Prix,10,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:30.566,1:29.851,1:30.502
+2024,1,Bahrain Grand Prix,11,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:30.481,1:30.129,
+2024,1,Bahrain Grand Prix,12,stroll,Lance Stroll,aston_martin,Aston Martin,1:29.965,1:30.200,
+2024,1,Bahrain Grand Prix,13,albon,Alexander Albon,williams,Williams,1:30.397,1:30.221,
+2024,1,Bahrain Grand Prix,14,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:30.562,1:30.278,
+2024,1,Bahrain Grand Prix,15,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:30.646,1:30.529,
+2024,1,Bahrain Grand Prix,16,bottas,Valtteri Bottas,sauber,Sauber,1:30.756,,
+2024,1,Bahrain Grand Prix,17,zhou,Guanyu Zhou,sauber,Sauber,1:30.757,,
+2024,1,Bahrain Grand Prix,18,sargeant,Logan Sargeant,williams,Williams,1:30.770,,
+2024,1,Bahrain Grand Prix,19,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:30.793,,
+2024,1,Bahrain Grand Prix,20,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:30.948,,
+2024,2,Saudi Arabian Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:28.171,1:28.033,1:27.472
+2024,2,Saudi Arabian Grand Prix,2,leclerc,Charles Leclerc,ferrari,Ferrari,1:28.318,1:28.112,1:27.791
+2024,2,Saudi Arabian Grand Prix,3,perez,Sergio Pérez,red_bull,Red Bull,1:28.638,1:28.467,1:27.807
+2024,2,Saudi Arabian Grand Prix,4,alonso,Fernando Alonso,aston_martin,Aston Martin,1:28.706,1:28.122,1:27.846
+2024,2,Saudi Arabian Grand Prix,5,piastri,Oscar Piastri,mclaren,McLaren,1:28.755,1:28.343,1:28.089
+2024,2,Saudi Arabian Grand Prix,6,norris,Lando Norris,mclaren,McLaren,1:28.805,1:28.479,1:28.132
+2024,2,Saudi Arabian Grand Prix,7,russell,George Russell,mercedes,Mercedes,1:28.749,1:28.448,1:28.316
+2024,2,Saudi Arabian Grand Prix,8,hamilton,Lewis Hamilton,mercedes,Mercedes,1:28.994,1:28.606,1:28.460
+2024,2,Saudi Arabian Grand Prix,9,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:28.988,1:28.564,1:28.547
+2024,2,Saudi Arabian Grand Prix,10,stroll,Lance Stroll,aston_martin,Aston Martin,1:28.250,1:28.578,1:28.572
+2024,2,Saudi Arabian Grand Prix,11,bearman,Oliver Bearman,ferrari,Ferrari,1:28.984,1:28.642,
+2024,2,Saudi Arabian Grand Prix,12,albon,Alexander Albon,williams,Williams,1:29.107,1:28.980,
+2024,2,Saudi Arabian Grand Prix,13,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:29.069,1:29.020,
+2024,2,Saudi Arabian Grand Prix,14,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:29.065,1:29.025,
+2024,2,Saudi Arabian Grand Prix,15,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:29.055,,
+2024,2,Saudi Arabian Grand Prix,16,bottas,Valtteri Bottas,sauber,Sauber,1:29.179,,
+2024,2,Saudi Arabian Grand Prix,17,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:29.475,,
+2024,2,Saudi Arabian Grand Prix,18,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:29.479,,
+2024,2,Saudi Arabian Grand Prix,19,sargeant,Logan Sargeant,williams,Williams,1:29.526,,
+2024,2,Saudi Arabian Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,,,
+2024,3,Australian Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:16.819,1:16.387,1:15.915
+2024,3,Australian Grand Prix,2,sainz,Carlos Sainz,ferrari,Ferrari,1:16.731,1:16.189,1:16.185
+2024,3,Australian Grand Prix,3,perez,Sergio Pérez,red_bull,Red Bull,1:16.805,1:16.631,1:16.274
+2024,3,Australian Grand Prix,4,norris,Lando Norris,mclaren,McLaren,1:17.430,1:16.750,1:16.315
+2024,3,Australian Grand Prix,5,leclerc,Charles Leclerc,ferrari,Ferrari,1:16.984,1:16.304,1:16.435
+2024,3,Australian Grand Prix,6,piastri,Oscar Piastri,mclaren,McLaren,1:17.369,1:16.601,1:16.572
+2024,3,Australian Grand Prix,7,russell,George Russell,mercedes,Mercedes,1:17.062,1:16.901,1:16.724
+2024,3,Australian Grand Prix,8,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:17.356,1:16.791,1:16.788
+2024,3,Australian Grand Prix,9,stroll,Lance Stroll,aston_martin,Aston Martin,1:17.376,1:16.780,1:17.072
+2024,3,Australian Grand Prix,10,alonso,Fernando Alonso,aston_martin,Aston Martin,1:16.991,1:16.710,1:17.552
+2024,3,Australian Grand Prix,11,hamilton,Lewis Hamilton,mercedes,Mercedes,1:17.499,1:16.960,
+2024,3,Australian Grand Prix,12,albon,Alexander Albon,williams,Williams,1:17.130,1:17.167,
+2024,3,Australian Grand Prix,13,bottas,Valtteri Bottas,sauber,Sauber,1:17.543,1:17.340,
+2024,3,Australian Grand Prix,14,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:17.709,1:17.427,
+2024,3,Australian Grand Prix,15,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:17.617,1:17.697,
+2024,3,Australian Grand Prix,16,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:17.976,,
+2024,3,Australian Grand Prix,17,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:17.982,,
+2024,3,Australian Grand Prix,18,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:18.085,,
+2024,3,Australian Grand Prix,19,zhou,Guanyu Zhou,sauber,Sauber,1:18.188,,
+2024,4,Japanese Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:28.866,1:28.740,1:28.197
+2024,4,Japanese Grand Prix,2,perez,Sergio Pérez,red_bull,Red Bull,1:29.303,1:28.752,1:28.263
+2024,4,Japanese Grand Prix,3,norris,Lando Norris,mclaren,McLaren,1:29.536,1:28.940,1:28.489
+2024,4,Japanese Grand Prix,4,sainz,Carlos Sainz,ferrari,Ferrari,1:29.513,1:29.099,1:28.682
+2024,4,Japanese Grand Prix,5,alonso,Fernando Alonso,aston_martin,Aston Martin,1:29.254,1:29.082,1:28.686
+2024,4,Japanese Grand Prix,6,piastri,Oscar Piastri,mclaren,McLaren,1:29.425,1:29.148,1:28.760
+2024,4,Japanese Grand Prix,7,hamilton,Lewis Hamilton,mercedes,Mercedes,1:29.661,1:28.887,1:28.766
+2024,4,Japanese Grand Prix,8,leclerc,Charles Leclerc,ferrari,Ferrari,1:29.338,1:29.196,1:28.786
+2024,4,Japanese Grand Prix,9,russell,George Russell,mercedes,Mercedes,1:29.799,1:29.140,1:29.008
+2024,4,Japanese Grand Prix,10,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:29.775,1:29.417,1:29.413
+2024,4,Japanese Grand Prix,11,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:29.727,1:29.472,
+2024,4,Japanese Grand Prix,12,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:29.821,1:29.494,
+2024,4,Japanese Grand Prix,13,bottas,Valtteri Bottas,sauber,Sauber,1:29.602,1:29.593,
+2024,4,Japanese Grand Prix,14,albon,Alexander Albon,williams,Williams,1:29.963,1:29.714,
+2024,4,Japanese Grand Prix,15,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:29.811,1:29.816,
+2024,4,Japanese Grand Prix,16,stroll,Lance Stroll,aston_martin,Aston Martin,1:30.024,,
+2024,4,Japanese Grand Prix,17,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:30.119,,
+2024,4,Japanese Grand Prix,18,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:30.131,,
+2024,4,Japanese Grand Prix,19,sargeant,Logan Sargeant,williams,Williams,1:30.139,,
+2024,4,Japanese Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:30.143,,
+2024,5,Chinese Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:34.742,1:33.794,1:33.660
+2024,5,Chinese Grand Prix,2,perez,Sergio Pérez,red_bull,Red Bull,1:35.457,1:34.026,1:33.982
+2024,5,Chinese Grand Prix,3,alonso,Fernando Alonso,aston_martin,Aston Martin,1:35.116,1:34.652,1:34.148
+2024,5,Chinese Grand Prix,4,norris,Lando Norris,mclaren,McLaren,1:34.842,1:34.460,1:34.165
+2024,5,Chinese Grand Prix,5,piastri,Oscar Piastri,mclaren,McLaren,1:35.014,1:34.659,1:34.273
+2024,5,Chinese Grand Prix,6,leclerc,Charles Leclerc,ferrari,Ferrari,1:34.797,1:34.399,1:34.289
+2024,5,Chinese Grand Prix,7,sainz,Carlos Sainz,ferrari,Ferrari,1:34.970,1:34.368,1:34.297
+2024,5,Chinese Grand Prix,8,russell,George Russell,mercedes,Mercedes,1:35.084,1:34.609,1:34.433
+2024,5,Chinese Grand Prix,9,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:35.068,1:34.667,1:34.604
+2024,5,Chinese Grand Prix,10,bottas,Valtteri Bottas,sauber,Sauber,1:35.169,1:34.769,1:34.665
+2024,5,Chinese Grand Prix,11,stroll,Lance Stroll,aston_martin,Aston Martin,1:35.334,1:34.838,
+2024,5,Chinese Grand Prix,12,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:35.443,1:34.934,
+2024,5,Chinese Grand Prix,13,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:35.356,1:35.223,
+2024,5,Chinese Grand Prix,14,albon,Alexander Albon,williams,Williams,1:35.384,1:35.241,
+2024,5,Chinese Grand Prix,15,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:35.287,1:35.463,
+2024,5,Chinese Grand Prix,16,zhou,Guanyu Zhou,sauber,Sauber,1:35.505,,
+2024,5,Chinese Grand Prix,17,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:35.516,,
+2024,5,Chinese Grand Prix,18,hamilton,Lewis Hamilton,mercedes,Mercedes,1:35.573,,
+2024,5,Chinese Grand Prix,19,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:35.746,,
+2024,5,Chinese Grand Prix,20,sargeant,Logan Sargeant,williams,Williams,1:36.358,,
+2024,6,Miami Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:27.689,1:27.566,1:27.241
+2024,6,Miami Grand Prix,2,leclerc,Charles Leclerc,ferrari,Ferrari,1:28.081,1:27.533,1:27.382
+2024,6,Miami Grand Prix,3,sainz,Carlos Sainz,ferrari,Ferrari,1:27.937,1:27.941,1:27.455
+2024,6,Miami Grand Prix,4,perez,Sergio Pérez,red_bull,Red Bull,1:27.772,1:27.839,1:27.460
+2024,6,Miami Grand Prix,5,norris,Lando Norris,mclaren,McLaren,1:27.913,1:27.871,1:27.594
+2024,6,Miami Grand Prix,6,piastri,Oscar Piastri,mclaren,McLaren,1:28.032,1:27.721,1:27.675
+2024,6,Miami Grand Prix,7,russell,George Russell,mercedes,Mercedes,1:28.159,1:28.095,1:28.067
+2024,6,Miami Grand Prix,8,hamilton,Lewis Hamilton,mercedes,Mercedes,1:28.167,1:27.697,1:28.107
+2024,6,Miami Grand Prix,9,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:28.383,1:28.200,1:28.146
+2024,6,Miami Grand Prix,10,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:28.324,1:28.167,1:28.192
+2024,6,Miami Grand Prix,11,stroll,Lance Stroll,aston_martin,Aston Martin,1:28.177,1:28.222,
+2024,6,Miami Grand Prix,12,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:27.976,1:28.324,
+2024,6,Miami Grand Prix,13,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:28.209,1:28.371,
+2024,6,Miami Grand Prix,14,albon,Alexander Albon,williams,Williams,1:28.343,1:28.413,
+2024,6,Miami Grand Prix,15,alonso,Fernando Alonso,aston_martin,Aston Martin,1:28.453,1:28.427,
+2024,6,Miami Grand Prix,16,bottas,Valtteri Bottas,sauber,Sauber,1:28.463,,
+2024,6,Miami Grand Prix,17,sargeant,Logan Sargeant,williams,Williams,1:28.487,,
+2024,6,Miami Grand Prix,18,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:28.617,,
+2024,6,Miami Grand Prix,19,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:28.619,,
+2024,6,Miami Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:28.824,,
+2024,7,Emilia Romagna Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:15.762,1:15.176,1:14.746
+2024,7,Emilia Romagna Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:15.940,1:15.407,1:14.820
+2024,7,Emilia Romagna Grand Prix,3,norris,Lando Norris,mclaren,McLaren,1:15.915,1:15.371,1:14.837
+2024,7,Emilia Romagna Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:15.823,1:15.328,1:14.970
+2024,7,Emilia Romagna Grand Prix,5,sainz,Carlos Sainz,ferrari,Ferrari,1:16.015,1:15.512,1:15.233
+2024,7,Emilia Romagna Grand Prix,6,russell,George Russell,mercedes,Mercedes,1:16.107,1:15.671,1:15.234
+2024,7,Emilia Romagna Grand Prix,7,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:15.894,1:15.358,1:15.465
+2024,7,Emilia Romagna Grand Prix,8,hamilton,Lewis Hamilton,mercedes,Mercedes,1:16.604,1:15.677,1:15.504
+2024,7,Emilia Romagna Grand Prix,9,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:16.060,1:15.691,1:15.674
+2024,7,Emilia Romagna Grand Prix,10,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:15.841,1:15.569,1:15.980
+2024,7,Emilia Romagna Grand Prix,11,perez,Sergio Pérez,red_bull,Red Bull,1:16.404,1:15.706,
+2024,7,Emilia Romagna Grand Prix,12,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:16.361,1:15.906,
+2024,7,Emilia Romagna Grand Prix,13,stroll,Lance Stroll,aston_martin,Aston Martin,1:16.458,1:15.992,
+2024,7,Emilia Romagna Grand Prix,14,albon,Alexander Albon,williams,Williams,1:16.524,1:16.200,
+2024,7,Emilia Romagna Grand Prix,15,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:16.015,1:16.381,
+2024,7,Emilia Romagna Grand Prix,16,bottas,Valtteri Bottas,sauber,Sauber,1:16.626,,
+2024,7,Emilia Romagna Grand Prix,17,zhou,Guanyu Zhou,sauber,Sauber,1:16.834,,
+2024,7,Emilia Romagna Grand Prix,18,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:16.854,,
+2024,7,Emilia Romagna Grand Prix,19,alonso,Fernando Alonso,aston_martin,Aston Martin,1:16.917,,
+2024,7,Emilia Romagna Grand Prix,20,sargeant,Logan Sargeant,williams,Williams,,,
+2024,8,Monaco Grand Prix,1,leclerc,Charles Leclerc,ferrari,Ferrari,1:11.584,1:10.825,1:10.270
+2024,8,Monaco Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:11.500,1:10.756,1:10.424
+2024,8,Monaco Grand Prix,3,sainz,Carlos Sainz,ferrari,Ferrari,1:11.543,1:11.075,1:10.518
+2024,8,Monaco Grand Prix,4,norris,Lando Norris,mclaren,McLaren,1:11.760,1:10.732,1:10.542
+2024,8,Monaco Grand Prix,5,russell,George Russell,mercedes,Mercedes,1:11.492,1:10.929,1:10.543
+2024,8,Monaco Grand Prix,6,max_verstappen,Max Verstappen,red_bull,Red Bull,1:11.711,1:10.745,1:10.567
+2024,8,Monaco Grand Prix,7,hamilton,Lewis Hamilton,mercedes,Mercedes,1:11.528,1:11.056,1:10.621
+2024,8,Monaco Grand Prix,8,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:11.852,1:11.106,1:10.858
+2024,8,Monaco Grand Prix,9,albon,Alexander Albon,williams,Williams,1:11.623,1:11.216,1:10.948
+2024,8,Monaco Grand Prix,10,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:11.714,1:10.896,1:11.311
+2024,8,Monaco Grand Prix,11,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:11.887,1:11.285,
+2024,8,Monaco Grand Prix,12,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:11.785,1:11.482,
+2024,8,Monaco Grand Prix,13,stroll,Lance Stroll,aston_martin,Aston Martin,1:11.728,1:11.563,
+2024,8,Monaco Grand Prix,14,alonso,Fernando Alonso,aston_martin,Aston Martin,1:12.019,,
+2024,8,Monaco Grand Prix,14,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:11.876,1:11.440,
+2024,8,Monaco Grand Prix,15,sargeant,Logan Sargeant,williams,Williams,1:12.020,,
+2024,8,Monaco Grand Prix,15,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:11.832,1:11.725,
+2024,8,Monaco Grand Prix,16,perez,Sergio Pérez,red_bull,Red Bull,1:12.060,,
+2024,8,Monaco Grand Prix,17,bottas,Valtteri Bottas,sauber,Sauber,1:12.512,,
+2024,8,Monaco Grand Prix,18,zhou,Guanyu Zhou,sauber,Sauber,1:13.028,,
+2024,9,Canadian Grand Prix,1,russell,George Russell,mercedes,Mercedes,1:13.013,1:11.742,1:12.000
+2024,9,Canadian Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:12.360,1:12.549,1:12.000
+2024,9,Canadian Grand Prix,3,norris,Lando Norris,mclaren,McLaren,1:12.959,1:12.201,1:12.021
+2024,9,Canadian Grand Prix,4,piastri,Oscar Piastri,mclaren,McLaren,1:12.907,1:12.462,1:12.103
+2024,9,Canadian Grand Prix,5,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:13.240,1:12.572,1:12.178
+2024,9,Canadian Grand Prix,6,alonso,Fernando Alonso,aston_martin,Aston Martin,1:13.117,1:12.635,1:12.228
+2024,9,Canadian Grand Prix,7,hamilton,Lewis Hamilton,mercedes,Mercedes,1:12.851,1:11.979,1:12.280
+2024,9,Canadian Grand Prix,8,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:12.748,1:12.303,1:12.414
+2024,9,Canadian Grand Prix,9,stroll,Lance Stroll,aston_martin,Aston Martin,1:13.088,1:12.659,1:12.701
+2024,9,Canadian Grand Prix,10,albon,Alexander Albon,williams,Williams,1:12.896,1:12.485,1:12.796
+2024,9,Canadian Grand Prix,11,leclerc,Charles Leclerc,ferrari,Ferrari,1:13.107,1:12.691,
+2024,9,Canadian Grand Prix,12,sainz,Carlos Sainz,ferrari,Ferrari,1:13.038,1:12.728,
+2024,9,Canadian Grand Prix,13,sargeant,Logan Sargeant,williams,Williams,1:13.063,1:12.736,
+2024,9,Canadian Grand Prix,14,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:13.217,1:12.916,
+2024,9,Canadian Grand Prix,15,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:13.289,1:12.940,
+2024,9,Canadian Grand Prix,16,perez,Sergio Pérez,red_bull,Red Bull,1:13.326,,
+2024,9,Canadian Grand Prix,17,bottas,Valtteri Bottas,sauber,Sauber,1:13.366,,
+2024,9,Canadian Grand Prix,18,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:13.435,,
+2024,9,Canadian Grand Prix,19,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:13.978,,
+2024,9,Canadian Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:14.292,,
+2024,10,Spanish Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:12.386,1:11.872,1:11.383
+2024,10,Spanish Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:12.306,1:11.653,1:11.403
+2024,10,Spanish Grand Prix,3,hamilton,Lewis Hamilton,mercedes,Mercedes,1:12.143,1:11.792,1:11.701
+2024,10,Spanish Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:12.456,1:11.812,1:11.703
+2024,10,Spanish Grand Prix,5,leclerc,Charles Leclerc,ferrari,Ferrari,1:12.257,1:12.038,1:11.731
+2024,10,Spanish Grand Prix,6,sainz,Carlos Sainz,ferrari,Ferrari,1:12.403,1:11.874,1:11.736
+2024,10,Spanish Grand Prix,7,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:12.651,1:12.079,1:11.857
+2024,10,Spanish Grand Prix,8,perez,Sergio Pérez,red_bull,Red Bull,1:12.477,1:12.054,1:12.061
+2024,10,Spanish Grand Prix,9,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:12.691,1:12.109,1:12.125
+2024,10,Spanish Grand Prix,10,piastri,Oscar Piastri,mclaren,McLaren,1:12.460,1:12.011,
+2024,10,Spanish Grand Prix,11,alonso,Fernando Alonso,aston_martin,Aston Martin,1:12.505,1:12.128,
+2024,10,Spanish Grand Prix,12,bottas,Valtteri Bottas,sauber,Sauber,1:12.758,1:12.227,
+2024,10,Spanish Grand Prix,13,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:12.708,1:12.310,
+2024,10,Spanish Grand Prix,14,stroll,Lance Stroll,aston_martin,Aston Martin,1:12.881,1:12.372,
+2024,10,Spanish Grand Prix,15,zhou,Guanyu Zhou,sauber,Sauber,1:12.880,1:12.738,
+2024,10,Spanish Grand Prix,16,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:12.937,,
+2024,10,Spanish Grand Prix,17,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:12.985,,
+2024,10,Spanish Grand Prix,18,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:13.075,,
+2024,10,Spanish Grand Prix,19,albon,Alexander Albon,williams,Williams,1:13.153,,
+2024,10,Spanish Grand Prix,20,sargeant,Logan Sargeant,williams,Williams,1:13.509,,
+2024,11,Austrian Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:05.336,1:04.469,1:04.314
+2024,11,Austrian Grand Prix,2,norris,Lando Norris,mclaren,McLaren,1:05.450,1:05.103,1:04.718
+2024,11,Austrian Grand Prix,3,russell,George Russell,mercedes,Mercedes,1:05.585,1:05.016,1:04.840
+2024,11,Austrian Grand Prix,4,sainz,Carlos Sainz,ferrari,Ferrari,1:05.263,1:05.016,1:04.851
+2024,11,Austrian Grand Prix,5,hamilton,Lewis Hamilton,mercedes,Mercedes,1:05.541,1:05.053,1:04.903
+2024,11,Austrian Grand Prix,6,leclerc,Charles Leclerc,ferrari,Ferrari,1:05.509,1:05.104,1:05.044
+2024,11,Austrian Grand Prix,7,piastri,Oscar Piastri,mclaren,McLaren,1:05.311,1:05.070,1:05.048
+2024,11,Austrian Grand Prix,8,perez,Sergio Pérez,red_bull,Red Bull,1:05.587,1:05.144,1:05.202
+2024,11,Austrian Grand Prix,9,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:05.596,1:05.262,1:05.385
+2024,11,Austrian Grand Prix,10,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:05.574,1:05.274,1:05.883
+2024,11,Austrian Grand Prix,11,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:05.569,1:05.289,
+2024,11,Austrian Grand Prix,12,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:05.508,1:05.347,
+2024,11,Austrian Grand Prix,13,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:05.598,1:05.359,
+2024,11,Austrian Grand Prix,14,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:05.563,1:05.412,
+2024,11,Austrian Grand Prix,15,alonso,Fernando Alonso,aston_martin,Aston Martin,1:05.656,1:05.639,
+2024,11,Austrian Grand Prix,16,albon,Alexander Albon,williams,Williams,1:05.736,,
+2024,11,Austrian Grand Prix,17,stroll,Lance Stroll,aston_martin,Aston Martin,1:05.819,,
+2024,11,Austrian Grand Prix,18,bottas,Valtteri Bottas,sauber,Sauber,1:05.847,,
+2024,11,Austrian Grand Prix,19,sargeant,Logan Sargeant,williams,Williams,1:05.856,,
+2024,11,Austrian Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:06.061,,
+2024,12,British Grand Prix,1,russell,George Russell,mercedes,Mercedes,1:30.106,1:26.723,1:25.819
+2024,12,British Grand Prix,2,hamilton,Lewis Hamilton,mercedes,Mercedes,1:29.547,1:26.770,1:25.990
+2024,12,British Grand Prix,3,norris,Lando Norris,mclaren,McLaren,1:31.596,1:26.559,1:26.030
+2024,12,British Grand Prix,4,max_verstappen,Max Verstappen,red_bull,Red Bull,1:31.342,1:26.796,1:26.203
+2024,12,British Grand Prix,5,piastri,Oscar Piastri,mclaren,McLaren,1:30.895,1:26.733,1:26.237
+2024,12,British Grand Prix,6,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:31.929,1:26.847,1:26.338
+2024,12,British Grand Prix,7,sainz,Carlos Sainz,ferrari,Ferrari,1:30.557,1:26.843,1:26.509
+2024,12,British Grand Prix,8,stroll,Lance Stroll,aston_martin,Aston Martin,1:31.410,1:26.938,1:26.585
+2024,12,British Grand Prix,9,albon,Alexander Albon,williams,Williams,1:31.135,1:26.933,1:26.640
+2024,12,British Grand Prix,10,alonso,Fernando Alonso,aston_martin,Aston Martin,1:31.264,1:26.730,1:26.917
+2024,12,British Grand Prix,11,leclerc,Charles Leclerc,ferrari,Ferrari,1:30.496,1:27.097,
+2024,12,British Grand Prix,12,sargeant,Logan Sargeant,williams,Williams,1:31.608,1:27.175,
+2024,12,British Grand Prix,13,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:30.994,1:27.269,
+2024,12,British Grand Prix,14,zhou,Guanyu Zhou,sauber,Sauber,1:31.190,1:27.867,
+2024,12,British Grand Prix,15,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:31.291,1:27.949,
+2024,12,British Grand Prix,16,bottas,Valtteri Bottas,sauber,Sauber,1:32.431,,
+2024,12,British Grand Prix,17,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:32.905,,
+2024,12,British Grand Prix,18,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:34.557,,
+2024,12,British Grand Prix,19,perez,Sergio Pérez,red_bull,Red Bull,1:38.348,,
+2024,12,British Grand Prix,20,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:39.804,,
+2024,13,Hungarian Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:17.755,1:15.540,1:15.227
+2024,13,Hungarian Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:17.504,1:15.785,1:15.249
+2024,13,Hungarian Grand Prix,3,max_verstappen,Max Verstappen,red_bull,Red Bull,1:17.087,1:15.770,1:15.273
+2024,13,Hungarian Grand Prix,4,sainz,Carlos Sainz,ferrari,Ferrari,1:17.244,1:15.885,1:15.696
+2024,13,Hungarian Grand Prix,5,hamilton,Lewis Hamilton,mercedes,Mercedes,1:17.087,1:16.307,1:15.854
+2024,13,Hungarian Grand Prix,6,leclerc,Charles Leclerc,ferrari,Ferrari,1:17.437,1:15.891,1:15.905
+2024,13,Hungarian Grand Prix,7,alonso,Fernando Alonso,aston_martin,Aston Martin,1:17.624,1:16.117,1:16.043
+2024,13,Hungarian Grand Prix,8,stroll,Lance Stroll,aston_martin,Aston Martin,1:17.405,1:16.075,1:16.244
+2024,13,Hungarian Grand Prix,9,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:17.050,1:16.202,1:16.447
+2024,13,Hungarian Grand Prix,10,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:17.436,1:16.121,1:16.477
+2024,13,Hungarian Grand Prix,11,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:17.362,1:16.317,
+2024,13,Hungarian Grand Prix,12,bottas,Valtteri Bottas,sauber,Sauber,1:17.487,1:16.384,
+2024,13,Hungarian Grand Prix,13,albon,Alexander Albon,williams,Williams,1:17.280,1:16.429,
+2024,13,Hungarian Grand Prix,14,sargeant,Logan Sargeant,williams,Williams,1:17.770,1:16.543,
+2024,13,Hungarian Grand Prix,15,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:17.851,1:16.548,
+2024,13,Hungarian Grand Prix,16,perez,Sergio Pérez,red_bull,Red Bull,1:17.886,,
+2024,13,Hungarian Grand Prix,17,russell,George Russell,mercedes,Mercedes,1:17.968,,
+2024,13,Hungarian Grand Prix,18,zhou,Guanyu Zhou,sauber,Sauber,1:18.037,,
+2024,13,Hungarian Grand Prix,19,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:18.049,,
+2024,13,Hungarian Grand Prix,20,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:18.166,,
+2024,14,Belgian Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:54.938,1:53.837,1:53.159
+2024,14,Belgian Grand Prix,2,leclerc,Charles Leclerc,ferrari,Ferrari,1:55.349,1:54.193,1:53.754
+2024,14,Belgian Grand Prix,3,perez,Sergio Pérez,red_bull,Red Bull,1:55.139,1:54.470,1:53.765
+2024,14,Belgian Grand Prix,4,hamilton,Lewis Hamilton,mercedes,Mercedes,1:55.692,1:54.037,1:53.835
+2024,14,Belgian Grand Prix,5,norris,Lando Norris,mclaren,McLaren,1:55.582,1:54.358,1:53.981
+2024,14,Belgian Grand Prix,6,piastri,Oscar Piastri,mclaren,McLaren,1:54.835,1:54.136,1:54.027
+2024,14,Belgian Grand Prix,7,russell,George Russell,mercedes,Mercedes,1:55.353,1:54.095,1:54.184
+2024,14,Belgian Grand Prix,8,sainz,Carlos Sainz,ferrari,Ferrari,1:55.169,1:54.112,1:54.477
+2024,14,Belgian Grand Prix,9,alonso,Fernando Alonso,aston_martin,Aston Martin,1:55.489,1:54.258,1:54.765
+2024,14,Belgian Grand Prix,10,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:55.417,1:54.460,1:54.810
+2024,14,Belgian Grand Prix,11,albon,Alexander Albon,williams,Williams,1:55.722,1:54.473,
+2024,14,Belgian Grand Prix,12,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:54.911,1:54.635,
+2024,14,Belgian Grand Prix,13,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:55.451,1:54.682,
+2024,14,Belgian Grand Prix,14,bottas,Valtteri Bottas,sauber,Sauber,1:55.531,1:54.764,
+2024,14,Belgian Grand Prix,15,stroll,Lance Stroll,aston_martin,Aston Martin,1:56.072,1:55.716,
+2024,14,Belgian Grand Prix,16,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:56.308,,
+2024,14,Belgian Grand Prix,17,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:56.500,,
+2024,14,Belgian Grand Prix,18,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:56.593,,
+2024,14,Belgian Grand Prix,19,sargeant,Logan Sargeant,williams,Williams,1:57.230,,
+2024,14,Belgian Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:57.775,,
+2024,15,Dutch Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:11.377,1:10.496,1:09.673
+2024,15,Dutch Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:11.393,1:10.811,1:10.029
+2024,15,Dutch Grand Prix,3,piastri,Oscar Piastri,mclaren,McLaren,1:11.541,1:10.505,1:10.172
+2024,15,Dutch Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:11.049,1:10.552,1:10.244
+2024,15,Dutch Grand Prix,5,perez,Sergio Pérez,red_bull,Red Bull,1:11.006,1:10.678,1:10.416
+2024,15,Dutch Grand Prix,6,leclerc,Charles Leclerc,ferrari,Ferrari,1:11.370,1:10.689,1:10.582
+2024,15,Dutch Grand Prix,7,alonso,Fernando Alonso,aston_martin,Aston Martin,1:11.493,1:10.845,1:10.633
+2024,15,Dutch Grand Prix,8,stroll,Lance Stroll,aston_martin,Aston Martin,1:11.518,1:10.661,1:10.857
+2024,15,Dutch Grand Prix,9,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:11.718,1:10.815,1:10.977
+2024,15,Dutch Grand Prix,10,sainz,Carlos Sainz,ferrari,Ferrari,1:11.327,1:10.914,
+2024,15,Dutch Grand Prix,10,albon,Alexander Albon,williams,Williams,,1:10.768,1:10.653
+2024,15,Dutch Grand Prix,11,hamilton,Lewis Hamilton,mercedes,Mercedes,1:11.375,1:10.948,
+2024,15,Dutch Grand Prix,12,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:11.603,1:10.955,
+2024,15,Dutch Grand Prix,13,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:11.832,1:11.215,
+2024,15,Dutch Grand Prix,14,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:11.630,1:11.295,
+2024,15,Dutch Grand Prix,15,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:11.943,,
+2024,15,Dutch Grand Prix,16,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:11.995,,
+2024,15,Dutch Grand Prix,17,bottas,Valtteri Bottas,sauber,Sauber,1:12.168,,
+2024,15,Dutch Grand Prix,18,zhou,Guanyu Zhou,sauber,Sauber,1:13.261,,
+2024,15,Dutch Grand Prix,20,sargeant,Logan Sargeant,williams,Williams,,,
+2024,16,Italian Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:19.911,1:19.727,1:19.327
+2024,16,Italian Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:20.076,1:19.808,1:19.436
+2024,16,Italian Grand Prix,3,russell,George Russell,mercedes,Mercedes,1:20.169,1:19.877,1:19.440
+2024,16,Italian Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:20.074,1:20.007,1:19.461
+2024,16,Italian Grand Prix,5,sainz,Carlos Sainz,ferrari,Ferrari,1:20.149,1:19.799,1:19.467
+2024,16,Italian Grand Prix,6,hamilton,Lewis Hamilton,mercedes,Mercedes,1:20.477,1:19.641,1:19.513
+2024,16,Italian Grand Prix,7,max_verstappen,Max Verstappen,red_bull,Red Bull,1:20.226,1:19.662,1:20.022
+2024,16,Italian Grand Prix,8,perez,Sergio Pérez,red_bull,Red Bull,1:20.598,1:20.216,1:20.062
+2024,16,Italian Grand Prix,9,albon,Alexander Albon,williams,Williams,1:20.542,1:20.314,1:20.299
+2024,16,Italian Grand Prix,10,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:20.781,1:20.411,1:20.339
+2024,16,Italian Grand Prix,11,alonso,Fernando Alonso,aston_martin,Aston Martin,1:20.617,1:20.421,
+2024,16,Italian Grand Prix,12,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:20.901,1:20.479,
+2024,16,Italian Grand Prix,13,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:20.856,1:20.698,
+2024,16,Italian Grand Prix,14,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:20.748,1:20.738,
+2024,16,Italian Grand Prix,15,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:20.764,1:20.766,
+2024,16,Italian Grand Prix,16,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:20.945,,
+2024,16,Italian Grand Prix,17,stroll,Lance Stroll,aston_martin,Aston Martin,1:21.013,,
+2024,16,Italian Grand Prix,18,colapinto,Franco Colapinto,williams,Williams,1:21.061,,
+2024,16,Italian Grand Prix,19,bottas,Valtteri Bottas,sauber,Sauber,1:21.101,,
+2024,16,Italian Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:21.445,,
+2024,17,Azerbaijan Grand Prix,1,leclerc,Charles Leclerc,ferrari,Ferrari,1:42.775,1:42.056,1:41.365
+2024,17,Azerbaijan Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:43.033,1:42.598,1:41.686
+2024,17,Azerbaijan Grand Prix,3,sainz,Carlos Sainz,ferrari,Ferrari,1:43.357,1:42.503,1:41.805
+2024,17,Azerbaijan Grand Prix,4,perez,Sergio Pérez,red_bull,Red Bull,1:43.213,1:42.263,1:41.813
+2024,17,Azerbaijan Grand Prix,5,russell,George Russell,mercedes,Mercedes,1:43.139,1:42.329,1:41.874
+2024,17,Azerbaijan Grand Prix,6,max_verstappen,Max Verstappen,red_bull,Red Bull,1:43.097,1:42.042,1:42.023
+2024,17,Azerbaijan Grand Prix,7,hamilton,Lewis Hamilton,mercedes,Mercedes,1:43.089,1:42.765,1:42.289
+2024,17,Azerbaijan Grand Prix,8,alonso,Fernando Alonso,aston_martin,Aston Martin,1:43.472,1:42.426,1:42.369
+2024,17,Azerbaijan Grand Prix,9,colapinto,Franco Colapinto,williams,Williams,1:43.138,1:42.473,1:42.530
+2024,17,Azerbaijan Grand Prix,10,albon,Alexander Albon,williams,Williams,1:42.899,1:42.840,1:42.859
+2024,17,Azerbaijan Grand Prix,11,bearman,Oliver Bearman,haas,Haas F1 Team,1:43.471,1:42.968,
+2024,17,Azerbaijan Grand Prix,12,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:43.337,1:43.035,
+2024,17,Azerbaijan Grand Prix,13,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:43.101,1:43.191,
+2024,17,Azerbaijan Grand Prix,14,stroll,Lance Stroll,aston_martin,Aston Martin,1:43.370,1:43.404,
+2024,17,Azerbaijan Grand Prix,15,gasly,Pierre Gasly,alpine,Alpine F1 Team,,1:43.179,
+2024,17,Azerbaijan Grand Prix,15,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:43.547,,
+2024,17,Azerbaijan Grand Prix,16,norris,Lando Norris,mclaren,McLaren,1:43.609,,
+2024,17,Azerbaijan Grand Prix,17,bottas,Valtteri Bottas,sauber,Sauber,1:43.618,,
+2024,17,Azerbaijan Grand Prix,18,zhou,Guanyu Zhou,sauber,Sauber,1:44.246,,
+2024,17,Azerbaijan Grand Prix,19,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:44.504,,
+2024,18,Singapore Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:30.002,1:30.007,1:29.525
+2024,18,Singapore Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:30.157,1:29.680,1:29.728
+2024,18,Singapore Grand Prix,3,hamilton,Lewis Hamilton,mercedes,Mercedes,1:30.393,1:29.929,1:29.841
+2024,18,Singapore Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:30.811,1:30.153,1:29.867
+2024,18,Singapore Grand Prix,5,piastri,Oscar Piastri,mclaren,McLaren,1:30.258,1:29.640,1:29.953
+2024,18,Singapore Grand Prix,6,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:30.724,1:30.150,1:30.115
+2024,18,Singapore Grand Prix,7,alonso,Fernando Alonso,aston_martin,Aston Martin,1:30.684,1:30.450,1:30.214
+2024,18,Singapore Grand Prix,8,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:30.716,1:30.289,1:30.354
+2024,18,Singapore Grand Prix,9,leclerc,Charles Leclerc,ferrari,Ferrari,1:30.786,1:29.747,
+2024,18,Singapore Grand Prix,10,sainz,Carlos Sainz,ferrari,Ferrari,1:30.670,1:30.108,
+2024,18,Singapore Grand Prix,11,albon,Alexander Albon,williams,Williams,1:30.679,1:30.474,
+2024,18,Singapore Grand Prix,12,colapinto,Franco Colapinto,williams,Williams,1:30.704,1:30.481,
+2024,18,Singapore Grand Prix,13,perez,Sergio Pérez,red_bull,Red Bull,1:30.624,1:30.579,
+2024,18,Singapore Grand Prix,14,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:30.829,1:30.653,
+2024,18,Singapore Grand Prix,15,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:30.958,1:30.769,
+2024,18,Singapore Grand Prix,16,ricciardo,Daniel Ricciardo,rb,RB F1 Team,1:31.085,,
+2024,18,Singapore Grand Prix,17,stroll,Lance Stroll,aston_martin,Aston Martin,1:31.094,,
+2024,18,Singapore Grand Prix,18,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:31.312,,
+2024,18,Singapore Grand Prix,19,bottas,Valtteri Bottas,sauber,Sauber,1:31.572,,
+2024,18,Singapore Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:32.054,,
+2024,19,United States Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:33.616,1:32.851,1:32.330
+2024,19,United States Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:33.046,1:32.584,1:32.361
+2024,19,United States Grand Prix,3,sainz,Carlos Sainz,ferrari,Ferrari,1:33.556,1:32.836,1:32.652
+2024,19,United States Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:33.241,1:32.962,1:32.740
+2024,19,United States Grand Prix,5,piastri,Oscar Piastri,mclaren,McLaren,1:33.864,1:33.057,1:32.950
+2024,19,United States Grand Prix,6,russell,George Russell,mercedes,Mercedes,1:33.536,1:33.142,1:32.974
+2024,19,United States Grand Prix,7,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:33.550,1:33.162,1:33.018
+2024,19,United States Grand Prix,8,alonso,Fernando Alonso,aston_martin,Aston Martin,1:33.973,1:33.429,1:33.309
+2024,19,United States Grand Prix,9,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:33.564,1:33.474,1:33.481
+2024,19,United States Grand Prix,10,perez,Sergio Pérez,red_bull,Red Bull,1:33.611,1:33.020,
+2024,19,United States Grand Prix,11,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:33.795,1:33.506,
+2024,19,United States Grand Prix,12,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:33.601,1:33.544,
+2024,19,United States Grand Prix,13,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:33.986,1:33.597,
+2024,19,United States Grand Prix,14,stroll,Lance Stroll,aston_martin,Aston Martin,1:34.033,1:33.759,
+2024,19,United States Grand Prix,15,lawson,Liam Lawson,rb,RB F1 Team,1:33.339,,
+2024,19,United States Grand Prix,16,albon,Alexander Albon,williams,Williams,1:34.051,,
+2024,19,United States Grand Prix,17,colapinto,Franco Colapinto,williams,Williams,1:34.062,,
+2024,19,United States Grand Prix,18,bottas,Valtteri Bottas,sauber,Sauber,1:34.152,,
+2024,19,United States Grand Prix,19,hamilton,Lewis Hamilton,mercedes,Mercedes,1:34.154,,
+2024,19,United States Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:34.228,,
+2024,20,Mexico City Grand Prix,1,sainz,Carlos Sainz,ferrari,Ferrari,1:16.778,1:16.515,1:15.946
+2024,20,Mexico City Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:16.803,1:16.514,1:16.171
+2024,20,Mexico City Grand Prix,3,norris,Lando Norris,mclaren,McLaren,1:16.505,1:16.301,1:16.260
+2024,20,Mexico City Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:16.972,1:16.641,1:16.265
+2024,20,Mexico City Grand Prix,5,russell,George Russell,mercedes,Mercedes,1:17.194,1:16.937,1:16.356
+2024,20,Mexico City Grand Prix,6,hamilton,Lewis Hamilton,mercedes,Mercedes,1:17.306,1:16.973,1:16.651
+2024,20,Mexico City Grand Prix,7,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:17.125,1:17.003,1:16.886
+2024,20,Mexico City Grand Prix,8,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:17.149,1:17.048,1:16.892
+2024,20,Mexico City Grand Prix,9,albon,Alexander Albon,williams,Williams,1:17.189,1:16.988,1:17.065
+2024,20,Mexico City Grand Prix,10,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:17.186,1:16.995,1:17.365
+2024,20,Mexico City Grand Prix,11,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:17.182,1:17.129,
+2024,20,Mexico City Grand Prix,12,lawson,Liam Lawson,rb,RB F1 Team,1:17.380,1:17.162,
+2024,20,Mexico City Grand Prix,13,alonso,Fernando Alonso,aston_martin,Aston Martin,1:17.307,1:17.168,
+2024,20,Mexico City Grand Prix,14,stroll,Lance Stroll,aston_martin,Aston Martin,1:17.407,1:17.294,
+2024,20,Mexico City Grand Prix,15,bottas,Valtteri Bottas,sauber,Sauber,1:17.393,1:17.817,
+2024,20,Mexico City Grand Prix,16,colapinto,Franco Colapinto,williams,Williams,1:17.558,,
+2024,20,Mexico City Grand Prix,17,piastri,Oscar Piastri,mclaren,McLaren,1:17.597,,
+2024,20,Mexico City Grand Prix,18,perez,Sergio Pérez,red_bull,Red Bull,1:17.611,,
+2024,20,Mexico City Grand Prix,19,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:17.617,,
+2024,20,Mexico City Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:18.072,,
+2024,21,São Paulo Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:30.944,1:24.844,1:23.405
+2024,21,São Paulo Grand Prix,2,russell,George Russell,mercedes,Mercedes,1:29.121,1:26.307,1:23.578
+2024,21,São Paulo Grand Prix,3,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:29.172,1:26.464,1:24.111
+2024,21,São Paulo Grand Prix,4,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:29.171,1:26.206,1:24.475
+2024,21,São Paulo Grand Prix,5,lawson,Liam Lawson,rb,RB F1 Team,1:30.758,1:25.654,1:24.484
+2024,21,São Paulo Grand Prix,6,leclerc,Charles Leclerc,ferrari,Ferrari,1:29.839,1:26.097,1:24.525
+2024,21,São Paulo Grand Prix,7,albon,Alexander Albon,williams,Williams,1:29.072,1:24.657,1:24.657
+2024,21,São Paulo Grand Prix,8,piastri,Oscar Piastri,mclaren,McLaren,1:30.114,1:24.686,1:24.686
+2024,21,São Paulo Grand Prix,9,alonso,Fernando Alonso,aston_martin,Aston Martin,1:30.207,1:28.998,1:28.998
+2024,21,São Paulo Grand Prix,10,stroll,Lance Stroll,aston_martin,Aston Martin,1:30.580,1:26.334,
+2024,21,São Paulo Grand Prix,11,bottas,Valtteri Bottas,sauber,Sauber,1:30.633,1:26.472,
+2024,21,São Paulo Grand Prix,12,max_verstappen,Max Verstappen,red_bull,Red Bull,1:28.522,1:27.771,
+2024,21,São Paulo Grand Prix,13,perez,Sergio Pérez,red_bull,Red Bull,1:30.035,1:28.158,
+2024,21,São Paulo Grand Prix,14,sainz,Carlos Sainz,ferrari,Ferrari,1:30.303,1:29.406,
+2024,21,São Paulo Grand Prix,15,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:29.420,1:29.614,
+2024,21,São Paulo Grand Prix,16,hamilton,Lewis Hamilton,mercedes,Mercedes,1:31.150,,
+2024,21,São Paulo Grand Prix,17,bearman,Oliver Bearman,haas,Haas F1 Team,1:31.229,,
+2024,21,São Paulo Grand Prix,18,colapinto,Franco Colapinto,williams,Williams,1:31.270,,
+2024,21,São Paulo Grand Prix,19,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:31.623,,
+2024,21,São Paulo Grand Prix,20,zhou,Guanyu Zhou,sauber,Sauber,1:32.263,,
+2024,22,Las Vegas Grand Prix,1,russell,George Russell,mercedes,Mercedes,1:33.186,1:32.779,1:32.312
+2024,22,Las Vegas Grand Prix,2,sainz,Carlos Sainz,ferrari,Ferrari,1:33.484,1:32.711,1:32.410
+2024,22,Las Vegas Grand Prix,3,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:33.691,1:32.879,1:32.664
+2024,22,Las Vegas Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:33.446,1:33.016,1:32.783
+2024,22,Las Vegas Grand Prix,5,max_verstappen,Max Verstappen,red_bull,Red Bull,1:33.299,1:33.085,1:32.797
+2024,22,Las Vegas Grand Prix,6,norris,Lando Norris,mclaren,McLaren,1:33.592,1:33.099,1:33.008
+2024,22,Las Vegas Grand Prix,7,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:33.789,1:33.089,1:33.029
+2024,22,Las Vegas Grand Prix,8,piastri,Oscar Piastri,mclaren,McLaren,1:33.450,1:33.024,1:33.033
+2024,22,Las Vegas Grand Prix,9,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:33.920,1:33.114,1:33.062
+2024,22,Las Vegas Grand Prix,10,hamilton,Lewis Hamilton,mercedes,Mercedes,1:33.225,1:32.567,1:48.106
+2024,22,Las Vegas Grand Prix,11,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:33.968,1:33.221,
+2024,22,Las Vegas Grand Prix,12,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:33.991,1:33.297,
+2024,22,Las Vegas Grand Prix,13,zhou,Guanyu Zhou,sauber,Sauber,1:34.079,1:33.566,
+2024,22,Las Vegas Grand Prix,14,colapinto,Franco Colapinto,williams,Williams,1:33.746,1:33.749,
+2024,22,Las Vegas Grand Prix,15,lawson,Liam Lawson,rb,RB F1 Team,1:34.087,1:34.257,
+2024,22,Las Vegas Grand Prix,16,perez,Sergio Pérez,red_bull,Red Bull,1:34.155,,
+2024,22,Las Vegas Grand Prix,17,alonso,Fernando Alonso,aston_martin,Aston Martin,1:34.258,,
+2024,22,Las Vegas Grand Prix,18,albon,Alexander Albon,williams,Williams,1:34.425,,
+2024,22,Las Vegas Grand Prix,19,bottas,Valtteri Bottas,sauber,Sauber,1:34.430,,
+2024,22,Las Vegas Grand Prix,20,stroll,Lance Stroll,aston_martin,Aston Martin,1:34.484,,
+2024,23,Qatar Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:21.579,1:20.687,1:20.520
+2024,23,Qatar Grand Prix,2,russell,George Russell,mercedes,Mercedes,1:21.241,1:21.069,1:20.575
+2024,23,Qatar Grand Prix,3,norris,Lando Norris,mclaren,McLaren,1:21.578,1:20.983,1:20.772
+2024,23,Qatar Grand Prix,4,piastri,Oscar Piastri,mclaren,McLaren,1:21.821,1:21.121,1:20.829
+2024,23,Qatar Grand Prix,5,leclerc,Charles Leclerc,ferrari,Ferrari,1:21.278,1:21.000,1:20.852
+2024,23,Qatar Grand Prix,6,hamilton,Lewis Hamilton,mercedes,Mercedes,1:21.637,1:21.095,1:21.011
+2024,23,Qatar Grand Prix,7,sainz,Carlos Sainz,ferrari,Ferrari,1:21.447,1:21.199,1:21.041
+2024,23,Qatar Grand Prix,8,alonso,Fernando Alonso,aston_martin,Aston Martin,1:21.608,1:21.208,1:21.251
+2024,23,Qatar Grand Prix,9,perez,Sergio Pérez,red_bull,Red Bull,1:21.675,1:21.425,1:21.425
+2024,23,Qatar Grand Prix,10,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:21.891,1:21.387,1:21.500
+2024,23,Qatar Grand Prix,11,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:21.843,1:21.437,
+2024,23,Qatar Grand Prix,12,zhou,Guanyu Zhou,sauber,Sauber,1:22.103,1:21.501,
+2024,23,Qatar Grand Prix,13,bottas,Valtteri Bottas,sauber,Sauber,1:21.927,1:21.731,
+2024,23,Qatar Grand Prix,14,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:22.364,1:21.771,
+2024,23,Qatar Grand Prix,15,stroll,Lance Stroll,aston_martin,Aston Martin,1:22.011,1:21.911,
+2024,23,Qatar Grand Prix,16,albon,Alexander Albon,williams,Williams,1:22.390,,
+2024,23,Qatar Grand Prix,17,lawson,Liam Lawson,rb,RB F1 Team,1:22.411,,
+2024,23,Qatar Grand Prix,18,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:22.442,,
+2024,23,Qatar Grand Prix,19,colapinto,Franco Colapinto,williams,Williams,1:22.594,,
+2024,23,Qatar Grand Prix,20,ocon,Esteban Ocon,alpine,Alpine F1 Team,1:22.714,,
+2024,24,Abu Dhabi Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:23.682,1:23.098,1:22.595
+2024,24,Abu Dhabi Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:23.640,1:23.199,1:22.804
+2024,24,Abu Dhabi Grand Prix,3,sainz,Carlos Sainz,ferrari,Ferrari,1:23.487,1:22.985,1:22.824
+2024,24,Abu Dhabi Grand Prix,4,hulkenberg,Nico Hülkenberg,haas,Haas F1 Team,1:23.722,1:23.040,1:22.886
+2024,24,Abu Dhabi Grand Prix,5,max_verstappen,Max Verstappen,red_bull,Red Bull,1:23.516,1:22.998,1:22.945
+2024,24,Abu Dhabi Grand Prix,6,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:23.548,1:23.086,1:22.984
+2024,24,Abu Dhabi Grand Prix,7,russell,George Russell,mercedes,Mercedes,1:23.678,1:23.283,1:23.132
+2024,24,Abu Dhabi Grand Prix,8,alonso,Fernando Alonso,aston_martin,Aston Martin,1:23.794,1:23.268,1:23.196
+2024,24,Abu Dhabi Grand Prix,9,bottas,Valtteri Bottas,sauber,Sauber,1:23.481,1:23.341,1:23.204
+2024,24,Abu Dhabi Grand Prix,10,perez,Sergio Pérez,red_bull,Red Bull,1:23.559,1:23.379,1:23.264
+2024,24,Abu Dhabi Grand Prix,11,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:23.735,1:23.419,
+2024,24,Abu Dhabi Grand Prix,12,lawson,Liam Lawson,rb,RB F1 Team,1:23.733,1:23.472,
+2024,24,Abu Dhabi Grand Prix,13,stroll,Lance Stroll,aston_martin,Aston Martin,1:23.729,1:23.784,
+2024,24,Abu Dhabi Grand Prix,14,leclerc,Charles Leclerc,ferrari,Ferrari,1:23.302,1:23.833,
+2024,24,Abu Dhabi Grand Prix,15,kevin_magnussen,Kevin Magnussen,haas,Haas F1 Team,1:23.632,1:23.877,
+2024,24,Abu Dhabi Grand Prix,16,albon,Alexander Albon,williams,Williams,1:23.821,,
+2024,24,Abu Dhabi Grand Prix,17,zhou,Guanyu Zhou,sauber,Sauber,1:23.880,,
+2024,24,Abu Dhabi Grand Prix,18,hamilton,Lewis Hamilton,mercedes,Mercedes,1:23.887,,
+2024,24,Abu Dhabi Grand Prix,19,colapinto,Franco Colapinto,williams,Williams,1:23.912,,
+2024,24,Abu Dhabi Grand Prix,20,doohan,Jack Doohan,alpine,Alpine F1 Team,1:24.105,,
+2025,1,Australian Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:15.912,1:15.415,1:15.096
+2025,1,Australian Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:16.062,1:15.468,1:15.180
+2025,1,Australian Grand Prix,3,max_verstappen,Max Verstappen,red_bull,Red Bull,1:16.018,1:15.565,1:15.481
+2025,1,Australian Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:15.971,1:15.798,1:15.546
+2025,1,Australian Grand Prix,5,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:16.225,1:16.009,1:15.670
+2025,1,Australian Grand Prix,6,albon,Alexander Albon,williams,Williams,1:16.245,1:16.017,1:15.737
+2025,1,Australian Grand Prix,7,leclerc,Charles Leclerc,ferrari,Ferrari,1:16.029,1:15.827,1:15.755
+2025,1,Australian Grand Prix,8,hamilton,Lewis Hamilton,ferrari,Ferrari,1:16.213,1:15.919,1:15.973
+2025,1,Australian Grand Prix,9,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:16.328,1:16.112,1:15.980
+2025,1,Australian Grand Prix,10,sainz,Carlos Sainz,williams,Williams,1:16.360,1:15.931,1:16.062
+2025,1,Australian Grand Prix,11,hadjar,Isack Hadjar,rb,RB F1 Team,1:16.354,1:16.175,
+2025,1,Australian Grand Prix,12,alonso,Fernando Alonso,aston_martin,Aston Martin,1:16.288,1:16.453,
+2025,1,Australian Grand Prix,13,stroll,Lance Stroll,aston_martin,Aston Martin,1:16.369,1:16.483,
+2025,1,Australian Grand Prix,14,doohan,Jack Doohan,alpine,Alpine F1 Team,1:16.315,1:16.863,
+2025,1,Australian Grand Prix,15,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:16.516,1:17.520,
+2025,1,Australian Grand Prix,16,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:16.525,,
+2025,1,Australian Grand Prix,17,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:16.579,,
+2025,1,Australian Grand Prix,18,lawson,Liam Lawson,red_bull,Red Bull,1:17.094,,
+2025,1,Australian Grand Prix,19,ocon,Esteban Ocon,haas,Haas F1 Team,1:17.147,,
+2025,1,Australian Grand Prix,20,bearman,Oliver Bearman,haas,Haas F1 Team,,,
+2025,2,Chinese Grand Prix,1,piastri,Oscar Piastri,mclaren,McLaren,1:31.591,1:31.200,1:30.641
+2025,2,Chinese Grand Prix,2,russell,George Russell,mercedes,Mercedes,1:31.295,1:31.307,1:30.723
+2025,2,Chinese Grand Prix,3,norris,Lando Norris,mclaren,McLaren,1:30.983,1:30.787,1:30.793
+2025,2,Chinese Grand Prix,4,max_verstappen,Max Verstappen,red_bull,Red Bull,1:31.424,1:31.142,1:30.817
+2025,2,Chinese Grand Prix,5,hamilton,Lewis Hamilton,ferrari,Ferrari,1:31.690,1:31.501,1:30.927
+2025,2,Chinese Grand Prix,6,leclerc,Charles Leclerc,ferrari,Ferrari,1:31.579,1:31.450,1:31.021
+2025,2,Chinese Grand Prix,7,hadjar,Isack Hadjar,rb,RB F1 Team,1:31.162,1:31.253,1:31.079
+2025,2,Chinese Grand Prix,8,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:31.676,1:31.590,1:31.103
+2025,2,Chinese Grand Prix,9,tsunoda,Yuki Tsunoda,rb,RB F1 Team,1:31.238,1:31.260,1:31.638
+2025,2,Chinese Grand Prix,10,albon,Alexander Albon,williams,Williams,1:31.503,1:31.595,1:31.706
+2025,2,Chinese Grand Prix,11,ocon,Esteban Ocon,haas,Haas F1 Team,1:31.876,1:31.625,
+2025,2,Chinese Grand Prix,12,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:31.921,1:31.632,
+2025,2,Chinese Grand Prix,13,alonso,Fernando Alonso,aston_martin,Aston Martin,1:31.719,1:31.688,
+2025,2,Chinese Grand Prix,14,stroll,Lance Stroll,aston_martin,Aston Martin,1:31.923,1:31.773,
+2025,2,Chinese Grand Prix,15,sainz,Carlos Sainz,williams,Williams,1:31.628,1:31.840,
+2025,2,Chinese Grand Prix,16,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:31.992,,
+2025,2,Chinese Grand Prix,17,bearman,Oliver Bearman,haas,Haas F1 Team,1:32.018,,
+2025,2,Chinese Grand Prix,18,doohan,Jack Doohan,alpine,Alpine F1 Team,1:32.092,,
+2025,2,Chinese Grand Prix,19,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:32.141,,
+2025,2,Chinese Grand Prix,20,lawson,Liam Lawson,red_bull,Red Bull,1:32.174,,
+2025,3,Japanese Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:27.943,1:27.502,1:26.983
+2025,3,Japanese Grand Prix,2,norris,Lando Norris,mclaren,McLaren,1:27.845,1:27.146,1:26.995
+2025,3,Japanese Grand Prix,3,piastri,Oscar Piastri,mclaren,McLaren,1:27.687,1:27.507,1:27.027
+2025,3,Japanese Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:27.920,1:27.555,1:27.299
+2025,3,Japanese Grand Prix,5,russell,George Russell,mercedes,Mercedes,1:27.843,1:27.400,1:27.318
+2025,3,Japanese Grand Prix,6,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:27.968,1:27.639,1:27.555
+2025,3,Japanese Grand Prix,7,hadjar,Isack Hadjar,rb,RB F1 Team,1:28.278,1:27.775,1:27.569
+2025,3,Japanese Grand Prix,8,hamilton,Lewis Hamilton,ferrari,Ferrari,1:27.942,1:27.610,1:27.610
+2025,3,Japanese Grand Prix,9,albon,Alexander Albon,williams,Williams,1:28.218,1:27.783,1:27.615
+2025,3,Japanese Grand Prix,10,bearman,Oliver Bearman,haas,Haas F1 Team,1:28.228,1:27.711,1:27.867
+2025,3,Japanese Grand Prix,11,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:28.186,1:27.822,
+2025,3,Japanese Grand Prix,12,sainz,Carlos Sainz,williams,Williams,1:28.209,1:27.836,
+2025,3,Japanese Grand Prix,13,alonso,Fernando Alonso,aston_martin,Aston Martin,1:28.337,1:27.897,
+2025,3,Japanese Grand Prix,14,lawson,Liam Lawson,rb,RB F1 Team,1:28.554,1:27.906,
+2025,3,Japanese Grand Prix,15,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:27.967,1:28.000,
+2025,3,Japanese Grand Prix,16,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:28.570,,
+2025,3,Japanese Grand Prix,17,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:28.622,,
+2025,3,Japanese Grand Prix,18,ocon,Esteban Ocon,haas,Haas F1 Team,1:28.696,,
+2025,3,Japanese Grand Prix,19,doohan,Jack Doohan,alpine,Alpine F1 Team,1:28.877,,
+2025,3,Japanese Grand Prix,20,stroll,Lance Stroll,aston_martin,Aston Martin,1:29.271,,
+2025,4,Bahrain Grand Prix,1,piastri,Oscar Piastri,mclaren,McLaren,1:31.392,1:30.454,1:29.841
+2025,4,Bahrain Grand Prix,2,russell,George Russell,mercedes,Mercedes,1:31.494,1:30.664,1:30.009
+2025,4,Bahrain Grand Prix,3,leclerc,Charles Leclerc,ferrari,Ferrari,1:31.454,1:30.724,1:30.175
+2025,4,Bahrain Grand Prix,4,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:31.415,1:30.716,1:30.213
+2025,4,Bahrain Grand Prix,5,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:31.462,1:30.643,1:30.216
+2025,4,Bahrain Grand Prix,6,norris,Lando Norris,mclaren,McLaren,1:31.107,1:30.560,1:30.267
+2025,4,Bahrain Grand Prix,7,max_verstappen,Max Verstappen,red_bull,Red Bull,1:31.303,1:31.019,1:30.423
+2025,4,Bahrain Grand Prix,8,sainz,Carlos Sainz,williams,Williams,1:31.591,1:30.844,1:30.680
+2025,4,Bahrain Grand Prix,9,hamilton,Lewis Hamilton,ferrari,Ferrari,1:31.219,1:31.009,1:30.772
+2025,4,Bahrain Grand Prix,10,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:31.751,1:31.228,1:31.303
+2025,4,Bahrain Grand Prix,11,doohan,Jack Doohan,alpine,Alpine F1 Team,1:31.414,1:31.245,
+2025,4,Bahrain Grand Prix,12,hadjar,Isack Hadjar,rb,RB F1 Team,1:31.591,1:31.271,
+2025,4,Bahrain Grand Prix,13,alonso,Fernando Alonso,aston_martin,Aston Martin,1:31.634,1:31.886,
+2025,4,Bahrain Grand Prix,14,ocon,Esteban Ocon,haas,Haas F1 Team,1:31.594,,
+2025,4,Bahrain Grand Prix,15,albon,Alexander Albon,williams,Williams,1:32.040,,
+2025,4,Bahrain Grand Prix,16,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:32.067,,
+2025,4,Bahrain Grand Prix,17,lawson,Liam Lawson,rb,RB F1 Team,1:32.165,,
+2025,4,Bahrain Grand Prix,18,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:32.186,,
+2025,4,Bahrain Grand Prix,19,stroll,Lance Stroll,aston_martin,Aston Martin,1:32.283,,
+2025,4,Bahrain Grand Prix,20,bearman,Oliver Bearman,haas,Haas F1 Team,1:32.373,,
+2025,5,Saudi Arabian Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:27.778,1:27.529,1:27.294
+2025,5,Saudi Arabian Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:27.901,1:27.545,1:27.304
+2025,5,Saudi Arabian Grand Prix,3,russell,George Russell,mercedes,Mercedes,1:28.282,1:27.599,1:27.407
+2025,5,Saudi Arabian Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:28.552,1:27.866,1:27.670
+2025,5,Saudi Arabian Grand Prix,5,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:28.128,1:27.798,1:27.866
+2025,5,Saudi Arabian Grand Prix,6,sainz,Carlos Sainz,williams,Williams,1:28.354,1:28.024,1:28.164
+2025,5,Saudi Arabian Grand Prix,7,hamilton,Lewis Hamilton,ferrari,Ferrari,1:28.372,1:28.102,1:28.201
+2025,5,Saudi Arabian Grand Prix,8,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:28.226,1:27.990,1:28.204
+2025,5,Saudi Arabian Grand Prix,9,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:28.421,1:28.025,1:28.367
+2025,5,Saudi Arabian Grand Prix,10,norris,Lando Norris,mclaren,McLaren,1:27.805,1:27.481,
+2025,5,Saudi Arabian Grand Prix,11,albon,Alexander Albon,williams,Williams,1:28.279,1:28.109,
+2025,5,Saudi Arabian Grand Prix,12,lawson,Liam Lawson,rb,RB F1 Team,1:28.561,1:28.191,
+2025,5,Saudi Arabian Grand Prix,13,alonso,Fernando Alonso,aston_martin,Aston Martin,1:28.548,1:28.303,
+2025,5,Saudi Arabian Grand Prix,14,hadjar,Isack Hadjar,rb,RB F1 Team,1:28.571,1:28.418,
+2025,5,Saudi Arabian Grand Prix,15,bearman,Oliver Bearman,haas,Haas F1 Team,1:28.536,1:28.648,
+2025,5,Saudi Arabian Grand Prix,16,stroll,Lance Stroll,aston_martin,Aston Martin,1:28.645,,
+2025,5,Saudi Arabian Grand Prix,17,doohan,Jack Doohan,alpine,Alpine F1 Team,1:28.739,,
+2025,5,Saudi Arabian Grand Prix,18,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:28.782,,
+2025,5,Saudi Arabian Grand Prix,19,ocon,Esteban Ocon,haas,Haas F1 Team,1:29.092,,
+2025,5,Saudi Arabian Grand Prix,20,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:29.462,,
+2025,6,Miami Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:26.870,1:26.643,1:26.204
+2025,6,Miami Grand Prix,2,norris,Lando Norris,mclaren,McLaren,1:26.955,1:26.499,1:26.269
+2025,6,Miami Grand Prix,3,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:27.077,1:26.606,1:26.271
+2025,6,Miami Grand Prix,4,piastri,Oscar Piastri,mclaren,McLaren,1:27.006,1:26.269,1:26.375
+2025,6,Miami Grand Prix,5,russell,George Russell,mercedes,Mercedes,1:27.014,1:26.575,1:26.385
+2025,6,Miami Grand Prix,6,sainz,Carlos Sainz,williams,Williams,1:27.098,1:26.847,1:26.569
+2025,6,Miami Grand Prix,7,albon,Alexander Albon,williams,Williams,1:27.042,1:26.855,1:26.682
+2025,6,Miami Grand Prix,8,leclerc,Charles Leclerc,ferrari,Ferrari,1:27.417,1:26.948,1:26.754
+2025,6,Miami Grand Prix,9,ocon,Esteban Ocon,haas,Haas F1 Team,1:27.450,1:26.967,1:26.824
+2025,6,Miami Grand Prix,10,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:27.298,1:26.959,1:26.943
+2025,6,Miami Grand Prix,11,hadjar,Isack Hadjar,rb,RB F1 Team,1:27.301,1:26.987,
+2025,6,Miami Grand Prix,12,hamilton,Lewis Hamilton,ferrari,Ferrari,1:27.279,1:27.006,
+2025,6,Miami Grand Prix,13,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:27.343,1:27.151,
+2025,6,Miami Grand Prix,14,doohan,Jack Doohan,alpine,Alpine F1 Team,1:27.422,1:27.186,
+2025,6,Miami Grand Prix,15,lawson,Liam Lawson,rb,RB F1 Team,1:27.444,1:27.363,
+2025,6,Miami Grand Prix,16,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:27.473,,
+2025,6,Miami Grand Prix,17,alonso,Fernando Alonso,aston_martin,Aston Martin,1:27.604,,
+2025,6,Miami Grand Prix,18,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:27.710,,
+2025,6,Miami Grand Prix,19,stroll,Lance Stroll,aston_martin,Aston Martin,1:27.830,,
+2025,6,Miami Grand Prix,20,bearman,Oliver Bearman,haas,Haas F1 Team,1:27.999,,
+2025,7,Emilia Romagna Grand Prix,1,piastri,Oscar Piastri,mclaren,McLaren,1:15.500,1:15.214,1:14.670
+2025,7,Emilia Romagna Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:15.175,1:15.394,1:14.704
+2025,7,Emilia Romagna Grand Prix,3,russell,George Russell,mercedes,Mercedes,1:15.852,1:15.334,1:14.807
+2025,7,Emilia Romagna Grand Prix,4,norris,Lando Norris,mclaren,McLaren,1:15.894,1:15.261,1:14.962
+2025,7,Emilia Romagna Grand Prix,5,alonso,Fernando Alonso,aston_martin,Aston Martin,1:15.695,1:15.442,1:15.431
+2025,7,Emilia Romagna Grand Prix,6,sainz,Carlos Sainz,williams,Williams,1:15.987,1:15.198,1:15.432
+2025,7,Emilia Romagna Grand Prix,7,albon,Alexander Albon,williams,Williams,1:16.123,1:15.521,1:15.473
+2025,7,Emilia Romagna Grand Prix,8,stroll,Lance Stroll,aston_martin,Aston Martin,1:15.817,1:15.497,1:15.581
+2025,7,Emilia Romagna Grand Prix,9,hadjar,Isack Hadjar,rb,RB F1 Team,1:16.253,1:15.510,1:15.746
+2025,7,Emilia Romagna Grand Prix,10,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:15.937,1:15.505,1:15.787
+2025,7,Emilia Romagna Grand Prix,11,leclerc,Charles Leclerc,ferrari,Ferrari,1:16.108,1:15.604,
+2025,7,Emilia Romagna Grand Prix,12,hamilton,Lewis Hamilton,ferrari,Ferrari,1:16.163,1:15.765,
+2025,7,Emilia Romagna Grand Prix,13,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:15.943,1:15.772,
+2025,7,Emilia Romagna Grand Prix,14,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:16.340,1:16.260,
+2025,7,Emilia Romagna Grand Prix,15,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:16.256,,
+2025,7,Emilia Romagna Grand Prix,16,lawson,Liam Lawson,rb,RB F1 Team,1:16.379,,
+2025,7,Emilia Romagna Grand Prix,17,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:16.518,,
+2025,7,Emilia Romagna Grand Prix,18,ocon,Esteban Ocon,haas,Haas F1 Team,1:16.613,,
+2025,7,Emilia Romagna Grand Prix,19,bearman,Oliver Bearman,haas,Haas F1 Team,1:16.918,,
+2025,7,Emilia Romagna Grand Prix,20,tsunoda,Yuki Tsunoda,red_bull,Red Bull,,,
+2025,8,Monaco Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:11.285,1:10.570,1:09.954
+2025,8,Monaco Grand Prix,2,leclerc,Charles Leclerc,ferrari,Ferrari,1:11.229,1:10.581,1:10.063
+2025,8,Monaco Grand Prix,3,piastri,Oscar Piastri,mclaren,McLaren,1:11.308,1:10.858,1:10.129
+2025,8,Monaco Grand Prix,4,hamilton,Lewis Hamilton,ferrari,Ferrari,1:11.575,1:10.883,1:10.382
+2025,8,Monaco Grand Prix,5,max_verstappen,Max Verstappen,red_bull,Red Bull,1:11.431,1:10.875,1:10.669
+2025,8,Monaco Grand Prix,6,hadjar,Isack Hadjar,rb,RB F1 Team,1:11.811,1:11.040,1:10.923
+2025,8,Monaco Grand Prix,7,alonso,Fernando Alonso,aston_martin,Aston Martin,1:11.674,1:11.182,1:10.924
+2025,8,Monaco Grand Prix,8,ocon,Esteban Ocon,haas,Haas F1 Team,1:11.839,1:11.262,1:10.942
+2025,8,Monaco Grand Prix,9,lawson,Liam Lawson,rb,RB F1 Team,1:11.818,1:11.250,1:11.129
+2025,8,Monaco Grand Prix,10,albon,Alexander Albon,williams,Williams,1:11.629,1:10.732,1:11.213
+2025,8,Monaco Grand Prix,11,sainz,Carlos Sainz,williams,Williams,1:11.707,1:11.362,
+2025,8,Monaco Grand Prix,12,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:11.800,1:11.415,
+2025,8,Monaco Grand Prix,13,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:11.871,1:11.596,
+2025,8,Monaco Grand Prix,14,russell,George Russell,mercedes,Mercedes,1:11.507,,
+2025,8,Monaco Grand Prix,15,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:11.880,,
+2025,8,Monaco Grand Prix,16,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:11.902,,
+2025,8,Monaco Grand Prix,17,bearman,Oliver Bearman,haas,Haas F1 Team,1:11.979,,
+2025,8,Monaco Grand Prix,18,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:11.994,,
+2025,8,Monaco Grand Prix,19,stroll,Lance Stroll,aston_martin,Aston Martin,1:12.563,,
+2025,8,Monaco Grand Prix,20,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:12.597,,
+2025,9,Spanish Grand Prix,1,piastri,Oscar Piastri,mclaren,McLaren,1:12.551,1:11.998,1:11.546
+2025,9,Spanish Grand Prix,2,norris,Lando Norris,mclaren,McLaren,1:12.799,1:12.056,1:11.755
+2025,9,Spanish Grand Prix,3,max_verstappen,Max Verstappen,red_bull,Red Bull,1:12.798,1:12.358,1:11.848
+2025,9,Spanish Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:12.806,1:12.407,1:11.848
+2025,9,Spanish Grand Prix,5,hamilton,Lewis Hamilton,ferrari,Ferrari,1:13.058,1:12.447,1:12.045
+2025,9,Spanish Grand Prix,6,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:12.815,1:12.585,1:12.111
+2025,9,Spanish Grand Prix,7,leclerc,Charles Leclerc,ferrari,Ferrari,1:13.014,1:12.495,1:12.131
+2025,9,Spanish Grand Prix,8,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:13.081,1:12.611,1:12.199
+2025,9,Spanish Grand Prix,9,hadjar,Isack Hadjar,rb,RB F1 Team,1:13.139,1:12.461,1:12.252
+2025,9,Spanish Grand Prix,10,alonso,Fernando Alonso,aston_martin,Aston Martin,1:13.102,1:12.523,1:12.284
+2025,9,Spanish Grand Prix,11,albon,Alexander Albon,williams,Williams,1:13.044,1:12.641,
+2025,9,Spanish Grand Prix,12,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:13.045,1:12.756,
+2025,9,Spanish Grand Prix,13,lawson,Liam Lawson,rb,RB F1 Team,1:13.039,1:12.763,
+2025,9,Spanish Grand Prix,14,stroll,Lance Stroll,aston_martin,Aston Martin,1:13.038,1:13.058,
+2025,9,Spanish Grand Prix,15,bearman,Oliver Bearman,haas,Haas F1 Team,1:13.074,1:13.315,
+2025,9,Spanish Grand Prix,16,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:13.190,,
+2025,9,Spanish Grand Prix,17,ocon,Esteban Ocon,haas,Haas F1 Team,1:13.201,,
+2025,9,Spanish Grand Prix,18,sainz,Carlos Sainz,williams,Williams,1:13.203,,
+2025,9,Spanish Grand Prix,19,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:13.334,,
+2025,9,Spanish Grand Prix,20,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:13.385,,
+2025,10,Canadian Grand Prix,1,russell,George Russell,mercedes,Mercedes,1:12.075,1:11.570,1:10.899
+2025,10,Canadian Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:12.054,1:11.638,1:11.059
+2025,10,Canadian Grand Prix,3,piastri,Oscar Piastri,mclaren,McLaren,1:11.939,1:11.715,1:11.120
+2025,10,Canadian Grand Prix,4,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:12.279,1:11.974,1:11.391
+2025,10,Canadian Grand Prix,5,hamilton,Lewis Hamilton,ferrari,Ferrari,1:11.952,1:11.885,1:11.526
+2025,10,Canadian Grand Prix,6,alonso,Fernando Alonso,aston_martin,Aston Martin,1:12.073,1:11.805,1:11.586
+2025,10,Canadian Grand Prix,7,norris,Lando Norris,mclaren,McLaren,1:11.826,1:11.599,1:11.625
+2025,10,Canadian Grand Prix,8,leclerc,Charles Leclerc,ferrari,Ferrari,1:12.038,1:11.626,1:11.682
+2025,10,Canadian Grand Prix,9,hadjar,Isack Hadjar,rb,RB F1 Team,1:12.211,1:12.003,1:11.867
+2025,10,Canadian Grand Prix,10,albon,Alexander Albon,williams,Williams,1:12.090,1:11.892,1:11.907
+2025,10,Canadian Grand Prix,11,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:12.334,1:12.102,
+2025,10,Canadian Grand Prix,12,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:12.234,1:12.142,
+2025,10,Canadian Grand Prix,13,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:12.323,1:12.183,
+2025,10,Canadian Grand Prix,14,bearman,Oliver Bearman,haas,Haas F1 Team,1:12.306,1:12.340,
+2025,10,Canadian Grand Prix,15,ocon,Esteban Ocon,haas,Haas F1 Team,1:12.378,1:12.634,
+2025,10,Canadian Grand Prix,16,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:12.385,,
+2025,10,Canadian Grand Prix,17,sainz,Carlos Sainz,williams,Williams,1:12.398,,
+2025,10,Canadian Grand Prix,18,stroll,Lance Stroll,aston_martin,Aston Martin,1:12.517,,
+2025,10,Canadian Grand Prix,19,lawson,Liam Lawson,rb,RB F1 Team,1:12.525,,
+2025,10,Canadian Grand Prix,20,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:12.667,,
+2025,11,Austrian Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:04.672,1:04.410,1:03.971
+2025,11,Austrian Grand Prix,2,leclerc,Charles Leclerc,ferrari,Ferrari,1:05.197,1:04.734,1:04.492
+2025,11,Austrian Grand Prix,3,piastri,Oscar Piastri,mclaren,McLaren,1:04.966,1:04.556,1:04.554
+2025,11,Austrian Grand Prix,4,hamilton,Lewis Hamilton,ferrari,Ferrari,1:05.115,1:04.896,1:04.582
+2025,11,Austrian Grand Prix,5,russell,George Russell,mercedes,Mercedes,1:05.189,1:04.860,1:04.763
+2025,11,Austrian Grand Prix,6,lawson,Liam Lawson,rb,RB F1 Team,1:05.017,1:05.041,1:04.926
+2025,11,Austrian Grand Prix,7,max_verstappen,Max Verstappen,red_bull,Red Bull,1:05.106,1:04.836,1:04.929
+2025,11,Austrian Grand Prix,8,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:05.123,1:04.846,1:05.132
+2025,11,Austrian Grand Prix,9,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:05.178,1:05.052,1:05.276
+2025,11,Austrian Grand Prix,10,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:05.054,1:04.846,1:05.649
+2025,11,Austrian Grand Prix,11,alonso,Fernando Alonso,aston_martin,Aston Martin,1:05.197,1:05.128,
+2025,11,Austrian Grand Prix,12,albon,Alexander Albon,williams,Williams,1:05.143,1:05.205,
+2025,11,Austrian Grand Prix,13,hadjar,Isack Hadjar,rb,RB F1 Team,1:05.063,1:05.226,
+2025,11,Austrian Grand Prix,14,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:05.278,1:05.288,
+2025,11,Austrian Grand Prix,15,bearman,Oliver Bearman,haas,Haas F1 Team,1:05.218,1:05.312,
+2025,11,Austrian Grand Prix,16,stroll,Lance Stroll,aston_martin,Aston Martin,1:05.329,,
+2025,11,Austrian Grand Prix,17,ocon,Esteban Ocon,haas,Haas F1 Team,1:05.364,,
+2025,11,Austrian Grand Prix,18,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:05.369,,
+2025,11,Austrian Grand Prix,19,sainz,Carlos Sainz,williams,Williams,1:05.582,,
+2025,11,Austrian Grand Prix,20,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:05.606,,
+2025,12,British Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:25.886,1:25.316,1:24.892
+2025,12,British Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:25.963,1:25.316,1:24.995
+2025,12,British Grand Prix,3,norris,Lando Norris,mclaren,McLaren,1:26.123,1:25.231,1:25.010
+2025,12,British Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:26.236,1:25.637,1:25.029
+2025,12,British Grand Prix,5,hamilton,Lewis Hamilton,ferrari,Ferrari,1:26.296,1:25.084,1:25.095
+2025,12,British Grand Prix,6,leclerc,Charles Leclerc,ferrari,Ferrari,1:26.186,1:25.133,1:25.121
+2025,12,British Grand Prix,7,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:26.265,1:25.620,1:25.374
+2025,12,British Grand Prix,8,bearman,Oliver Bearman,haas,Haas F1 Team,1:26.005,1:25.534,1:25.471
+2025,12,British Grand Prix,9,alonso,Fernando Alonso,aston_martin,Aston Martin,1:26.108,1:25.593,1:25.621
+2025,12,British Grand Prix,10,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:26.328,1:25.711,1:25.785
+2025,12,British Grand Prix,11,sainz,Carlos Sainz,williams,Williams,1:26.175,1:25.746,
+2025,12,British Grand Prix,12,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:26.275,1:25.826,
+2025,12,British Grand Prix,13,hadjar,Isack Hadjar,rb,RB F1 Team,1:26.177,1:25.864,
+2025,12,British Grand Prix,14,albon,Alexander Albon,williams,Williams,1:26.093,1:25.889,
+2025,12,British Grand Prix,15,ocon,Esteban Ocon,haas,Haas F1 Team,1:26.136,1:25.950,
+2025,12,British Grand Prix,16,lawson,Liam Lawson,rb,RB F1 Team,1:26.440,,
+2025,12,British Grand Prix,17,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:26.446,,
+2025,12,British Grand Prix,18,stroll,Lance Stroll,aston_martin,Aston Martin,1:26.504,,
+2025,12,British Grand Prix,19,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:26.574,,
+2025,12,British Grand Prix,20,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:27.060,,
+2025,13,Belgian Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:41.010,1:40.715,1:40.562
+2025,13,Belgian Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:41.201,1:40.626,1:40.647
+2025,13,Belgian Grand Prix,3,leclerc,Charles Leclerc,ferrari,Ferrari,1:41.635,1:41.084,1:40.900
+2025,13,Belgian Grand Prix,4,max_verstappen,Max Verstappen,red_bull,Red Bull,1:41.334,1:40.951,1:40.903
+2025,13,Belgian Grand Prix,5,albon,Alexander Albon,williams,Williams,1:41.772,1:41.505,1:41.201
+2025,13,Belgian Grand Prix,6,russell,George Russell,mercedes,Mercedes,1:41.784,1:41.254,1:41.260
+2025,13,Belgian Grand Prix,7,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:41.840,1:41.245,1:41.284
+2025,13,Belgian Grand Prix,8,hadjar,Isack Hadjar,rb,RB F1 Team,1:41.572,1:41.281,1:41.310
+2025,13,Belgian Grand Prix,9,lawson,Liam Lawson,rb,RB F1 Team,1:41.748,1:41.297,1:41.328
+2025,13,Belgian Grand Prix,10,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:41.908,1:41.336,1:42.387
+2025,13,Belgian Grand Prix,11,ocon,Esteban Ocon,haas,Haas F1 Team,1:41.884,1:41.525,
+2025,13,Belgian Grand Prix,12,bearman,Oliver Bearman,haas,Haas F1 Team,1:41.617,1:41.617,
+2025,13,Belgian Grand Prix,13,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:41.800,1:41.633,
+2025,13,Belgian Grand Prix,14,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:41.844,1:41.707,
+2025,13,Belgian Grand Prix,15,sainz,Carlos Sainz,williams,Williams,1:41.691,1:41.758,
+2025,13,Belgian Grand Prix,16,hamilton,Lewis Hamilton,ferrari,Ferrari,1:41.939,,
+2025,13,Belgian Grand Prix,17,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:42.022,,
+2025,13,Belgian Grand Prix,18,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:42.139,,
+2025,13,Belgian Grand Prix,19,alonso,Fernando Alonso,aston_martin,Aston Martin,1:42.385,,
+2025,13,Belgian Grand Prix,20,stroll,Lance Stroll,aston_martin,Aston Martin,1:42.502,,
+2025,14,Hungarian Grand Prix,1,leclerc,Charles Leclerc,ferrari,Ferrari,1:15.582,1:15.455,1:15.372
+2025,14,Hungarian Grand Prix,2,piastri,Oscar Piastri,mclaren,McLaren,1:15.211,1:14.941,1:15.398
+2025,14,Hungarian Grand Prix,3,norris,Lando Norris,mclaren,McLaren,1:15.523,1:14.890,1:15.413
+2025,14,Hungarian Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:15.627,1:15.201,1:15.425
+2025,14,Hungarian Grand Prix,5,alonso,Fernando Alonso,aston_martin,Aston Martin,1:15.281,1:15.395,1:15.481
+2025,14,Hungarian Grand Prix,6,stroll,Lance Stroll,aston_martin,Aston Martin,1:15.673,1:15.129,1:15.498
+2025,14,Hungarian Grand Prix,7,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:15.586,1:15.687,1:15.725
+2025,14,Hungarian Grand Prix,8,max_verstappen,Max Verstappen,red_bull,Red Bull,1:15.736,1:15.547,1:15.728
+2025,14,Hungarian Grand Prix,9,lawson,Liam Lawson,rb,RB F1 Team,1:15.849,1:15.630,1:15.821
+2025,14,Hungarian Grand Prix,10,hadjar,Isack Hadjar,rb,RB F1 Team,1:15.516,1:15.469,1:15.915
+2025,14,Hungarian Grand Prix,11,bearman,Oliver Bearman,haas,Haas F1 Team,1:15.750,1:15.694,
+2025,14,Hungarian Grand Prix,12,hamilton,Lewis Hamilton,ferrari,Ferrari,1:15.733,1:15.702,
+2025,14,Hungarian Grand Prix,13,sainz,Carlos Sainz,williams,Williams,1:15.652,1:15.781,
+2025,14,Hungarian Grand Prix,14,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:15.875,1:16.159,
+2025,14,Hungarian Grand Prix,15,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:15.782,1:16.386,
+2025,14,Hungarian Grand Prix,16,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:15.899,,
+2025,14,Hungarian Grand Prix,17,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:15.966,,
+2025,14,Hungarian Grand Prix,18,ocon,Esteban Ocon,haas,Haas F1 Team,1:16.023,,
+2025,14,Hungarian Grand Prix,19,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:16.081,,
+2025,14,Hungarian Grand Prix,20,albon,Alexander Albon,williams,Williams,1:16.223,,
+2025,15,Dutch Grand Prix,1,piastri,Oscar Piastri,mclaren,McLaren,1:09.338,1:08.964,1:08.662
+2025,15,Dutch Grand Prix,2,norris,Lando Norris,mclaren,McLaren,1:09.469,1:08.874,1:08.674
+2025,15,Dutch Grand Prix,3,max_verstappen,Max Verstappen,red_bull,Red Bull,1:09.696,1:09.122,1:08.925
+2025,15,Dutch Grand Prix,4,hadjar,Isack Hadjar,rb,RB F1 Team,1:09.966,1:09.439,1:09.208
+2025,15,Dutch Grand Prix,5,russell,George Russell,mercedes,Mercedes,1:09.676,1:09.313,1:09.255
+2025,15,Dutch Grand Prix,6,leclerc,Charles Leclerc,ferrari,Ferrari,1:09.906,1:09.304,1:09.340
+2025,15,Dutch Grand Prix,7,hamilton,Lewis Hamilton,ferrari,Ferrari,1:09.900,1:09.261,1:09.390
+2025,15,Dutch Grand Prix,8,lawson,Liam Lawson,rb,RB F1 Team,1:09.779,1:09.383,1:09.500
+2025,15,Dutch Grand Prix,9,sainz,Carlos Sainz,williams,Williams,1:09.980,1:09.472,1:09.505
+2025,15,Dutch Grand Prix,10,alonso,Fernando Alonso,aston_martin,Aston Martin,1:09.950,1:09.366,1:09.630
+2025,15,Dutch Grand Prix,11,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:09.845,1:09.493,
+2025,15,Dutch Grand Prix,12,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:09.954,1:09.622,
+2025,15,Dutch Grand Prix,13,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:10.037,1:09.622,
+2025,15,Dutch Grand Prix,14,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:09.894,1:09.637,
+2025,15,Dutch Grand Prix,15,albon,Alexander Albon,williams,Williams,1:09.792,1:09.652,
+2025,15,Dutch Grand Prix,16,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:10.104,,
+2025,15,Dutch Grand Prix,17,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:10.195,,
+2025,15,Dutch Grand Prix,18,ocon,Esteban Ocon,haas,Haas F1 Team,1:10.197,,
+2025,15,Dutch Grand Prix,19,bearman,Oliver Bearman,haas,Haas F1 Team,1:10.262,,
+2025,15,Dutch Grand Prix,20,stroll,Lance Stroll,aston_martin,Aston Martin,,,
+2025,16,Italian Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:19.455,1:19.140,1:18.792
+2025,16,Italian Grand Prix,2,norris,Lando Norris,mclaren,McLaren,1:19.517,1:19.293,1:18.869
+2025,16,Italian Grand Prix,3,piastri,Oscar Piastri,mclaren,McLaren,1:19.711,1:19.286,1:18.982
+2025,16,Italian Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:19.689,1:19.310,1:19.007
+2025,16,Italian Grand Prix,5,hamilton,Lewis Hamilton,ferrari,Ferrari,1:19.765,1:19.371,1:19.124
+2025,16,Italian Grand Prix,6,russell,George Russell,mercedes,Mercedes,1:19.414,1:19.287,1:19.157
+2025,16,Italian Grand Prix,7,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:19.747,1:19.245,1:19.200
+2025,16,Italian Grand Prix,8,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:19.688,1:19.323,1:19.390
+2025,16,Italian Grand Prix,9,alonso,Fernando Alonso,aston_martin,Aston Martin,1:19.658,1:19.362,1:19.424
+2025,16,Italian Grand Prix,10,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:19.619,1:19.433,1:19.519
+2025,16,Italian Grand Prix,11,bearman,Oliver Bearman,haas,Haas F1 Team,1:19.688,1:19.446,
+2025,16,Italian Grand Prix,12,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:19.777,1:19.498,
+2025,16,Italian Grand Prix,13,sainz,Carlos Sainz,williams,Williams,1:19.644,1:19.528,
+2025,16,Italian Grand Prix,14,albon,Alexander Albon,williams,Williams,1:19.837,1:19.583,
+2025,16,Italian Grand Prix,15,ocon,Esteban Ocon,haas,Haas F1 Team,1:19.816,1:19.707,
+2025,16,Italian Grand Prix,16,hadjar,Isack Hadjar,rb,RB F1 Team,1:19.917,,
+2025,16,Italian Grand Prix,17,stroll,Lance Stroll,aston_martin,Aston Martin,1:19.948,,
+2025,16,Italian Grand Prix,18,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:19.992,,
+2025,16,Italian Grand Prix,19,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:20.103,,
+2025,16,Italian Grand Prix,20,lawson,Liam Lawson,rb,RB F1 Team,1:20.279,,
+2025,17,Azerbaijan Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:41.331,1:41.255,1:41.117
+2025,17,Azerbaijan Grand Prix,2,sainz,Carlos Sainz,williams,Williams,1:42.635,1:41.675,1:41.595
+2025,17,Azerbaijan Grand Prix,3,lawson,Liam Lawson,rb,RB F1 Team,1:42.257,1:41.537,1:41.707
+2025,17,Azerbaijan Grand Prix,4,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:42.247,1:41.464,1:41.717
+2025,17,Azerbaijan Grand Prix,5,russell,George Russell,mercedes,Mercedes,1:41.646,1:41.455,1:42.070
+2025,17,Azerbaijan Grand Prix,6,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:42.347,1:41.788,1:42.143
+2025,17,Azerbaijan Grand Prix,7,norris,Lando Norris,mclaren,McLaren,1:41.322,1:41.396,1:42.239
+2025,17,Azerbaijan Grand Prix,8,hadjar,Isack Hadjar,rb,RB F1 Team,1:41.656,1:41.647,1:42.372
+2025,17,Azerbaijan Grand Prix,9,piastri,Oscar Piastri,mclaren,McLaren,1:41.839,1:41.414,
+2025,17,Azerbaijan Grand Prix,10,leclerc,Charles Leclerc,ferrari,Ferrari,1:41.458,1:41.519,
+2025,17,Azerbaijan Grand Prix,11,alonso,Fernando Alonso,aston_martin,Aston Martin,1:42.211,1:41.857,
+2025,17,Azerbaijan Grand Prix,12,hamilton,Lewis Hamilton,ferrari,Ferrari,1:41.821,1:42.183,
+2025,17,Azerbaijan Grand Prix,13,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:42.511,1:42.277,
+2025,17,Azerbaijan Grand Prix,14,stroll,Lance Stroll,aston_martin,Aston Martin,1:42.101,1:43.061,
+2025,17,Azerbaijan Grand Prix,15,bearman,Oliver Bearman,haas,Haas F1 Team,1:42.666,,
+2025,17,Azerbaijan Grand Prix,16,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:42.779,,
+2025,17,Azerbaijan Grand Prix,17,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:42.916,,
+2025,17,Azerbaijan Grand Prix,18,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:43.139,,
+2025,17,Azerbaijan Grand Prix,19,albon,Alexander Albon,williams,Williams,1:43.778,,
+2025,17,Azerbaijan Grand Prix,20,ocon,Esteban Ocon,haas,Haas F1 Team,,,
+2025,18,Singapore Grand Prix,1,russell,George Russell,mercedes,Mercedes,1:29.928,1:29.562,1:29.158
+2025,18,Singapore Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:30.028,1:29.572,1:29.340
+2025,18,Singapore Grand Prix,3,piastri,Oscar Piastri,mclaren,McLaren,1:30.313,1:29.813,1:29.524
+2025,18,Singapore Grand Prix,4,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:30.036,1:29.649,1:29.537
+2025,18,Singapore Grand Prix,5,norris,Lando Norris,mclaren,McLaren,1:29.932,1:29.809,1:29.586
+2025,18,Singapore Grand Prix,6,hamilton,Lewis Hamilton,ferrari,Ferrari,1:29.765,1:29.936,1:29.688
+2025,18,Singapore Grand Prix,7,leclerc,Charles Leclerc,ferrari,Ferrari,1:30.370,1:29.914,1:29.784
+2025,18,Singapore Grand Prix,8,hadjar,Isack Hadjar,rb,RB F1 Team,1:30.214,1:30.016,1:29.846
+2025,18,Singapore Grand Prix,9,bearman,Oliver Bearman,haas,Haas F1 Team,1:30.420,1:30.076,1:29.868
+2025,18,Singapore Grand Prix,10,alonso,Fernando Alonso,aston_martin,Aston Martin,1:30.745,1:30.054,1:29.955
+2025,18,Singapore Grand Prix,11,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:30.715,1:30.141,
+2025,18,Singapore Grand Prix,12,lawson,Liam Lawson,rb,RB F1 Team,1:30.681,1:30.320,
+2025,18,Singapore Grand Prix,13,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:30.574,1:30.353,
+2025,18,Singapore Grand Prix,14,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:30.820,,
+2025,18,Singapore Grand Prix,15,stroll,Lance Stroll,aston_martin,Aston Martin,1:30.949,,
+2025,18,Singapore Grand Prix,16,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:30.982,,
+2025,18,Singapore Grand Prix,17,ocon,Esteban Ocon,haas,Haas F1 Team,1:30.989,,
+2025,18,Singapore Grand Prix,18,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:31.261,,
+2025,18,Singapore Grand Prix,19,albon,Alexander Albon,williams,Williams,,,
+2025,18,Singapore Grand Prix,20,sainz,Carlos Sainz,williams,Williams,,,
+2025,19,United States Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:33.207,1:32.701,1:32.510
+2025,19,United States Grand Prix,2,norris,Lando Norris,mclaren,McLaren,1:33.843,1:32.876,1:32.801
+2025,19,United States Grand Prix,3,leclerc,Charles Leclerc,ferrari,Ferrari,1:33.525,1:32.869,1:32.807
+2025,19,United States Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:33.311,1:33.058,1:32.826
+2025,19,United States Grand Prix,5,hamilton,Lewis Hamilton,ferrari,Ferrari,1:33.685,1:32.914,1:32.912
+2025,19,United States Grand Prix,6,piastri,Oscar Piastri,mclaren,McLaren,1:33.746,1:33.228,1:33.084
+2025,19,United States Grand Prix,7,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:33.501,1:33.044,1:33.114
+2025,19,United States Grand Prix,8,bearman,Oliver Bearman,haas,Haas F1 Team,1:33.921,1:33.238,1:33.139
+2025,19,United States Grand Prix,9,sainz,Carlos Sainz,williams,Williams,1:33.739,1:33.124,1:33.150
+2025,19,United States Grand Prix,10,alonso,Fernando Alonso,aston_martin,Aston Martin,1:33.741,1:33.237,1:33.160
+2025,19,United States Grand Prix,11,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:33.551,1:33.334,
+2025,19,United States Grand Prix,12,lawson,Liam Lawson,rb,RB F1 Team,1:33.549,1:33.360,
+2025,19,United States Grand Prix,13,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:33.935,1:33.466,
+2025,19,United States Grand Prix,14,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:33.599,1:33.651,
+2025,19,United States Grand Prix,15,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:34.039,1:34.044,
+2025,19,United States Grand Prix,16,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:34.125,,
+2025,19,United States Grand Prix,17,ocon,Esteban Ocon,haas,Haas F1 Team,1:34.136,,
+2025,19,United States Grand Prix,18,stroll,Lance Stroll,aston_martin,Aston Martin,1:34.540,,
+2025,19,United States Grand Prix,19,albon,Alexander Albon,williams,Williams,1:34.690,,
+2025,19,United States Grand Prix,20,hadjar,Isack Hadjar,rb,RB F1 Team,,,
+2025,20,Mexico City Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:16.899,1:16.252,1:15.586
+2025,20,Mexico City Grand Prix,2,leclerc,Charles Leclerc,ferrari,Ferrari,1:17.024,1:16.658,1:15.848
+2025,20,Mexico City Grand Prix,3,hamilton,Lewis Hamilton,ferrari,Ferrari,1:16.736,1:16.458,1:15.938
+2025,20,Mexico City Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:16.895,1:16.537,1:16.034
+2025,20,Mexico City Grand Prix,5,max_verstappen,Max Verstappen,red_bull,Red Bull,1:17.076,1:16.605,1:16.070
+2025,20,Mexico City Grand Prix,6,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:17.291,1:16.773,1:16.118
+2025,20,Mexico City Grand Prix,7,sainz,Carlos Sainz,williams,Williams,1:17.171,1:16.607,1:16.172
+2025,20,Mexico City Grand Prix,8,piastri,Oscar Piastri,mclaren,McLaren,1:17.158,1:16.737,1:16.174
+2025,20,Mexico City Grand Prix,9,hadjar,Isack Hadjar,rb,RB F1 Team,1:16.733,1:16.804,1:16.252
+2025,20,Mexico City Grand Prix,10,bearman,Oliver Bearman,haas,Haas F1 Team,1:17.040,1:16.787,1:16.460
+2025,20,Mexico City Grand Prix,11,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:17.234,1:16.816,
+2025,20,Mexico City Grand Prix,12,ocon,Esteban Ocon,haas,Haas F1 Team,1:16.948,1:16.837,
+2025,20,Mexico City Grand Prix,13,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:17.251,1:17.016,
+2025,20,Mexico City Grand Prix,14,alonso,Fernando Alonso,aston_martin,Aston Martin,1:17.232,1:17.103,
+2025,20,Mexico City Grand Prix,15,lawson,Liam Lawson,rb,RB F1 Team,1:16.961,1:18.072,
+2025,20,Mexico City Grand Prix,16,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:17.412,,
+2025,20,Mexico City Grand Prix,17,albon,Alexander Albon,williams,Williams,1:17.490,,
+2025,20,Mexico City Grand Prix,18,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:17.546,,
+2025,20,Mexico City Grand Prix,19,stroll,Lance Stroll,aston_martin,Aston Martin,1:17.606,,
+2025,20,Mexico City Grand Prix,20,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:17.670,,
+2025,21,São Paulo Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:09.656,1:09.616,1:09.511
+2025,21,São Paulo Grand Prix,2,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:10.192,1:09.774,1:09.685
+2025,21,São Paulo Grand Prix,3,leclerc,Charles Leclerc,ferrari,Ferrari,1:09.934,1:09.801,1:09.805
+2025,21,São Paulo Grand Prix,4,piastri,Oscar Piastri,mclaren,McLaren,1:09.928,1:09.835,1:09.886
+2025,21,São Paulo Grand Prix,5,hadjar,Isack Hadjar,rb,RB F1 Team,1:10.083,1:09.970,1:09.931
+2025,21,São Paulo Grand Prix,6,russell,George Russell,mercedes,Mercedes,1:09.935,1:09.880,1:09.942
+2025,21,São Paulo Grand Prix,7,lawson,Liam Lawson,rb,RB F1 Team,1:10.108,1:09.950,1:09.962
+2025,21,São Paulo Grand Prix,8,bearman,Oliver Bearman,haas,Haas F1 Team,1:09.891,1:09.755,1:09.977
+2025,21,São Paulo Grand Prix,9,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:09.885,1:09.857,1:10.002
+2025,21,São Paulo Grand Prix,10,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:10.337,1:09.985,1:10.039
+2025,21,São Paulo Grand Prix,11,alonso,Fernando Alonso,aston_martin,Aston Martin,1:10.181,1:10.001,
+2025,21,São Paulo Grand Prix,12,albon,Alexander Albon,williams,Williams,1:10.115,1:10.053,
+2025,21,São Paulo Grand Prix,13,hamilton,Lewis Hamilton,ferrari,Ferrari,1:10.016,1:10.100,
+2025,21,São Paulo Grand Prix,14,stroll,Lance Stroll,aston_martin,Aston Martin,1:10.041,1:10.161,
+2025,21,São Paulo Grand Prix,15,sainz,Carlos Sainz,williams,Williams,1:10.184,1:10.472,
+2025,21,São Paulo Grand Prix,16,max_verstappen,Max Verstappen,red_bull,Red Bull,1:10.403,,
+2025,21,São Paulo Grand Prix,17,ocon,Esteban Ocon,haas,Haas F1 Team,1:10.438,,
+2025,21,São Paulo Grand Prix,18,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:10.632,,
+2025,21,São Paulo Grand Prix,19,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:10.711,,
+2025,22,Las Vegas Grand Prix,1,norris,Lando Norris,mclaren,McLaren,1:55.473,1:51.379,1:47.934
+2025,22,Las Vegas Grand Prix,2,max_verstappen,Max Verstappen,red_bull,Red Bull,1:53.458,1:51.593,1:48.257
+2025,22,Las Vegas Grand Prix,3,sainz,Carlos Sainz,williams,Williams,1:54.873,1:51.144,1:48.296
+2025,22,Las Vegas Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:53.144,1:50.935,1:48.803
+2025,22,Las Vegas Grand Prix,5,piastri,Oscar Piastri,mclaren,McLaren,1:54.544,1:52.126,1:48.961
+2025,22,Las Vegas Grand Prix,6,lawson,Liam Lawson,rb,RB F1 Team,1:54.828,1:51.621,1:49.062
+2025,22,Las Vegas Grand Prix,7,alonso,Fernando Alonso,aston_martin,Aston Martin,1:53.739,1:51.865,1:49.466
+2025,22,Las Vegas Grand Prix,8,hadjar,Isack Hadjar,rb,RB F1 Team,1:55.613,1:51.120,1:49.554
+2025,22,Las Vegas Grand Prix,9,leclerc,Charles Leclerc,ferrari,Ferrari,1:54.814,1:51.952,1:49.872
+2025,22,Las Vegas Grand Prix,10,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:54.432,1:51.760,1:51.540
+2025,22,Las Vegas Grand Prix,11,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:54.555,1:52.781,
+2025,22,Las Vegas Grand Prix,12,stroll,Lance Stroll,aston_martin,Aston Martin,1:54.416,1:52.850,
+2025,22,Las Vegas Grand Prix,13,ocon,Esteban Ocon,haas,Haas F1 Team,1:54.635,1:52.987,
+2025,22,Las Vegas Grand Prix,14,bearman,Oliver Bearman,haas,Haas F1 Team,1:56.016,1:53.094,
+2025,22,Las Vegas Grand Prix,15,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:54.847,1:53.683,
+2025,22,Las Vegas Grand Prix,16,albon,Alexander Albon,williams,Williams,1:56.220,,
+2025,22,Las Vegas Grand Prix,17,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:56.314,,
+2025,22,Las Vegas Grand Prix,18,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:56.674,,
+2025,22,Las Vegas Grand Prix,19,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:56.798,,
+2025,22,Las Vegas Grand Prix,20,hamilton,Lewis Hamilton,ferrari,Ferrari,1:57.115,,
+2025,23,Qatar Grand Prix,1,piastri,Oscar Piastri,mclaren,McLaren,1:20.234,1:19.650,1:19.387
+2025,23,Qatar Grand Prix,2,norris,Lando Norris,mclaren,McLaren,1:20.157,1:19.861,1:19.495
+2025,23,Qatar Grand Prix,3,max_verstappen,Max Verstappen,red_bull,Red Bull,1:20.472,1:19.985,1:19.651
+2025,23,Qatar Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:20.074,1:20.186,1:19.662
+2025,23,Qatar Grand Prix,5,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:20.576,1:20.084,1:19.846
+2025,23,Qatar Grand Prix,6,hadjar,Isack Hadjar,rb,RB F1 Team,1:20.603,1:20.350,1:20.114
+2025,23,Qatar Grand Prix,7,sainz,Carlos Sainz,williams,Williams,1:20.520,1:20.251,1:20.287
+2025,23,Qatar Grand Prix,8,alonso,Fernando Alonso,aston_martin,Aston Martin,1:20.598,1:20.219,1:20.418
+2025,23,Qatar Grand Prix,9,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:20.681,1:20.324,1:20.477
+2025,23,Qatar Grand Prix,10,leclerc,Charles Leclerc,ferrari,Ferrari,1:20.564,1:20.343,1:20.561
+2025,23,Qatar Grand Prix,11,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:20.630,1:20.353,
+2025,23,Qatar Grand Prix,12,lawson,Liam Lawson,rb,RB F1 Team,1:20.539,1:20.433,
+2025,23,Qatar Grand Prix,13,bearman,Oliver Bearman,haas,Haas F1 Team,1:20.548,1:20.438,
+2025,23,Qatar Grand Prix,14,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:20.653,1:20.534,
+2025,23,Qatar Grand Prix,15,albon,Alexander Albon,williams,Williams,1:20.629,1:20.629,
+2025,23,Qatar Grand Prix,16,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:20.761,,
+2025,23,Qatar Grand Prix,17,ocon,Esteban Ocon,haas,Haas F1 Team,1:20.864,,
+2025,23,Qatar Grand Prix,18,hamilton,Lewis Hamilton,ferrari,Ferrari,1:20.907,,
+2025,23,Qatar Grand Prix,19,stroll,Lance Stroll,aston_martin,Aston Martin,1:21.058,,
+2025,23,Qatar Grand Prix,20,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:21.137,,
+2025,24,Abu Dhabi Grand Prix,1,max_verstappen,Max Verstappen,red_bull,Red Bull,1:22.877,1:22.752,1:22.207
+2025,24,Abu Dhabi Grand Prix,2,norris,Lando Norris,mclaren,McLaren,1:23.178,1:22.804,1:22.408
+2025,24,Abu Dhabi Grand Prix,3,piastri,Oscar Piastri,mclaren,McLaren,1:22.605,1:23.021,1:22.437
+2025,24,Abu Dhabi Grand Prix,4,russell,George Russell,mercedes,Mercedes,1:23.247,1:22.730,1:22.645
+2025,24,Abu Dhabi Grand Prix,5,leclerc,Charles Leclerc,ferrari,Ferrari,1:23.163,1:22.948,1:22.730
+2025,24,Abu Dhabi Grand Prix,6,alonso,Fernando Alonso,aston_martin,Aston Martin,1:23.071,1:22.861,1:22.902
+2025,24,Abu Dhabi Grand Prix,7,bortoleto,Gabriel Bortoleto,sauber,Sauber,1:23.374,1:22.874,1:22.904
+2025,24,Abu Dhabi Grand Prix,8,ocon,Esteban Ocon,haas,Haas F1 Team,1:23.334,1:23.023,1:22.913
+2025,24,Abu Dhabi Grand Prix,9,hadjar,Isack Hadjar,rb,RB F1 Team,1:23.373,1:22.997,1:23.072
+2025,24,Abu Dhabi Grand Prix,10,tsunoda,Yuki Tsunoda,red_bull,Red Bull,1:23.386,1:23.034,
+2025,24,Abu Dhabi Grand Prix,11,bearman,Oliver Bearman,haas,Haas F1 Team,1:23.254,1:23.041,
+2025,24,Abu Dhabi Grand Prix,12,sainz,Carlos Sainz,williams,Williams,1:23.187,1:23.042,
+2025,24,Abu Dhabi Grand Prix,13,lawson,Liam Lawson,rb,RB F1 Team,1:23.265,1:23.077,
+2025,24,Abu Dhabi Grand Prix,14,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:22.894,1:23.080,
+2025,24,Abu Dhabi Grand Prix,15,stroll,Lance Stroll,aston_martin,Aston Martin,1:23.316,1:23.097,
+2025,24,Abu Dhabi Grand Prix,16,hamilton,Lewis Hamilton,ferrari,Ferrari,1:23.394,,
+2025,24,Abu Dhabi Grand Prix,17,albon,Alexander Albon,williams,Williams,1:23.416,,
+2025,24,Abu Dhabi Grand Prix,18,hulkenberg,Nico Hülkenberg,sauber,Sauber,1:23.450,,
+2025,24,Abu Dhabi Grand Prix,19,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:23.468,,
+2025,24,Abu Dhabi Grand Prix,20,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:23.890,,
+2026,1,Australian Grand Prix,1,russell,George Russell,mercedes,Mercedes,1:19.507,1:18.934,1:18.518
+2026,1,Australian Grand Prix,2,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:20.120,1:19.435,1:18.811
+2026,1,Australian Grand Prix,3,hadjar,Isack Hadjar,red_bull,Red Bull,1:20.023,1:19.653,1:19.303
+2026,1,Australian Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:20.226,1:19.357,1:19.327
+2026,1,Australian Grand Prix,5,piastri,Oscar Piastri,mclaren,McLaren,1:19.664,1:19.525,1:19.380
+2026,1,Australian Grand Prix,6,norris,Lando Norris,mclaren,McLaren,1:20.010,1:19.882,1:19.475
+2026,1,Australian Grand Prix,7,hamilton,Lewis Hamilton,ferrari,Ferrari,1:19.811,1:19.921,1:19.478
+2026,1,Australian Grand Prix,8,lawson,Liam Lawson,rb,RB F1 Team,1:20.491,1:20.144,1:19.994
+2026,1,Australian Grand Prix,9,arvid_lindblad,Arvid Lindblad,rb,RB F1 Team,1:20.409,1:19.971,1:21.247
+2026,1,Australian Grand Prix,10,bortoleto,Gabriel Bortoleto,audi,Audi,1:20.495,1:20.221,
+2026,1,Australian Grand Prix,11,hulkenberg,Nico Hülkenberg,audi,Audi,1:21.024,1:20.303,
+2026,1,Australian Grand Prix,12,bearman,Oliver Bearman,haas,Haas F1 Team,1:21.247,1:20.311,
+2026,1,Australian Grand Prix,13,ocon,Esteban Ocon,haas,Haas F1 Team,1:20.759,1:20.491,
+2026,1,Australian Grand Prix,14,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:21.138,1:20.501,
+2026,1,Australian Grand Prix,15,albon,Alexander Albon,williams,Williams,1:21.051,1:20.941,
+2026,1,Australian Grand Prix,16,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:21.200,1:21.270,
+2026,1,Australian Grand Prix,17,alonso,Fernando Alonso,aston_martin,Aston Martin,1:21.969,,
+2026,1,Australian Grand Prix,18,perez,Sergio Pérez,cadillac,Cadillac F1 Team,1:22.605,,
+2026,1,Australian Grand Prix,19,bottas,Valtteri Bottas,cadillac,Cadillac F1 Team,1:23.244,,
+2026,2,Chinese Grand Prix,1,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:33.305,1:32.443,1:32.064
+2026,2,Chinese Grand Prix,2,russell,George Russell,mercedes,Mercedes,1:33.262,1:32.523,1:32.286
+2026,2,Chinese Grand Prix,3,hamilton,Lewis Hamilton,ferrari,Ferrari,1:33.522,1:32.567,1:32.415
+2026,2,Chinese Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:33.175,1:32.486,1:32.428
+2026,2,Chinese Grand Prix,5,piastri,Oscar Piastri,mclaren,McLaren,1:33.590,1:33.130,1:32.550
+2026,2,Chinese Grand Prix,6,norris,Lando Norris,mclaren,McLaren,1:33.535,1:32.910,1:32.608
+2026,2,Chinese Grand Prix,7,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:33.788,1:33.003,1:32.873
+2026,2,Chinese Grand Prix,8,max_verstappen,Max Verstappen,red_bull,Red Bull,1:33.417,1:33.098,1:33.002
+2026,2,Chinese Grand Prix,9,hadjar,Isack Hadjar,red_bull,Red Bull,1:33.632,1:33.352,1:33.121
+2026,2,Chinese Grand Prix,10,bearman,Oliver Bearman,haas,Haas F1 Team,1:33.687,1:33.197,1:33.292
+2026,2,Chinese Grand Prix,11,hulkenberg,Nico Hülkenberg,audi,Audi,1:34.116,1:33.354,
+2026,2,Chinese Grand Prix,12,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:33.634,1:33.357,
+2026,2,Chinese Grand Prix,13,ocon,Esteban Ocon,haas,Haas F1 Team,1:33.974,1:33.538,
+2026,2,Chinese Grand Prix,14,lawson,Liam Lawson,rb,RB F1 Team,1:34.139,1:33.765,
+2026,2,Chinese Grand Prix,15,arvid_lindblad,Arvid Lindblad,rb,RB F1 Team,1:33.906,1:33.784,
+2026,2,Chinese Grand Prix,16,bortoleto,Gabriel Bortoleto,audi,Audi,1:33.549,1:33.965,
+2026,2,Chinese Grand Prix,17,sainz,Carlos Sainz,williams,Williams,1:34.317,,
+2026,2,Chinese Grand Prix,18,albon,Alexander Albon,williams,Williams,1:34.772,,
+2026,2,Chinese Grand Prix,19,alonso,Fernando Alonso,aston_martin,Aston Martin,1:35.203,,
+2026,2,Chinese Grand Prix,20,bottas,Valtteri Bottas,cadillac,Cadillac F1 Team,1:35.436,,
+2026,2,Chinese Grand Prix,21,stroll,Lance Stroll,aston_martin,Aston Martin,1:35.995,,
+2026,2,Chinese Grand Prix,22,perez,Sergio Pérez,cadillac,Cadillac F1 Team,1:36.906,,
+2026,3,Japanese Grand Prix,1,antonelli,Andrea Kimi Antonelli,mercedes,Mercedes,1:30.035,1:29.048,1:28.778
+2026,3,Japanese Grand Prix,2,russell,George Russell,mercedes,Mercedes,1:29.967,1:29.686,1:29.076
+2026,3,Japanese Grand Prix,3,piastri,Oscar Piastri,mclaren,McLaren,1:30.200,1:29.451,1:29.132
+2026,3,Japanese Grand Prix,4,leclerc,Charles Leclerc,ferrari,Ferrari,1:29.915,1:29.303,1:29.405
+2026,3,Japanese Grand Prix,5,norris,Lando Norris,mclaren,McLaren,1:30.401,1:29.795,1:29.409
+2026,3,Japanese Grand Prix,6,hamilton,Lewis Hamilton,ferrari,Ferrari,1:30.309,1:29.589,1:29.567
+2026,3,Japanese Grand Prix,7,gasly,Pierre Gasly,alpine,Alpine F1 Team,1:30.584,1:29.874,1:29.691
+2026,3,Japanese Grand Prix,8,hadjar,Isack Hadjar,red_bull,Red Bull,1:30.662,1:30.104,1:29.978
+2026,3,Japanese Grand Prix,9,bortoleto,Gabriel Bortoleto,audi,Audi,1:30.359,1:29.990,1:30.274
+2026,3,Japanese Grand Prix,10,arvid_lindblad,Arvid Lindblad,rb,RB F1 Team,1:30.781,1:30.109,1:30.319
+2026,3,Japanese Grand Prix,11,max_verstappen,Max Verstappen,red_bull,Red Bull,1:30.519,1:30.262,
+2026,3,Japanese Grand Prix,12,ocon,Esteban Ocon,haas,Haas F1 Team,1:30.915,1:30.309,
+2026,3,Japanese Grand Prix,13,hulkenberg,Nico Hülkenberg,audi,Audi,1:30.358,1:30.387,
+2026,3,Japanese Grand Prix,14,lawson,Liam Lawson,rb,RB F1 Team,1:30.657,1:30.495,
+2026,3,Japanese Grand Prix,15,colapinto,Franco Colapinto,alpine,Alpine F1 Team,1:30.931,1:30.627,
+2026,3,Japanese Grand Prix,16,sainz,Carlos Sainz,williams,Williams,1:30.927,1:31.033,
+2026,3,Japanese Grand Prix,17,albon,Alexander Albon,williams,Williams,1:31.088,,
+2026,3,Japanese Grand Prix,18,bearman,Oliver Bearman,haas,Haas F1 Team,1:31.090,,
+2026,3,Japanese Grand Prix,19,perez,Sergio Pérez,cadillac,Cadillac F1 Team,1:32.206,,
+2026,3,Japanese Grand Prix,20,bottas,Valtteri Bottas,cadillac,Cadillac F1 Team,1:32.330,,
+2026,3,Japanese Grand Prix,21,alonso,Fernando Alonso,aston_martin,Aston Martin,1:32.646,,
+2026,3,Japanese Grand Prix,22,stroll,Lance Stroll,aston_martin,Aston Martin,1:32.920,,
