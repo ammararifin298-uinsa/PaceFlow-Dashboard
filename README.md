@@ -9,14 +9,16 @@
 ## Halaman Dashboard
 
 | Halaman | Isi |
-|---|---|
+| --- | --- |
 | 🏁 Beranda | Championship points progression dan klasemen konstruktor |
 | 📊 Klasemen | Driver standings dan constructor standings |
 | 📈 Analitik | Pit stop heatmap, speed trend, qualifying vs race |
 | ⚔️ Head-to-Head | Radar chart perbandingan hingga 3 driver |
 | 🗃️ Tabel Data | Raw data lengkap dari SQL View |
 | ⚡ Benchmark | Perbandingan performa SQL View vs Pandas in-memory |
-| 📋 Evaluasi SUS | Form kuesioner System Usability Scale |
+| ℹ️ Tentang | Informasi tim, arsitektur, teknologi, dan referensi |
+
+> **Catatan:** Evaluasi usability menggunakan System Usability Scale (SUS) dijalankan secara terpisah melalui `sus_tool.py`. Lihat bagian [Evaluasi SUS](#evaluasi-sus-terpisah) di bawah.
 
 ---
 
@@ -37,14 +39,14 @@ Pastikan sudah terinstall di laptop:
 
 Buka terminal (Command Prompt / PowerShell / Terminal), lalu jalankan:
 
-```bash
+```
 git clone https://github.com/ammararifin298-uinsa/PaceFlow-Dashboard.git
 cd PaceFlow-Dashboard
 ```
 
 ### STEP 2 — Buat Virtual Environment
 
-```bash
+```
 # Windows
 python -m venv .venv
 .venv\Scripts\activate
@@ -58,7 +60,7 @@ Jika berhasil, terminal akan menampilkan `(.venv)` di awal baris.
 
 ### STEP 3 — Install Dependencies
 
-```bash
+```
 pip install -r requirements.txt
 ```
 
@@ -73,7 +75,7 @@ Tunggu sampai semua package selesai terinstall.
 
 ### STEP 5 — Konfigurasi Environment
 
-```bash
+```
 cp .env.example .env
 ```
 
@@ -110,7 +112,7 @@ PaceFlow-Dashboard/
 
 ### STEP 7 — Jalankan ETL (Load CSV ke Database)
 
-```bash
+```
 python etl_load.py
 ```
 
@@ -144,7 +146,7 @@ Creating views...
 
 ### STEP 9 — Jalankan Dashboard
 
-```bash
+```
 python app.py
 ```
 
@@ -170,13 +172,43 @@ F1_DEMO_MODE=true
 
 **2. Jalankan langsung:**
 
-```bash
+```
 python app.py
 ```
 
 Buka browser di `http://localhost:8050` — selesai, tidak perlu database.
 
 > Mode demo menggunakan data real dari file `demo_cache.csv` yang sudah ada di repo.
+
+---
+
+## Evaluasi SUS (Terpisah)
+
+Pengukuran usability menggunakan **System Usability Scale (SUS)** dijalankan sebagai tool terpisah, **tidak terintegrasi ke dalam dashboard utama** (`app.py`).
+
+### Cara Menjalankan SUS
+
+```
+python sus_tool.py
+```
+
+Tool ini akan:
+- Menampilkan 10 pernyataan kuesioner SUS standar (Brooke, 1996)
+- Menerima input skor 1–5 dari responden
+- Menghitung skor SUS akhir (0–100)
+- Menampilkan interpretasi berdasarkan threshold Bangor et al. (2008)
+
+### Interpretasi Skor SUS
+
+| Skor | Kategori |
+| --- | --- |
+| 90–100 | Excellent |
+| 80–89 | Good |
+| 68–79 | Acceptable |
+| 51–67 | Marginal |
+| 0–50 | Unacceptable |
+
+> SUS dijalankan terpisah agar pengumpulan data responden tidak bergantung pada koneksi database atau status server dashboard.
 
 ---
 
@@ -198,11 +230,13 @@ Buka browser di `http://localhost:8050` — selesai, tidak perlu database.
 
 **Error: `cannot drop table races because other objects depend on it`**  
 → Jalankan di pgAdmin Query Tool:
+
 ```sql
 DROP VIEW IF EXISTS v_kpi_summary CASCADE;
 DROP VIEW IF EXISTS v_constructor_season CASCADE;
 DROP VIEW IF EXISTS v_f1_analytics CASCADE;
 ```
+
 → Lalu jalankan ulang `python etl_load.py`
 
 **Dashboard jalan tapi data kosong atau error di halaman**  
@@ -212,6 +246,7 @@ DROP VIEW IF EXISTS v_f1_analytics CASCADE;
 
 **Port 8050 sudah dipakai**  
 → Buka file `app.py`, cari baris paling bawah, ubah port:
+
 ```python
 app.run(debug=False, host="0.0.0.0", port=8051)
 ```
@@ -228,7 +263,7 @@ PaceFlow-Dashboard/
 ├── demo_data.py             # Data provider untuk mode demo
 ├── etl_load.py              # ETL pipeline: CSV ke PostgreSQL
 ├── benchmark.py             # Modul benchmark performa
-├── sus_tool.py              # System Usability Scale tool
+├── sus_tool.py              # Tool evaluasi SUS — dijalankan terpisah
 ├── schema_and_view.sql      # DDL: CREATE TABLE, INDEX, dan VIEW
 ├── demo_cache.csv           # Data cache untuk mode demo
 ├── benchmark_results.json   # Hasil benchmark (auto-generated)
@@ -261,7 +296,7 @@ PaceFlow-Dashboard/
 │  Index: season+round, driver_id, constructor_id             │
 └────────────────────────┬────────────────────────────────────┘
                          │ SQLAlchemy (psycopg2 driver)
-                         │ @st.cache_data TTL = 600 detik
+                         │ lru_cache TTL = 600 detik
 ┌────────────────────────▼────────────────────────────────────┐
 │  MIDDLEWARE — db.py dan demo_data.py                        │
 │  Repository Pattern: app.py tidak menulis SQL secara langsung│
@@ -271,13 +306,20 @@ PaceFlow-Dashboard/
 ┌────────────────────────▼────────────────────────────────────┐
 │  PRESENTATION LAYER — app.py (Dash + Plotly)                │
 │  Sidebar navigasi · Filter season · 7 halaman               │
-│  Export CSV · SUS form · Benchmark chart                    │
+│  Export CSV · Benchmark chart                               │
+└─────────────────────────────────────────────────────────────┘
+
+┌─────────────────────────────────────────────────────────────┐
+│  EVALUASI USABILITY — sus_tool.py (Terpisah)                │
+│  Kuesioner SUS 10 item · Skor 0–100 · CLI-based             │
+│  Tidak bergantung pada database atau server dashboard       │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 **Prinsip:** Separation of Concerns (SoC) sesuai ISO/IEC 25010  
 Komputasi berat (JOIN, agregasi) dieksekusi di PostgreSQL.  
-Dash hanya bertugas merender data yang sudah matang.
+Dash hanya bertugas merender data yang sudah matang.  
+Evaluasi SUS berjalan independen sebagai tool CLI terpisah.
 
 ---
 
