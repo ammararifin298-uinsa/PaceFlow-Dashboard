@@ -7,12 +7,15 @@ Project   : Formula 1 Live Tracker 2024-2026
 
 import pandas as pd
 from sqlalchemy import create_engine, text
-import os
+import os, sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from config import DB_URL
 
 # ─────────────────────────────────────────────────────────────────────────────
 # KONFIGURASI
 # ─────────────────────────────────────────────────────────────────────────────
-ENGINE_URL = "postgresql+psycopg2://postgres:ammarktb123@localhost:5432/f1_analytics"
+ENGINE_URL = DB_URL  # dibaca dari config.py → .env
 DATA_DIR   = "./Data"
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -130,7 +133,7 @@ def run_etl():
                     print(f"  [WARN] {e!s:.80}")
 
     print("  [OK] Views created.")
-    print("\n✅ ETL selesai. Jalankan: streamlit run app.py")
+    print("\n✅ ETL selesai. Jalankan: python app.py")
 
 if __name__ == "__main__":
     run_etl()

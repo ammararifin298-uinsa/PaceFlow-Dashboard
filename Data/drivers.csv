@@ -1,0 +1,29 @@
+driver_id,code,permanent_num,given_name,family_name,full_name,dob,nationality,url
+albon,ALB,23.0,Alexander,Albon,Alexander Albon,1996-03-23,Thai,http://en.wikipedia.org/wiki/Alexander_Albon
+alonso,ALO,14.0,Fernando,Alonso,Fernando Alonso,1981-07-29,Spanish,http://en.wikipedia.org/wiki/Fernando_Alonso
+antonelli,ANT,12.0,Andrea Kimi,Antonelli,Andrea Kimi Antonelli,2006-08-25,Italian,https://en.wikipedia.org/wiki/Andrea_Kimi_Antonelli
+bearman,BEA,87.0,Oliver,Bearman,Oliver Bearman,2005-05-08,British,http://en.wikipedia.org/wiki/Oliver_Bearman
+bottas,BOT,77.0,Valtteri,Bottas,Valtteri Bottas,1989-08-28,Finnish,http://en.wikipedia.org/wiki/Valtteri_Bottas
+colapinto,COL,43.0,Franco,Colapinto,Franco Colapinto,2003-05-27,Argentine,http://en.wikipedia.org/wiki/Franco_Colapinto
+doohan,DOO,7.0,Jack,Doohan,Jack Doohan,2003-01-20,Australian,http://en.wikipedia.org/wiki/Jack_Doohan
+gasly,GAS,10.0,Pierre,Gasly,Pierre Gasly,1996-02-07,French,http://en.wikipedia.org/wiki/Pierre_Gasly
+hamilton,HAM,44.0,Lewis,Hamilton,Lewis Hamilton,1985-01-07,British,http://en.wikipedia.org/wiki/Lewis_Hamilton
+hulkenberg,HUL,27.0,Nico,Hülkenberg,Nico Hülkenberg,1987-08-19,German,http://en.wikipedia.org/wiki/Nico_H%C3%BClkenberg
+lawson,LAW,30.0,Liam,Lawson,Liam Lawson,2002-02-11,New Zealander,http://en.wikipedia.org/wiki/Liam_Lawson
+leclerc,LEC,16.0,Charles,Leclerc,Charles Leclerc,1997-10-16,Monegasque,http://en.wikipedia.org/wiki/Charles_Leclerc
+kevin_magnussen,MAG,20.0,Kevin,Magnussen,Kevin Magnussen,1992-10-05,Danish,http://en.wikipedia.org/wiki/Kevin_Magnussen
+norris,NOR,1.0,Lando,Norris,Lando Norris,1999-11-13,British,http://en.wikipedia.org/wiki/Lando_Norris
+ocon,OCO,31.0,Esteban,Ocon,Esteban Ocon,1996-09-17,French,http://en.wikipedia.org/wiki/Esteban_Ocon
+piastri,PIA,81.0,Oscar,Piastri,Oscar Piastri,2001-04-06,Australian,http://en.wikipedia.org/wiki/Oscar_Piastri
+perez,PER,11.0,Sergio,Pérez,Sergio Pérez,1990-01-26,Mexican,http://en.wikipedia.org/wiki/Sergio_P%C3%A9rez
+ricciardo,RIC,3.0,Daniel,Ricciardo,Daniel Ricciardo,1989-07-01,Australian,http://en.wikipedia.org/wiki/Daniel_Ricciardo
+russell,RUS,63.0,George,Russell,George Russell,1998-02-15,British,http://en.wikipedia.org/wiki/George_Russell_(racing_driver)
+sainz,SAI,55.0,Carlos,Sainz,Carlos Sainz,1994-09-01,Spanish,http://en.wikipedia.org/wiki/Carlos_Sainz_Jr.
+sargeant,SAR,2.0,Logan,Sargeant,Logan Sargeant,2000-12-31,American,http://en.wikipedia.org/wiki/Logan_Sargeant
+stroll,STR,18.0,Lance,Stroll,Lance Stroll,1998-10-29,Canadian,http://en.wikipedia.org/wiki/Lance_Stroll
+tsunoda,TSU,22.0,Yuki,Tsunoda,Yuki Tsunoda,2000-05-11,Japanese,http://en.wikipedia.org/wiki/Yuki_Tsunoda
+max_verstappen,VER,3.0,Max,Verstappen,Max Verstappen,1997-09-30,Dutch,http://en.wikipedia.org/wiki/Max_Verstappen
+zhou,ZHO,24.0,Guanyu,Zhou,Guanyu Zhou,1999-05-30,Chinese,http://en.wikipedia.org/wiki/Zhou_Guanyu
+bortoleto,BOR,5.0,Gabriel,Bortoleto,Gabriel Bortoleto,2004-10-14,Brazilian,https://en.wikipedia.org/wiki/Gabriel_Bortoleto
+hadjar,HAD,6.0,Isack,Hadjar,Isack Hadjar,2004-09-28,French,https://en.wikipedia.org/wiki/Isack_Hadjar
+arvid_lindblad,LIN,41.0,Arvid,Lindblad,Arvid Lindblad,2007-08-08,British,https://en.wikipedia.org/wiki/Arvid_Lindblad

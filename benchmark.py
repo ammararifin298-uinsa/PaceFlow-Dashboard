@@ -149,7 +149,7 @@ def save_results(bench: dict, out_dir: str):
 
 
 if __name__ == "__main__":
-    DATA_DIR = os.path.join(os.path.dirname(__file__), '..', '..', 'uploads')
+    DATA_DIR = os.path.join(os.path.dirname(__file__), 'Data')
     OUT_DIR  = os.path.dirname(__file__)
     bench = run_benchmark(DATA_DIR, n_iter=10)
     save_results(bench, OUT_DIR)

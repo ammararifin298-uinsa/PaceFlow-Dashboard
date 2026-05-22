@@ -4,9 +4,8 @@ Semua nilai hardcoded dipindahkan ke sini agar reusable dan mudah diubah.
 """
 import os
 from dotenv import load_dotenv
-from pathlib import Path
 
-load_dotenv(dotenv_path=Path(__file__).parent / ".env")
+load_dotenv()
 
 # ── Database ─────────────────────────────────────────────────────────────────
 DB = {
@@ -44,6 +43,9 @@ TEAM_COLORS = {
     "Haas":             "#B6BABD",
     "Kick Sauber":      "#52E252",
     "Sauber":           "#52E252",
+    # 2026 new constructors
+    "Audi":             "#B0B0B0",
+    "Cadillac F1 Team": "#C8102E",
 }
 DEFAULT_TEAM_COLOR = "#888899"
 

@@ -1,6 +1,6 @@
 Scenario,Row Count,Pandas Mean (ms),Pandas Std (ms),SQL View Mean (ms),SQL View Std (ms),Speedup Ratio (x)
-S1_full_dataset,1024,26.5967,2.2937,7.3596,0.7311,3.61
-S2_single_season,479,24.4775,0.9456,6.7014,0.4519,3.65
-S3_single_season_top10,199,24.1513,0.6269,4.4234,0.3025,5.46
-S4_single_round,20,22.5642,0.352,3.9361,0.1989,5.73
-S5_two_seasons,958,25.2709,2.59,4.3205,0.4797,5.85
+S1_full_dataset,1024,51.7684,13.3925,11.7618,3.0277,4.4
+S2_single_season,479,58.917,6.9262,14.6716,2.1218,4.02
+S3_single_season_top10,199,50.869,8.5916,13.488,2.6755,3.77
+S4_single_round,20,47.213,13.4243,8.0562,2.4242,5.86
+S5_two_seasons,958,46.9763,11.4358,10.2835,2.8648,4.57
