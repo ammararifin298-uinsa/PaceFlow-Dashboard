@@ -1,7 +1,7 @@
-"""
-config.py — Centralized configuration & constants
-Semua nilai hardcoded dipindahkan ke sini agar reusable dan mudah diubah.
-"""
+# =========================================================================
+# config.py — Centralized configuration & constants
+# Semua nilai hardcoded dipindahkan ke sini agar reusable dan mudah diubah.
+# =========================================================================
 import os
 from dotenv import load_dotenv
 

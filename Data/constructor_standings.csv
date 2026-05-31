@@ -1,0 +1,514 @@
+season,round,position,points,wins,constructor_id,constructor,nationality
+2024,1,1,44.0,1,red_bull,Red Bull,Austrian
+2024,1,2,27.0,0,ferrari,Ferrari,Italian
+2024,1,3,16.0,0,mercedes,Mercedes,German
+2024,1,4,12.0,0,mclaren,McLaren,British
+2024,1,5,3.0,0,aston_martin,Aston Martin,British
+2024,1,6,0.0,0,sauber,Sauber,Swiss
+2024,1,7,0.0,0,haas,Haas F1 Team,American
+2024,1,8,0.0,0,rb,RB F1 Team,Italian
+2024,1,9,0.0,0,williams,Williams,British
+2024,1,10,0.0,0,alpine,Alpine F1 Team,French
+2024,2,1,87.0,2,red_bull,Red Bull,Austrian
+2024,2,2,49.0,0,ferrari,Ferrari,Italian
+2024,2,3,28.0,0,mclaren,McLaren,British
+2024,2,4,26.0,0,mercedes,Mercedes,German
+2024,2,5,13.0,0,aston_martin,Aston Martin,British
+2024,2,6,1.0,0,haas,Haas F1 Team,American
+2024,2,7,0.0,0,williams,Williams,British
+2024,2,8,0.0,0,sauber,Sauber,Swiss
+2024,2,9,0.0,0,rb,RB F1 Team,Italian
+2024,2,10,0.0,0,alpine,Alpine F1 Team,French
+2024,3,1,97.0,2,red_bull,Red Bull,Austrian
+2024,3,2,93.0,1,ferrari,Ferrari,Italian
+2024,3,3,55.0,0,mclaren,McLaren,British
+2024,3,4,26.0,0,mercedes,Mercedes,German
+2024,3,5,25.0,0,aston_martin,Aston Martin,British
+2024,3,6,6.0,0,rb,RB F1 Team,Italian
+2024,3,7,4.0,0,haas,Haas F1 Team,American
+2024,3,8,0.0,0,williams,Williams,British
+2024,3,9,0.0,0,sauber,Sauber,Swiss
+2024,3,10,0.0,0,alpine,Alpine F1 Team,French
+2024,4,1,141.0,3,red_bull,Red Bull,Austrian
+2024,4,2,120.0,1,ferrari,Ferrari,Italian
+2024,4,3,69.0,0,mclaren,McLaren,British
+2024,4,4,34.0,0,mercedes,Mercedes,German
+2024,4,5,33.0,0,aston_martin,Aston Martin,British
+2024,4,6,7.0,0,rb,RB F1 Team,Italian
+2024,4,7,4.0,0,haas,Haas F1 Team,American
+2024,4,8,0.0,0,williams,Williams,British
+2024,4,9,0.0,0,sauber,Sauber,Swiss
+2024,4,10,0.0,0,alpine,Alpine F1 Team,French
+2024,5,1,195.0,4,red_bull,Red Bull,Austrian
+2024,5,2,151.0,1,ferrari,Ferrari,Italian
+2024,5,3,96.0,0,mclaren,McLaren,British
+2024,5,4,52.0,0,mercedes,Mercedes,German
+2024,5,5,40.0,0,aston_martin,Aston Martin,British
+2024,5,6,7.0,0,rb,RB F1 Team,Italian
+2024,5,7,5.0,0,haas,Haas F1 Team,American
+2024,5,8,0.0,0,williams,Williams,British
+2024,5,9,0.0,0,alpine,Alpine F1 Team,French
+2024,5,10,0.0,0,sauber,Sauber,Swiss
+2024,6,1,239.0,4,red_bull,Red Bull,Austrian
+2024,6,2,187.0,1,ferrari,Ferrari,Italian
+2024,6,3,124.0,1,mclaren,McLaren,British
+2024,6,4,64.0,0,mercedes,Mercedes,German
+2024,6,5,42.0,0,aston_martin,Aston Martin,British
+2024,6,6,19.0,0,rb,RB F1 Team,Italian
+2024,6,7,7.0,0,haas,Haas F1 Team,American
+2024,6,8,1.0,0,alpine,Alpine F1 Team,French
+2024,6,9,0.0,0,williams,Williams,British
+2024,6,10,0.0,0,sauber,Sauber,Swiss
+2024,7,1,268.0,5,red_bull,Red Bull,Austrian
+2024,7,2,212.0,1,ferrari,Ferrari,Italian
+2024,7,3,154.0,1,mclaren,McLaren,British
+2024,7,4,79.0,0,mercedes,Mercedes,German
+2024,7,5,44.0,0,aston_martin,Aston Martin,British
+2024,7,6,20.0,0,rb,RB F1 Team,Italian
+2024,7,7,7.0,0,haas,Haas F1 Team,American
+2024,7,8,1.0,0,alpine,Alpine F1 Team,French
+2024,7,9,0.0,0,williams,Williams,British
+2024,7,10,0.0,0,sauber,Sauber,Swiss
+2024,8,1,276.0,5,red_bull,Red Bull,Austrian
+2024,8,2,252.0,2,ferrari,Ferrari,Italian
+2024,8,3,184.0,1,mclaren,McLaren,British
+2024,8,4,96.0,0,mercedes,Mercedes,German
+2024,8,5,44.0,0,aston_martin,Aston Martin,British
+2024,8,6,24.0,0,rb,RB F1 Team,Italian
+2024,8,7,7.0,0,haas,Haas F1 Team,American
+2024,8,8,2.0,0,williams,Williams,British
+2024,8,9,2.0,0,alpine,Alpine F1 Team,French
+2024,8,10,0.0,0,sauber,Sauber,Swiss
+2024,9,1,301.0,6,red_bull,Red Bull,Austrian
+2024,9,2,252.0,2,ferrari,Ferrari,Italian
+2024,9,3,212.0,1,mclaren,McLaren,British
+2024,9,4,124.0,0,mercedes,Mercedes,German
+2024,9,5,58.0,0,aston_martin,Aston Martin,British
+2024,9,6,28.0,0,rb,RB F1 Team,Italian
+2024,9,7,7.0,0,haas,Haas F1 Team,American
+2024,9,8,5.0,0,alpine,Alpine F1 Team,French
+2024,9,9,2.0,0,williams,Williams,British
+2024,9,10,0.0,0,sauber,Sauber,Swiss
+2024,10,1,330.0,7,red_bull,Red Bull,Austrian
+2024,10,2,270.0,2,ferrari,Ferrari,Italian
+2024,10,3,237.0,1,mclaren,McLaren,British
+2024,10,4,151.0,0,mercedes,Mercedes,German
+2024,10,5,58.0,0,aston_martin,Aston Martin,British
+2024,10,6,28.0,0,rb,RB F1 Team,Italian
+2024,10,7,8.0,0,alpine,Alpine F1 Team,French
+2024,10,8,7.0,0,haas,Haas F1 Team,American
+2024,10,9,2.0,0,williams,Williams,British
+2024,10,10,0.0,0,sauber,Sauber,Swiss
+2024,11,1,355.0,7,red_bull,Red Bull,Austrian
+2024,11,2,291.0,2,ferrari,Ferrari,Italian
+2024,11,3,268.0,1,mclaren,McLaren,British
+2024,11,4,196.0,1,mercedes,Mercedes,German
+2024,11,5,58.0,0,aston_martin,Aston Martin,British
+2024,11,6,30.0,0,rb,RB F1 Team,Italian
+2024,11,7,19.0,0,haas,Haas F1 Team,American
+2024,11,8,9.0,0,alpine,Alpine F1 Team,French
+2024,11,9,2.0,0,williams,Williams,British
+2024,11,10,0.0,0,sauber,Sauber,Swiss
+2024,12,1,373.0,7,red_bull,Red Bull,Austrian
+2024,12,2,302.0,2,ferrari,Ferrari,Italian
+2024,12,3,295.0,1,mclaren,McLaren,British
+2024,12,4,221.0,2,mercedes,Mercedes,German
+2024,12,5,68.0,0,aston_martin,Aston Martin,British
+2024,12,6,31.0,0,rb,RB F1 Team,Italian
+2024,12,7,27.0,0,haas,Haas F1 Team,American
+2024,12,8,9.0,0,alpine,Alpine F1 Team,French
+2024,12,9,4.0,0,williams,Williams,British
+2024,12,10,0.0,0,sauber,Sauber,Swiss
+2024,13,1,389.0,7,red_bull,Red Bull,Austrian
+2024,13,2,338.0,2,mclaren,McLaren,British
+2024,13,3,322.0,2,ferrari,Ferrari,Italian
+2024,13,4,241.0,2,mercedes,Mercedes,German
+2024,13,5,69.0,0,aston_martin,Aston Martin,British
+2024,13,6,33.0,0,rb,RB F1 Team,Italian
+2024,13,7,27.0,0,haas,Haas F1 Team,American
+2024,13,8,9.0,0,alpine,Alpine F1 Team,French
+2024,13,9,4.0,0,williams,Williams,British
+2024,13,10,0.0,0,sauber,Sauber,Swiss
+2024,14,1,408.0,7,red_bull,Red Bull,Austrian
+2024,14,2,366.0,2,mclaren,McLaren,British
+2024,14,3,345.0,2,ferrari,Ferrari,Italian
+2024,14,4,266.0,3,mercedes,Mercedes,German
+2024,14,5,73.0,0,aston_martin,Aston Martin,British
+2024,14,6,34.0,0,rb,RB F1 Team,Italian
+2024,14,7,27.0,0,haas,Haas F1 Team,American
+2024,14,8,11.0,0,alpine,Alpine F1 Team,French
+2024,14,9,4.0,0,williams,Williams,British
+2024,14,10,0.0,0,sauber,Sauber,Swiss
+2024,15,1,434.0,7,red_bull,Red Bull,Austrian
+2024,15,2,404.0,3,mclaren,McLaren,British
+2024,15,3,370.0,2,ferrari,Ferrari,Italian
+2024,15,4,276.0,3,mercedes,Mercedes,German
+2024,15,5,74.0,0,aston_martin,Aston Martin,British
+2024,15,6,34.0,0,rb,RB F1 Team,Italian
+2024,15,7,27.0,0,haas,Haas F1 Team,American
+2024,15,8,13.0,0,alpine,Alpine F1 Team,French
+2024,15,9,4.0,0,williams,Williams,British
+2024,15,10,0.0,0,sauber,Sauber,Swiss
+2024,16,1,446.0,7,red_bull,Red Bull,Austrian
+2024,16,2,438.0,3,mclaren,McLaren,British
+2024,16,3,407.0,3,ferrari,Ferrari,Italian
+2024,16,4,292.0,3,mercedes,Mercedes,German
+2024,16,5,74.0,0,aston_martin,Aston Martin,British
+2024,16,6,34.0,0,rb,RB F1 Team,Italian
+2024,16,7,28.0,0,haas,Haas F1 Team,American
+2024,16,8,13.0,0,alpine,Alpine F1 Team,French
+2024,16,9,6.0,0,williams,Williams,British
+2024,16,10,0.0,0,sauber,Sauber,Swiss
+2024,17,1,476.0,4,mclaren,McLaren,British
+2024,17,2,456.0,7,red_bull,Red Bull,Austrian
+2024,17,3,425.0,3,ferrari,Ferrari,Italian
+2024,17,4,309.0,3,mercedes,Mercedes,German
+2024,17,5,82.0,0,aston_martin,Aston Martin,British
+2024,17,6,34.0,0,rb,RB F1 Team,Italian
+2024,17,7,29.0,0,haas,Haas F1 Team,American
+2024,17,8,16.0,0,williams,Williams,British
+2024,17,9,13.0,0,alpine,Alpine F1 Team,French
+2024,17,10,0.0,0,sauber,Sauber,Swiss
+2024,18,1,516.0,5,mclaren,McLaren,British
+2024,18,2,475.0,7,red_bull,Red Bull,Austrian
+2024,18,3,441.0,3,ferrari,Ferrari,Italian
+2024,18,4,329.0,3,mercedes,Mercedes,German
+2024,18,5,86.0,0,aston_martin,Aston Martin,British
+2024,18,6,34.0,0,rb,RB F1 Team,Italian
+2024,18,7,31.0,0,haas,Haas F1 Team,American
+2024,18,8,16.0,0,williams,Williams,British
+2024,18,9,13.0,0,alpine,Alpine F1 Team,French
+2024,18,10,0.0,0,sauber,Sauber,Swiss
+2024,19,1,544.0,5,mclaren,McLaren,British
+2024,19,2,504.0,7,red_bull,Red Bull,Austrian
+2024,19,3,496.0,4,ferrari,Ferrari,Italian
+2024,19,4,344.0,3,mercedes,Mercedes,German
+2024,19,5,86.0,0,aston_martin,Aston Martin,British
+2024,19,6,38.0,0,haas,Haas F1 Team,American
+2024,19,7,36.0,0,rb,RB F1 Team,Italian
+2024,19,8,17.0,0,williams,Williams,British
+2024,19,9,13.0,0,alpine,Alpine F1 Team,French
+2024,19,10,0.0,0,sauber,Sauber,Swiss
+2024,20,1,566.0,5,mclaren,McLaren,British
+2024,20,2,537.0,5,ferrari,Ferrari,Italian
+2024,20,3,512.0,7,red_bull,Red Bull,Austrian
+2024,20,4,366.0,3,mercedes,Mercedes,German
+2024,20,5,86.0,0,aston_martin,Aston Martin,British
+2024,20,6,46.0,0,haas,Haas F1 Team,American
+2024,20,7,36.0,0,rb,RB F1 Team,Italian
+2024,20,8,17.0,0,williams,Williams,British
+2024,20,9,14.0,0,alpine,Alpine F1 Team,French
+2024,20,10,0.0,0,sauber,Sauber,Swiss
+2024,21,1,593.0,5,mclaren,McLaren,British
+2024,21,2,557.0,5,ferrari,Ferrari,Italian
+2024,21,3,544.0,8,red_bull,Red Bull,Austrian
+2024,21,4,382.0,3,mercedes,Mercedes,German
+2024,21,5,86.0,0,aston_martin,Aston Martin,British
+2024,21,6,49.0,0,alpine,Alpine F1 Team,French
+2024,21,7,46.0,0,haas,Haas F1 Team,American
+2024,21,8,44.0,0,rb,RB F1 Team,Italian
+2024,21,9,17.0,0,williams,Williams,British
+2024,21,10,0.0,0,sauber,Sauber,Swiss
+2024,22,1,608.0,5,mclaren,McLaren,British
+2024,22,2,584.0,5,ferrari,Ferrari,Italian
+2024,22,3,555.0,8,red_bull,Red Bull,Austrian
+2024,22,4,425.0,4,mercedes,Mercedes,German
+2024,22,5,86.0,0,aston_martin,Aston Martin,British
+2024,22,6,50.0,0,haas,Haas F1 Team,American
+2024,22,7,49.0,0,alpine,Alpine F1 Team,French
+2024,22,8,46.0,0,rb,RB F1 Team,Italian
+2024,22,9,17.0,0,williams,Williams,British
+2024,22,10,0.0,0,sauber,Sauber,Swiss
+2024,23,1,640.0,5,mclaren,McLaren,British
+2024,23,2,619.0,5,ferrari,Ferrari,Italian
+2024,23,3,581.0,9,red_bull,Red Bull,Austrian
+2024,23,4,446.0,4,mercedes,Mercedes,German
+2024,23,5,92.0,0,aston_martin,Aston Martin,British
+2024,23,6,59.0,0,alpine,Alpine F1 Team,French
+2024,23,7,54.0,0,haas,Haas F1 Team,American
+2024,23,8,46.0,0,rb,RB F1 Team,Italian
+2024,23,9,17.0,0,williams,Williams,British
+2024,23,10,4.0,0,sauber,Sauber,Swiss
+2024,24,1,666.0,6,mclaren,McLaren,British
+2024,24,2,652.0,5,ferrari,Ferrari,Italian
+2024,24,3,589.0,9,red_bull,Red Bull,Austrian
+2024,24,4,468.0,4,mercedes,Mercedes,German
+2024,24,5,94.0,0,aston_martin,Aston Martin,British
+2024,24,6,65.0,0,alpine,Alpine F1 Team,French
+2024,24,7,58.0,0,haas,Haas F1 Team,American
+2024,24,8,46.0,0,rb,RB F1 Team,Italian
+2024,24,9,17.0,0,williams,Williams,British
+2024,24,10,4.0,0,sauber,Sauber,Swiss
+2025,1,1,27.0,1,mclaren,McLaren,British
+2025,1,2,27.0,0,mercedes,Mercedes,German
+2025,1,3,18.0,0,red_bull,Red Bull,Austrian
+2025,1,4,10.0,0,williams,Williams,British
+2025,1,5,8.0,0,aston_martin,Aston Martin,British
+2025,1,6,6.0,0,sauber,Sauber,Swiss
+2025,1,7,5.0,0,ferrari,Ferrari,Italian
+2025,1,8,0.0,0,alpine,Alpine F1 Team,French
+2025,1,9,0.0,0,rb,RB F1 Team,Italian
+2025,1,10,0.0,0,haas,Haas F1 Team,American
+2025,2,1,78.0,2,mclaren,McLaren,British
+2025,2,2,57.0,0,mercedes,Mercedes,German
+2025,2,3,36.0,0,red_bull,Red Bull,Austrian
+2025,2,4,17.0,0,williams,Williams,British
+2025,2,5,17.0,0,ferrari,Ferrari,Italian
+2025,2,6,14.0,0,haas,Haas F1 Team,American
+2025,2,7,10.0,0,aston_martin,Aston Martin,British
+2025,2,8,6.0,0,sauber,Sauber,Swiss
+2025,2,9,3.0,0,rb,RB F1 Team,Italian
+2025,2,10,0.0,0,alpine,Alpine F1 Team,French
+2025,3,1,111.0,2,mclaren,McLaren,British
+2025,3,2,75.0,0,mercedes,Mercedes,German
+2025,3,3,61.0,1,red_bull,Red Bull,Austrian
+2025,3,4,35.0,0,ferrari,Ferrari,Italian
+2025,3,5,19.0,0,williams,Williams,British
+2025,3,6,15.0,0,haas,Haas F1 Team,American
+2025,3,7,10.0,0,aston_martin,Aston Martin,British
+2025,3,8,7.0,0,rb,RB F1 Team,Italian
+2025,3,9,6.0,0,sauber,Sauber,Swiss
+2025,3,10,0.0,0,alpine,Alpine F1 Team,French
+2025,4,1,151.0,3,mclaren,McLaren,British
+2025,4,2,93.0,0,mercedes,Mercedes,German
+2025,4,3,71.0,1,red_bull,Red Bull,Austrian
+2025,4,4,57.0,0,ferrari,Ferrari,Italian
+2025,4,5,20.0,0,haas,Haas F1 Team,American
+2025,4,6,19.0,0,williams,Williams,British
+2025,4,7,10.0,0,aston_martin,Aston Martin,British
+2025,4,8,7.0,0,rb,RB F1 Team,Italian
+2025,4,9,6.0,0,alpine,Alpine F1 Team,French
+2025,4,10,6.0,0,sauber,Sauber,Swiss
+2025,5,1,188.0,4,mclaren,McLaren,British
+2025,5,2,111.0,0,mercedes,Mercedes,German
+2025,5,3,89.0,1,red_bull,Red Bull,Austrian
+2025,5,4,78.0,0,ferrari,Ferrari,Italian
+2025,5,5,25.0,0,williams,Williams,British
+2025,5,6,20.0,0,haas,Haas F1 Team,American
+2025,5,7,10.0,0,aston_martin,Aston Martin,British
+2025,5,8,8.0,0,rb,RB F1 Team,Italian
+2025,5,9,6.0,0,alpine,Alpine F1 Team,French
+2025,5,10,6.0,0,sauber,Sauber,Swiss
+2025,6,1,246.0,5,mclaren,McLaren,British
+2025,6,2,141.0,0,mercedes,Mercedes,German
+2025,6,3,105.0,1,red_bull,Red Bull,Austrian
+2025,6,4,94.0,0,ferrari,Ferrari,Italian
+2025,6,5,37.0,0,williams,Williams,British
+2025,6,6,20.0,0,haas,Haas F1 Team,American
+2025,6,7,14.0,0,aston_martin,Aston Martin,British
+2025,6,8,8.0,0,rb,RB F1 Team,Italian
+2025,6,9,7.0,0,alpine,Alpine F1 Team,French
+2025,6,10,6.0,0,sauber,Sauber,Swiss
+2025,7,1,279.0,5,mclaren,McLaren,British
+2025,7,2,147.0,0,mercedes,Mercedes,German
+2025,7,3,131.0,2,red_bull,Red Bull,Austrian
+2025,7,4,114.0,0,ferrari,Ferrari,Italian
+2025,7,5,51.0,0,williams,Williams,British
+2025,7,6,20.0,0,haas,Haas F1 Team,American
+2025,7,7,14.0,0,aston_martin,Aston Martin,British
+2025,7,8,10.0,0,rb,RB F1 Team,Italian
+2025,7,9,7.0,0,alpine,Alpine F1 Team,French
+2025,7,10,6.0,0,sauber,Sauber,Swiss
+2025,8,1,319.0,6,mclaren,McLaren,British
+2025,8,2,147.0,0,mercedes,Mercedes,German
+2025,8,3,143.0,2,red_bull,Red Bull,Austrian
+2025,8,4,142.0,0,ferrari,Ferrari,Italian
+2025,8,5,54.0,0,williams,Williams,British
+2025,8,6,26.0,0,haas,Haas F1 Team,American
+2025,8,7,22.0,0,rb,RB F1 Team,Italian
+2025,8,8,14.0,0,aston_martin,Aston Martin,British
+2025,8,9,7.0,0,alpine,Alpine F1 Team,French
+2025,8,10,6.0,0,sauber,Sauber,Swiss
+2025,9,1,362.0,7,mclaren,McLaren,British
+2025,9,2,165.0,0,ferrari,Ferrari,Italian
+2025,9,3,159.0,0,mercedes,Mercedes,German
+2025,9,4,144.0,2,red_bull,Red Bull,Austrian
+2025,9,5,54.0,0,williams,Williams,British
+2025,9,6,28.0,0,rb,RB F1 Team,Italian
+2025,9,7,26.0,0,haas,Haas F1 Team,American
+2025,9,8,16.0,0,sauber,Sauber,Swiss
+2025,9,9,16.0,0,aston_martin,Aston Martin,British
+2025,9,10,11.0,0,alpine,Alpine F1 Team,French
+2025,10,1,374.0,7,mclaren,McLaren,British
+2025,10,2,199.0,1,mercedes,Mercedes,German
+2025,10,3,183.0,0,ferrari,Ferrari,Italian
+2025,10,4,162.0,2,red_bull,Red Bull,Austrian
+2025,10,5,55.0,0,williams,Williams,British
+2025,10,6,28.0,0,haas,Haas F1 Team,American
+2025,10,7,28.0,0,rb,RB F1 Team,Italian
+2025,10,8,22.0,0,aston_martin,Aston Martin,British
+2025,10,9,20.0,0,sauber,Sauber,Swiss
+2025,10,10,11.0,0,alpine,Alpine F1 Team,French
+2025,11,1,417.0,8,mclaren,McLaren,British
+2025,11,2,210.0,0,ferrari,Ferrari,Italian
+2025,11,3,209.0,1,mercedes,Mercedes,German
+2025,11,4,162.0,2,red_bull,Red Bull,Austrian
+2025,11,5,55.0,0,williams,Williams,British
+2025,11,6,36.0,0,rb,RB F1 Team,Italian
+2025,11,7,29.0,0,haas,Haas F1 Team,American
+2025,11,8,28.0,0,aston_martin,Aston Martin,British
+2025,11,9,26.0,0,sauber,Sauber,Swiss
+2025,11,10,11.0,0,alpine,Alpine F1 Team,French
+2025,12,1,460.0,9,mclaren,McLaren,British
+2025,12,2,222.0,0,ferrari,Ferrari,Italian
+2025,12,3,210.0,1,mercedes,Mercedes,German
+2025,12,4,172.0,2,red_bull,Red Bull,Austrian
+2025,12,5,59.0,0,williams,Williams,British
+2025,12,6,41.0,0,sauber,Sauber,Swiss
+2025,12,7,36.0,0,rb,RB F1 Team,Italian
+2025,12,8,36.0,0,aston_martin,Aston Martin,British
+2025,12,9,29.0,0,haas,Haas F1 Team,American
+2025,12,10,19.0,0,alpine,Alpine F1 Team,French
+2025,13,1,516.0,10,mclaren,McLaren,British
+2025,13,2,248.0,0,ferrari,Ferrari,Italian
+2025,13,3,220.0,1,mercedes,Mercedes,German
+2025,13,4,192.0,2,red_bull,Red Bull,Austrian
+2025,13,5,70.0,0,williams,Williams,British
+2025,13,6,43.0,0,sauber,Sauber,Swiss
+2025,13,7,41.0,0,rb,RB F1 Team,Italian
+2025,13,8,36.0,0,aston_martin,Aston Martin,British
+2025,13,9,35.0,0,haas,Haas F1 Team,American
+2025,13,10,20.0,0,alpine,Alpine F1 Team,French
+2025,14,1,559.0,11,mclaren,McLaren,British
+2025,14,2,260.0,0,ferrari,Ferrari,Italian
+2025,14,3,236.0,1,mercedes,Mercedes,German
+2025,14,4,194.0,2,red_bull,Red Bull,Austrian
+2025,14,5,70.0,0,williams,Williams,British
+2025,14,6,52.0,0,aston_martin,Aston Martin,British
+2025,14,7,51.0,0,sauber,Sauber,Swiss
+2025,14,8,45.0,0,rb,RB F1 Team,Italian
+2025,14,9,35.0,0,haas,Haas F1 Team,American
+2025,14,10,20.0,0,alpine,Alpine F1 Team,French
+2025,15,1,584.0,12,mclaren,McLaren,British
+2025,15,2,260.0,0,ferrari,Ferrari,Italian
+2025,15,3,248.0,1,mercedes,Mercedes,German
+2025,15,4,214.0,2,red_bull,Red Bull,Austrian
+2025,15,5,80.0,0,williams,Williams,British
+2025,15,6,62.0,0,aston_martin,Aston Martin,British
+2025,15,7,60.0,0,rb,RB F1 Team,Italian
+2025,15,8,51.0,0,sauber,Sauber,Swiss
+2025,15,9,44.0,0,haas,Haas F1 Team,American
+2025,15,10,20.0,0,alpine,Alpine F1 Team,French
+2025,16,1,617.0,12,mclaren,McLaren,British
+2025,16,2,280.0,0,ferrari,Ferrari,Italian
+2025,16,3,260.0,1,mercedes,Mercedes,German
+2025,16,4,239.0,3,red_bull,Red Bull,Austrian
+2025,16,5,86.0,0,williams,Williams,British
+2025,16,6,62.0,0,aston_martin,Aston Martin,British
+2025,16,7,61.0,0,rb,RB F1 Team,Italian
+2025,16,8,55.0,0,sauber,Sauber,Swiss
+2025,16,9,44.0,0,haas,Haas F1 Team,American
+2025,16,10,20.0,0,alpine,Alpine F1 Team,French
+2025,17,1,623.0,12,mclaren,McLaren,British
+2025,17,2,290.0,1,mercedes,Mercedes,German
+2025,17,3,286.0,0,ferrari,Ferrari,Italian
+2025,17,4,272.0,4,red_bull,Red Bull,Austrian
+2025,17,5,101.0,0,williams,Williams,British
+2025,17,6,72.0,0,rb,RB F1 Team,Italian
+2025,17,7,62.0,0,aston_martin,Aston Martin,British
+2025,17,8,55.0,0,sauber,Sauber,Swiss
+2025,17,9,44.0,0,haas,Haas F1 Team,American
+2025,17,10,20.0,0,alpine,Alpine F1 Team,French
+2025,18,1,650.0,12,mclaren,McLaren,British
+2025,18,2,325.0,2,mercedes,Mercedes,German
+2025,18,3,298.0,0,ferrari,Ferrari,Italian
+2025,18,4,290.0,4,red_bull,Red Bull,Austrian
+2025,18,5,102.0,0,williams,Williams,British
+2025,18,6,72.0,0,rb,RB F1 Team,Italian
+2025,18,7,68.0,0,aston_martin,Aston Martin,British
+2025,18,8,55.0,0,sauber,Sauber,Swiss
+2025,18,9,46.0,0,haas,Haas F1 Team,American
+2025,18,10,20.0,0,alpine,Alpine F1 Team,French
+2025,19,1,678.0,12,mclaren,McLaren,British
+2025,19,2,341.0,2,mercedes,Mercedes,German
+2025,19,3,334.0,0,ferrari,Ferrari,Italian
+2025,19,4,331.0,5,red_bull,Red Bull,Austrian
+2025,19,5,111.0,0,williams,Williams,British
+2025,19,6,72.0,0,rb,RB F1 Team,Italian
+2025,19,7,69.0,0,aston_martin,Aston Martin,British
+2025,19,8,59.0,0,sauber,Sauber,Swiss
+2025,19,9,48.0,0,haas,Haas F1 Team,American
+2025,19,10,20.0,0,alpine,Alpine F1 Team,French
+2025,20,1,713.0,13,mclaren,McLaren,British
+2025,20,2,356.0,0,ferrari,Ferrari,Italian
+2025,20,3,355.0,2,mercedes,Mercedes,German
+2025,20,4,346.0,5,red_bull,Red Bull,Austrian
+2025,20,5,111.0,0,williams,Williams,British
+2025,20,6,72.0,0,rb,RB F1 Team,Italian
+2025,20,7,69.0,0,aston_martin,Aston Martin,British
+2025,20,8,62.0,0,haas,Haas F1 Team,American
+2025,20,9,60.0,0,sauber,Sauber,Swiss
+2025,20,10,20.0,0,alpine,Alpine F1 Team,French
+2025,21,1,756.0,14,mclaren,McLaren,British
+2025,21,2,398.0,2,mercedes,Mercedes,German
+2025,21,3,366.0,5,red_bull,Red Bull,Austrian
+2025,21,4,362.0,0,ferrari,Ferrari,Italian
+2025,21,5,111.0,0,williams,Williams,British
+2025,21,6,82.0,0,rb,RB F1 Team,Italian
+2025,21,7,72.0,0,aston_martin,Aston Martin,British
+2025,21,8,70.0,0,haas,Haas F1 Team,American
+2025,21,9,62.0,0,sauber,Sauber,Swiss
+2025,21,10,22.0,0,alpine,Alpine F1 Team,French
+2025,22,1,756.0,14,mclaren,McLaren,British
+2025,22,2,431.0,2,mercedes,Mercedes,German
+2025,22,3,391.0,6,red_bull,Red Bull,Austrian
+2025,22,4,378.0,0,ferrari,Ferrari,Italian
+2025,22,5,121.0,0,williams,Williams,British
+2025,22,6,90.0,0,rb,RB F1 Team,Italian
+2025,22,7,73.0,0,haas,Haas F1 Team,American
+2025,22,8,72.0,0,aston_martin,Aston Martin,British
+2025,22,9,68.0,0,sauber,Sauber,Swiss
+2025,22,10,22.0,0,alpine,Alpine F1 Team,French
+2025,23,1,800.0,14,mclaren,McLaren,British
+2025,23,2,459.0,2,mercedes,Mercedes,German
+2025,23,3,426.0,7,red_bull,Red Bull,Austrian
+2025,23,4,382.0,0,ferrari,Ferrari,Italian
+2025,23,5,137.0,0,williams,Williams,British
+2025,23,6,92.0,0,rb,RB F1 Team,Italian
+2025,23,7,80.0,0,aston_martin,Aston Martin,British
+2025,23,8,73.0,0,haas,Haas F1 Team,American
+2025,23,9,68.0,0,sauber,Sauber,Swiss
+2025,23,10,22.0,0,alpine,Alpine F1 Team,French
+2025,24,1,833.0,14,mclaren,McLaren,British
+2025,24,2,469.0,2,mercedes,Mercedes,German
+2025,24,3,451.0,8,red_bull,Red Bull,Austrian
+2025,24,4,398.0,0,ferrari,Ferrari,Italian
+2025,24,5,137.0,0,williams,Williams,British
+2025,24,6,92.0,0,rb,RB F1 Team,Italian
+2025,24,7,89.0,0,aston_martin,Aston Martin,British
+2025,24,8,79.0,0,haas,Haas F1 Team,American
+2025,24,9,70.0,0,sauber,Sauber,Swiss
+2025,24,10,22.0,0,alpine,Alpine F1 Team,French
+2026,1,1,43.0,1,mercedes,Mercedes,German
+2026,1,2,27.0,0,ferrari,Ferrari,Italian
+2026,1,3,10.0,0,mclaren,McLaren,British
+2026,1,4,8.0,0,red_bull,Red Bull,Austrian
+2026,1,5,6.0,0,haas,Haas F1 Team,American
+2026,1,6,4.0,0,rb,RB F1 Team,Italian
+2026,1,7,2.0,0,audi,Audi,German
+2026,1,8,1.0,0,alpine,Alpine F1 Team,French
+2026,1,9,0.0,0,williams,Williams,British
+2026,1,10,0.0,0,cadillac,Cadillac F1 Team,American
+2026,1,11,0.0,0,aston_martin,Aston Martin,British
+2026,2,1,98.0,2,mercedes,Mercedes,German
+2026,2,2,67.0,0,ferrari,Ferrari,Italian
+2026,2,3,18.0,0,mclaren,McLaren,British
+2026,2,4,17.0,0,haas,Haas F1 Team,American
+2026,2,5,12.0,0,red_bull,Red Bull,Austrian
+2026,2,6,12.0,0,rb,RB F1 Team,Italian
+2026,2,7,10.0,0,alpine,Alpine F1 Team,French
+2026,2,8,2.0,0,audi,Audi,German
+2026,2,9,2.0,0,williams,Williams,British
+2026,2,10,0.0,0,cadillac,Cadillac F1 Team,American
+2026,2,11,0.0,0,aston_martin,Aston Martin,British
+2026,3,1,135.0,3,mercedes,Mercedes,German
+2026,3,2,90.0,0,ferrari,Ferrari,Italian
+2026,3,3,46.0,0,mclaren,McLaren,British
+2026,3,4,18.0,0,haas,Haas F1 Team,American
+2026,3,5,16.0,0,alpine,Alpine F1 Team,French
+2026,3,6,16.0,0,red_bull,Red Bull,Austrian
+2026,3,7,14.0,0,rb,RB F1 Team,Italian
+2026,3,8,2.0,0,audi,Audi,German
+2026,3,9,2.0,0,williams,Williams,British
+2026,3,10,0.0,0,cadillac,Cadillac F1 Team,American
+2026,3,11,0.0,0,aston_martin,Aston Martin,British

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python _check_analytics.py)",
+      "Bash(python -c ' *)"
+    ]
+  }
+}
