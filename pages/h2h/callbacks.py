@@ -7,10 +7,11 @@
 
 from dash import Input, Output, State, callback_context, no_update
 import plotly.graph_objects as go
-from dash import html
-from layout.components import tbl_hdr, safe_col
+from dash import html, dcc
+import dash_bootstrap_components as dbc
+from layout.components import tbl_hdr, safe_col, card, sec
 from layout.design_tokens import C, F, CL, ax, rgba, tc
-from services.data_service import get_analytics
+from services.data_service import get_analytics, get_driver_season_summary
 
 
 METRICS = ["Avg Poin/Race", "Win Rate %", "Podium Rate %", "Pole Rate %", "FL Rate %", "DNF Rate %"]
@@ -54,11 +55,26 @@ def _get_driver_stats(driver_name: str, season: int) -> dict | None:
     }
 
 
+def _get_consistency(driver_name: str, season: int) -> float | None:
+    """Ambil consistency_score dari driver_season_summary."""
+    try:
+        dsum = get_driver_season_summary(season)
+        if dsum.empty or "consistency_score" not in dsum.columns:
+            return None
+        row = dsum[dsum["driver_name"] == driver_name]
+        if row.empty:
+            return None
+        return float(row.iloc[0]["consistency_score"])
+    except Exception:
+        return None
+
+
 def register_callbacks(app):
     @app.callback(
         Output("h2h-radar",  "figure"),
         Output("h2h-bar",    "figure"),
         Output("h2h-table",  "children"),
+        Output("h2h-gauges", "children"),
         Input("h2h-d1", "value"), Input("h2h-s1", "value"),
         Input("h2h-d2", "value"), Input("h2h-s2", "value"),
         Input("h2h-d3", "value"), Input("h2h-s3", "value"),
@@ -80,7 +96,7 @@ def register_callbacks(app):
             ], style=dict(display="flex", flexDirection="column",
                           alignItems="center", justifyContent="center",
                           padding="40px", textAlign="center"))
-            return em, em, msg
+            return em, em, msg, html.Div()
 
         stats = []
         for drv, ssn in pairs:
@@ -90,7 +106,7 @@ def register_callbacks(app):
 
         if len(stats) < 2:
             return em, em, html.Div("Data tidak tersedia untuk pembalap yang dipilih.",
-                style=dict(color=C["muted"], fontSize="13px", fontFamily=F, padding="20px"))
+                style=dict(color=C["muted"], fontSize="13px", fontFamily=F, padding="20px")), html.Div()
 
         # Radar chart
         rf = go.Figure()
@@ -176,7 +192,67 @@ def register_callbacks(app):
             ], style=dict(width="100%", borderCollapse="collapse")),
         ])
 
-        return rf, bf, tbl
+        # ── Gauge consistency score ───────────────────────────────────────────
+        gauge_cols = []
+        for i, s in enumerate(stats):
+            score = _get_consistency(s["driver"], s["season"])
+            color = DRIVER_COLORS[i % len(DRIVER_COLORS)]
+            if score is None:
+                # Fallback hitung dari stats
+                score = round(
+                    s["pod_rate"] * 0.4 +
+                    (100 - s["dnf_rate"]) * 0.3 +
+                    min(s["avg_pts"] * 2, 30),
+                    1)
+            score = max(0.0, min(100.0, score))
+
+            fig_gauge = go.Figure(go.Indicator(
+                mode="gauge+number",
+                value=score,
+                number=dict(suffix="", font=dict(size=26, family=F, color=color)),
+                gauge=dict(
+                    axis=dict(
+                        range=[0, 100],
+                        tickfont=dict(size=9, color=C["muted"]),
+                        tickwidth=1,
+                    ),
+                    bar=dict(color=color, thickness=0.28),
+                    bgcolor=C["grid"],
+                    borderwidth=0,
+                    steps=[
+                        dict(range=[0,  40], color=rgba(C["red"],    0.10)),
+                        dict(range=[40, 70], color=rgba(C["orange"], 0.10)),
+                        dict(range=[70,100], color=rgba(C["green"],  0.10)),
+                    ],
+                    threshold=dict(
+                        line=dict(color=color, width=2),
+                        thickness=0.75, value=score
+                    )
+                ),
+                title=dict(
+                    text=f"<b style='font-size:12px'>{s['driver']}</b>"
+                         f"<br><span style='font-size:10px;color:{C['muted']}'>"
+                         f"Season {s['season']}</span>",
+                    font=dict(family=F)
+                )
+            ))
+            fig_gauge.update_layout(
+                **CL, height=200,
+                margin=dict(l=20, r=20, t=50, b=10)
+            )
+            gauge_cols.append(
+                dbc.Col(card(html.Div([
+                    html.Div("CONSISTENCY SCORE", style=dict(
+                        fontSize="9px", fontWeight="700", letterSpacing="1.5px",
+                        textTransform="uppercase", color=C["muted"],
+                        fontFamily=F, marginBottom="4px", textAlign="center")),
+                    dcc.Graph(figure=fig_gauge, config=dict(displayModeBar=False)),
+                ])), width=12 // max(len(stats), 1))
+            )
+
+        gauges_row = dbc.Row(gauge_cols, className="g-3") if gauge_cols else html.Div()
+
+        return rf, bf, tbl, gauges_row
 
 
 def ico_(name, size=16, color=None):

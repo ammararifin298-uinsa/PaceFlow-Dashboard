@@ -139,6 +139,66 @@ def layout(season: int, flt: dict):
         ], style=dict(borderBottom=f"1px solid {C['border']}",
             background=C["grid"] if i % 2 == 0 else C["surface"])))
 
+    # ── Constructor Championship Progression (Line Chart) ────────────────────
+    from services.data_service import get_constructor_progression
+    prog_df = get_constructor_progression(season)
+
+    fig_prog = go.Figure()
+    if not prog_df.empty:
+        for con in prog_df["constructor"].unique():
+            sub = prog_df[prog_df["constructor"] == con].sort_values("round")
+            fig_prog.add_trace(go.Scatter(
+                x=sub["round"],
+                y=sub["cumulative_points"],
+                mode="lines+markers",
+                name=con,
+                line=dict(color=tc(con), width=2.5),
+                marker=dict(size=5, color=tc(con)),
+                hovertemplate=(f"<b>{con}</b><br>Round %{{x}}<br>"
+                               "Poin: <b>%{y:.0f}</b><extra></extra>")
+            ))
+        fig_prog.update_layout(
+            **CL, height=320,
+            xaxis=ax("Round", dtick=1),
+            yaxis=ax("Poin Kumulatif"),
+            legend=dict(
+                orientation="h", y=-0.25, x=0,
+                bgcolor="rgba(0,0,0,0)",
+                font=dict(size=9, color=C["muted"])
+            ),
+            margin=dict(l=40, r=20, t=10, b=60),
+            hovermode="x unified",
+        )
+
+    # ── Treemap Konstruktor ────────────────────────────────────────────────────
+    import plotly.express as px
+    fig_tree = go.Figure()
+    if not dc.empty:
+        dc_tree = dc.sort_values("total_points", ascending=False).copy()
+        dc_tree["color_val"] = dc_tree["total_points"].astype(float)
+        dc_tree["label_txt"] = dc_tree.apply(
+            lambda r: f"{r['constructor']}<br>{int(r['total_points'])} pts<br>"
+                      f"{int(r['total_wins'])}W · {int(r['total_podiums'])}P",
+            axis=1)
+        fig_tree.add_trace(go.Treemap(
+            labels=dc_tree["constructor"],
+            parents=[""] * len(dc_tree),
+            values=dc_tree["total_points"],
+            text=dc_tree["label_txt"],
+            textinfo="text",
+            textfont=dict(family=F, size=11),
+            marker=dict(
+                colors=[tc(c) for c in dc_tree["constructor"]],
+                line=dict(width=2, color=C["surface"]),
+                pad=dict(t=4, b=4, l=4, r=4),
+            ),
+            hovertemplate="<b>%{label}</b><br>Poin: <b>%{value:.0f}</b><extra></extra>",
+        ))
+        fig_tree.update_layout(
+            **CL, height=280,
+            margin=dict(l=0, r=0, t=10, b=0),
+        )
+
     return html.Div([
         sec("Klasemen Pembalap", "lucide:user"),
         dbc.Row([
@@ -162,6 +222,17 @@ def layout(season: int, flt: dict):
             ], style=dict(width="100%", borderCollapse="collapse"))), width=7),
         ], className="g-3"),
 
+        sec("Progres Poin Konstruktor", "lucide:trending-up"),
+        card(dcc.Graph(figure=fig_prog, config=dict(displayModeBar=False)))
+        if not prog_df.empty else
+        html.Div("Data progres konstruktor belum tersedia.",
+            style=dict(color=C["muted"], fontSize="12px", fontFamily=F,
+                       padding="20px", textAlign="center")),
+
+        sec("Distribusi Poin Konstruktor (Treemap)", "lucide:layout-grid"),
+        card(dcc.Graph(figure=fig_tree, config=dict(displayModeBar=False)))
+        if not dc.empty else html.Div(),
+
         html.Div(
             html.Button([
                 ico("lucide:download", 13, "#FFF"),
@@ -176,4 +247,4 @@ def layout(season: int, flt: dict):
         style=dict(display="flex", justifyContent="flex-end")),
 
         dcc.Store(id="store-klasemen-data", data=lat.to_dict("records")),
-    ])
+    ])

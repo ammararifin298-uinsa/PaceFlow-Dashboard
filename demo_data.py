@@ -82,7 +82,8 @@ def get_kpi(season: int) -> pd.Series:
         'gap_to_p2':          gap,
         'season_avg_pit_s':   round(float(avg_pit), 3) if pd.notna(avg_pit) else None,
         'total_dnf':          dnf,
-        'total_entries':      total,
+        'total_entries':             total,
+        'total_races_scheduled':     df['round'].max(),
     })
 
 

@@ -30,7 +30,12 @@ MARKER_SYMBOLS = [
 ]
 
 def tc(name):
-    return TEAM_COLORS.get(str(name), DEFAULT_TEAM_COLOR)
+    if not name:
+        return DEFAULT_TEAM_COLOR
+    cleaned = str(name).strip().lower()
+    # Case-insensitive lookup dictionary
+    mapping = {k.strip().lower(): v for k, v in TEAM_COLORS.items()}
+    return mapping.get(cleaned, DEFAULT_TEAM_COLOR)
 
 def rgba(h, a=0.15):
     h = h.lstrip("#")

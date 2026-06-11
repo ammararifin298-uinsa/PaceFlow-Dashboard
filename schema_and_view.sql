@@ -269,10 +269,16 @@ SELECT
     r.constructor                                       AS leader_constructor,
     ROUND(AVG(v.avg_pit_duration_s)::NUMERIC, 2)        AS season_avg_pit_s,
     COUNT(*) FILTER (WHERE v.is_dnf = TRUE)             AS total_dnf,
-    COUNT(*)                                            AS total_entries
+    COUNT(*)                                            AS total_entries,
+    sr.total_races_scheduled
 FROM v_f1_analytics v
 JOIN ranked r ON v.season = r.season AND r.rn = 1
-GROUP BY v.season, r.driver_name, r.points, r.constructor;
+JOIN (
+    SELECT season, COUNT(*) AS total_races_scheduled
+    FROM races
+    GROUP BY season
+) sr ON v.season = sr.season
+GROUP BY v.season, r.driver_name, r.points, r.constructor, sr.total_races_scheduled;
 
 -- ─────────────────────────────────────────────────────────────────────────────
 -- SECTION 5: NEW VIEWS

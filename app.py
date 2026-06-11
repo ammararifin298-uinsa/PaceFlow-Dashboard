@@ -2,6 +2,7 @@
 # app.py — Entry Point PaceFlow (Modular Monolith)
 # Hanya berisi: inisialisasi Dash, register callbacks, routing halaman
 # Semua logika ada di pages/, components/, layout/, services/
+# Update: tambah Settings page + Comparison page
 # =============================================================================
 
 import os, sys
@@ -24,10 +25,17 @@ from pages.h2h.layout       import layout as page_h2h
 from pages.datatable.layout import layout as page_datatable
 from pages.benchmark.layout import layout as page_benchmark
 from pages.about.layout     import layout as page_about
+from pages.settings.layout   import layout as page_settings
+from pages.comparison.layout import layout as page_comparison
 
-# ── Callbacks halaman yang punya callbacks sendiri ────────────────────────────
-from pages.h2h.callbacks      import register_callbacks as reg_h2h
+# ── Callbacks ─────────────────────────────────────────────────────────────────
+from pages.home.callbacks      import register_callbacks as reg_home
+from pages.analytics.callbacks import register_callbacks as reg_analytics
+from pages.h2h.callbacks       import register_callbacks as reg_h2h
 from pages.datatable.callbacks import register_callbacks as reg_datatable
+from pages.settings.callbacks   import register_callbacks as reg_settings
+from pages.comparison.callbacks import register_callbacks as reg_comparison
+from pages.benchmark.callbacks   import register_callbacks as reg_benchmark
 
 # ── App ──────────────────────────────────────────────────────────────────────
 app = Dash(
@@ -45,7 +53,8 @@ SL = get_seasons()
 # ── Layout ───────────────────────────────────────────────────────────────────
 app.layout = html.Div([
     dcc.Store(id="store-page",   data="beranda"),
-    dcc.Store(id="store-season", data=None),
+    dcc.Store(id="store-season",  data=None),
+    dcc.Store(id="store-seasons", data=[]),
     dcc.Store(id="store-filter",
               data={"search": "", "drv": None, "con": None, "status": None}),
     dcc.Download(id="dl-beranda"),
@@ -53,7 +62,15 @@ app.layout = html.Div([
     dcc.Download(id="dl-analitik"),
     dcc.Download(id="dl-tabel"),
     dcc.Download(id="dl-benchmark"),
-    html.Div(id="sidebar-wrap"),
+    dcc.Store(id="store-bench-ts", data=0),
+    dcc.Interval(id="bench-interval", interval=2000, n_intervals=0, disabled=True),
+    html.Div([
+        dcc.Input(id="sf-search", style=dict(display="none"), value=""),
+        dcc.Dropdown(id="sf-drv", style=dict(display="none"), value=None),
+        dcc.Dropdown(id="sf-con", style=dict(display="none"), value=None),
+        dcc.Dropdown(id="sf-status", style=dict(display="none"), value=None),
+        dcc.Dropdown(id="dd-season", style=dict(display="none"), value=None),
+    ], id="sidebar-wrap"),
     html.Div([
         dcc.Loading(
             html.Div(id="page-content"),
@@ -73,7 +90,8 @@ app.layout = html.Div([
 ], style=dict(background=C["bg"], minHeight="100vh", fontFamily=F))
 
 # ── Navigation callback ───────────────────────────────────────────────────────
-NAV_IDS = ["beranda", "klasemen", "analitik", "h2h", "tabel", "benchmark", "tentang"]
+NAV_IDS = ["beranda", "klasemen", "analitik", "h2h", "tabel",
+           "comparison", "benchmark", "tentang", "settings"]
 
 @app.callback(
     Output("store-page", "data"),
@@ -94,12 +112,22 @@ def nav_click(*args):
 
 # ── Season callback ───────────────────────────────────────────────────────────
 @app.callback(
-    Output("store-season", "data"),
+    Output("store-season",  "data"),
+    Output("store-seasons", "data"),
     Input("dd-season", "value"),
     prevent_initial_call=True,
 )
 def season_change(val):
-    return val if val else no_update
+    """dd-season sekarang single-select. Kembalikan:
+       store-season  = season aktif (int)
+       store-seasons = list berisi season aktif tersebut [season] untuk multi-compat.
+    """
+    if not val:
+        return None, []
+    if isinstance(val, list):
+        primary = val[0] if val else None
+        return primary, val
+    return val, [val]
 
 
 # ── Filter callback ───────────────────────────────────────────────────────────
@@ -119,7 +147,9 @@ def manage_filter(season, page, search, drv, con, status, current):
     if not ctx.triggered:
         return no_update
     trigger = ctx.triggered[0]["prop_id"].split(".")[0]
-    if trigger in ("store-season", "store-page"):
+    if trigger == "store-page":
+        return {"search": "", "drv": None, "con": None, "status": None}
+    if trigger == "store-season" and page != "tabel":
         return {"search": "", "drv": None, "con": None, "status": None}
     return {"search": search or "", "drv": drv, "con": con, "status": status}
 
@@ -128,11 +158,12 @@ def manage_filter(season, page, search, drv, con, status, current):
 @app.callback(
     Output("sidebar-wrap", "children"),
     Input("store-page",   "data"),
-    Input("store-season", "data"),
+    Input("store-seasons", "data"),
     Input("store-filter", "data"),
 )
-def render_sidebar(page, season, flt):
-    return make_sidebar(page, season, SL, flt or {}, is_demo_mode())
+def render_sidebar(page, seasons_list, flt):
+    # Pass seasons_list to make_sidebar
+    return make_sidebar(page, seasons_list, SL, flt or {}, is_demo_mode())
 
 
 # ── Page render callback ──────────────────────────────────────────────────────
@@ -144,31 +175,33 @@ def render_sidebar(page, season, flt):
 )
 def render_page(page, season, flt):
     flt = flt or {}
+    ctx = callback_context
+    triggered = ctx.triggered[0]["prop_id"].split(".")[0] if ctx.triggered else ""
+
     if page == "benchmark": return page_benchmark()
     if page == "tentang":   return page_about()
+    if page == "settings":
+        # Settings punya state internal — jangan re-render saat store-season/filter berubah
+        if triggered in ("store-season", "store-filter"):
+            return no_update
+        return page_settings()
     if season is None:      return welcome_state()
     if page == "beranda":   return page_home(season, flt)
     if page == "klasemen":  return page_standings(season, flt)
     if page == "analitik":  return page_analytics(season, flt)
     if page == "h2h":       return page_h2h(season)
-    if page == "tabel":     return page_datatable(season, flt)
+    if page == "comparison":
+        # Comparison punya season selector internal — jangan re-render saat store-season berubah
+        if triggered in ("store-season", "store-filter"):
+            return no_update
+        return page_comparison()
+    if page == "tabel":
+        # Halaman tabel punya filter dan tahun lokal — jangan re-render saat store-filter
+        # atau store-season berubah (callback internal tabel yang handle)
+        if triggered in ("store-filter", "store-season"):
+            return no_update
+        return page_datatable(season, {})
     return page_home(season, flt)
-
-
-# ── Tab tabel callback ────────────────────────────────────────────────────────
-@app.callback(
-    Output("tabel-drv", "style"),
-    Output("tabel-con", "style"),
-    Output("tabel-cal", "style"),
-    Input("tabel-tabs", "value"),
-    prevent_initial_call=True,
-)
-def switch_tabel(tab):
-    show = dict(display="block")
-    hide = dict(display="none")
-    if tab == "drv": return show, hide, hide
-    if tab == "con": return hide, show, hide
-    return hide, hide, show
 
 
 # ── Download callbacks ────────────────────────────────────────────────────────
@@ -212,9 +245,14 @@ def dl_tabel(n, data):
 
 
 # ── Register callbacks dari pages ─────────────────────────────────────────────
+reg_settings(app)
+reg_home(app)
+reg_analytics(app)
 reg_h2h(app)
 reg_datatable(app)
+reg_comparison(app)
+reg_benchmark(app)
 
 
 if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port=8050)
+    app.run(debug=True, host="0.0.0.0", port=8050)

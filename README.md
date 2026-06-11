@@ -14,8 +14,10 @@
 | 📊 Klasemen | Driver standings dan constructor standings |
 | 📈 Analitik | Pit stop heatmap, speed trend, qualifying vs race |
 | ⚔️ Head-to-Head | Radar chart perbandingan hingga 3 driver |
+| ⚖️ Comparison | Perbandingan performa per season |
 | 🗃️ Tabel Data | Raw data lengkap dari SQL View |
 | ⚡ Benchmark | Perbandingan performa SQL View vs Pandas in-memory |
+| ⚙️ Settings | Konfigurasi preferensi dashboard |
 | ℹ️ Tentang | Informasi tim, arsitektur, teknologi, dan referensi |
 
 > **Catatan:** Evaluasi usability menggunakan System Usability Scale (SUS) dijalankan secara terpisah melalui `sus_tool.py`. Lihat bagian [Evaluasi SUS](#evaluasi-sus-terpisah) di bawah.

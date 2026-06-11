@@ -1,7 +1,8 @@
 # =============================================================================
 # pages/home/layout.py — Halaman Beranda PaceFlow
-# Berisi: KPI cards, grafik poin championship, grafik konstruktor
-# Fix: default top-10 driver, marker dibedakan dari garis
+# Berisi: KPI cards, championship chart (Poin/Posisi) dengan toggle Top N,
+#         grafik konstruktor
+# Update: bump chart mode, toggle Poin/Posisi, partial badge dinamis dari DB
 # =============================================================================
 
 import plotly.graph_objects as go
@@ -13,6 +14,21 @@ from layout.components import (
 )
 from layout.design_tokens import C, F, CL, ax, legh, rgba, tc, MARKER_SYMBOLS
 from services.data_service import get_analytics, get_kpi, get_constructor_season
+from pages.home.callbacks import _build_points_fig
+
+
+def _btn_toggle(btn_id, label, active):
+    return html.Button(
+        label, id=btn_id, n_clicks=0,
+        style=dict(
+            background=C["blue"] if active else C["surface"],
+            color="#FFF" if active else C["muted"],
+            border=f"1px solid {C['blue'] if active else C['border']}",
+            borderRadius="6px", padding="4px 14px",
+            fontSize="11px", fontWeight="600",
+            fontFamily=F, cursor="pointer",
+        )
+    )
 
 
 def layout(season: int, flt: dict):
@@ -54,45 +70,12 @@ def layout(season: int, flt: dict):
     races   = int(kp.get("total_races", n_races) or n_races)
     pit_d   = f"{float(ap):.3f}s" if ap else "N/A"
     dnf_r   = f"{dnf/tot*100:.1f}%" if tot > 0 else "N/A"
+    total_scheduled = int(kp.get("total_races_scheduled", n_races) or n_races)
 
-    # Data grafik — pakai season_cumulative_points
+    # Data grafik
     tr = (df.groupby(["driver_name", "round", "race_name", "constructor"],
-                     as_index=False)["season_cumulative_points"].max()
+                     as_index=False)[["season_cumulative_points", "cumulative_points"]].max()
             .sort_values(["driver_name", "round"]))
-
-    # Default top-10 driver berdasarkan poin tertinggi
-    top_drivers = (tr.groupby("driver_name")["season_cumulative_points"]
-                   .max().nlargest(10).index.tolist())
-    tr_plot = tr[tr["driver_name"].isin(top_drivers)]
-    show_all = len(tr["driver_name"].unique()) <= 10
-
-    # Grafik poin progression — marker dibedakan dari garis
-    fig = go.Figure()
-    for i, drv in enumerate(tr_plot["driver_name"].unique()):
-        d     = tr_plot[tr_plot["driver_name"] == drv].sort_values("round")
-        color = tc(d["constructor"].iloc[0] if not d.empty else "")
-        fig.add_trace(go.Scatter(
-            x=d["round"],
-            y=d["season_cumulative_points"],
-            mode="lines+markers",
-            name=drv,
-            line=dict(width=2, color=color),
-            marker=dict(
-                size=8,
-                color="#FFFFFF",
-                symbol=MARKER_SYMBOLS[i % len(MARKER_SYMBOLS)],
-                line=dict(width=2, color=color),
-            ),
-            customdata=d["race_name"],
-            hovertemplate=(f"<b>{drv}</b><br>Putaran %{{x}} — %{{customdata}}"
-                           f"<br>Poin: <b>%{{y}}</b><extra></extra>")
-        ))
-
-    fig.update_layout(**CL, height=380, legend=legh(-0.18),
-        xaxis=ax("Putaran", dtick=2),
-        yaxis=ax("Poin Kumulatif per Season"),
-        hovermode="x unified",
-        margin=dict(l=55, r=20, t=20, b=80))
 
     # Grafik konstruktor
     dc_s = dc.sort_values("total_points")
@@ -111,17 +94,24 @@ def layout(season: int, flt: dict):
                    tickfont=dict(size=10, color=C["text"])),
         margin=dict(l=140, r=50, t=10, b=30))
 
+    is_finished = n_races >= total_scheduled
+
     return html.Div([
         sec("Indikator Kinerja Utama", "lucide:trending-up"),
-        partial_badge(n_races) if n_races < 24 else html.Span(),
+        partial_badge(n_races, total_scheduled),
         dbc.Row([
-            dbc.Col(kpi_card("Pemimpin Klasemen", leader,
-                f"▲ {lpts:.0f} poin · Gap +{gap:.0f} vs P2",
+            dbc.Col(kpi_card(
+                "Juara Pembalap (WDC)" if is_finished else "Pemimpin Pembalap (WDC)",
+                leader,
+                f"WDC · Season {season}" if is_finished else f"▲ {lpts:.0f} poin · Gap +{gap:.0f} vs P2",
                 C["red"], "lucide:trophy"), width=3),
-            dbc.Col(kpi_card("Rata-rata Pit Stop", pit_d,
-                "Rata-rata musim", C["teal"], "lucide:timer"), width=3),
+            dbc.Col(kpi_card(
+                "Juara Konstruktor (WCC)" if is_finished else "Pemimpin Konstruktor (WCC)",
+                str(kp.get("leader_constructor", "—")),
+                f"WCC · Season {season}" if is_finished else f"Sementara · Season {season}",
+                C["teal"], "lucide:shield"), width=3),
             dbc.Col(kpi_card("Tingkat DNF", dnf_r,
-                f"{dnf} DNF dari {tot} start",
+                f"{dnf} DNF dari {tot} start" + (" · ⚠ Parsial" if n_races < total_scheduled else ""),
                 C["orange"], "lucide:circle-x"), width=3),
             dbc.Col(kpi_card("Total Balapan", f"{races} Race",
                 f"{df_r['driver_id'].nunique()} pembalap · "
@@ -133,9 +123,27 @@ def layout(season: int, flt: dict):
         info_box(
             f"**{leader}** memimpin dengan **{lpts:.0f} poin** "
             f"setelah {n_races} race. Gap ke P2: **+{gap:.0f} poin**."
-            + ("" if show_all else " Menampilkan **Top 10 pembalap** berdasarkan poin.")
+            + ("" if n_races >= total_scheduled
+               else " Menampilkan **Top 5 pembalap** berdasarkan poin.")
         ),
-        card(dcc.Graph(figure=fig, config=dict(displayModeBar=False))),
+        card(
+            html.Div([
+                html.Div([
+                    _btn_toggle("btn-top5",   "Top 5",  True),
+                    _btn_toggle("btn-top10",  "Top 10", False),
+                    _btn_toggle("btn-topall", "Semua",  False),
+                ], style=dict(display="flex", gap="6px")),
+                html.Div([
+                    _btn_toggle("btn-mode-poin",   "Poin",   True),
+                    _btn_toggle("btn-mode-posisi", "Posisi", False),
+                ], style=dict(display="flex", gap="6px")),
+            ], style=dict(display="flex", justifyContent="space-between",
+                          marginBottom="12px")),
+            dcc.Graph(id="graph-championship",
+                      figure=_build_points_fig(tr, 5),
+                      config=dict(displayModeBar=False),
+                      style=dict(overflow="visible")),
+        ),
 
         sec("Performa Konstruktor", "lucide:bar-chart-2"),
         card(dcc.Graph(figure=fig_cb, config=dict(displayModeBar=False))),
@@ -154,4 +162,6 @@ def layout(season: int, flt: dict):
         style=dict(display="flex", justifyContent="flex-end")),
 
         dcc.Store(id="store-beranda-data", data=tr.to_dict("records")),
+        dcc.Store(id="store-home-top-n",   data=5),
+        dcc.Store(id="store-home-mode",    data="poin"),
     ])

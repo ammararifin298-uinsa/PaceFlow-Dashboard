@@ -9,13 +9,15 @@ from layout.design_tokens import C, F, rgba, tc
 from layout.components import ico
 
 NAV = [
-    ("beranda",   "lucide:home",        "Beranda"),
-    ("klasemen",  "lucide:bar-chart-2", "Klasemen"),
-    ("analitik",  "lucide:activity",    "Analitik"),
-    ("h2h",       "lucide:users",       "Head-to-Head"),
-    ("tabel",     "lucide:table",       "Tabel Data"),
-    ("benchmark", "lucide:zap",         "Benchmark"),
-    ("tentang",   "lucide:info",        "Tentang"),
+    ("beranda",    "lucide:home",        "Beranda"),
+    ("klasemen",   "lucide:bar-chart-2", "Klasemen"),
+    ("analitik",   "lucide:activity",    "Analitik"),
+    ("h2h",        "lucide:users",       "Head-to-Head"),
+    ("tabel",      "lucide:table",       "Tabel Data"),
+    ("comparison", "lucide:git-compare", "Perbandingan"),
+    ("benchmark",  "lucide:zap",         "Benchmark"),
+    ("tentang",    "lucide:info",        "Tentang"),
+    ("settings",   "lucide:settings",   "Settings"),
 ]
 
 # Filter yang aktif per halaman
@@ -36,7 +38,12 @@ def make_sidebar(page, season, seasons, flt, use_demo=False):
     """
     import pandas as pd
     flt = flt or {}
-    season_ok = season is not None
+    
+    if isinstance(season, list):
+        active_season_for_filter = season[0] if len(season) > 0 else None
+    else:
+        active_season_for_filter = season
+    season_ok = active_season_for_filter is not None
     active_f = FILTER_PAGES.get(page, [])
 
     def _hidden_filters():
@@ -139,7 +146,7 @@ def make_sidebar(page, season, seasons, flt, use_demo=False):
 
     # Ambil data untuk filter options
     from services.data_service import get_analytics
-    df_s = get_analytics(season) if season_ok else pd.DataFrame()
+    df_s = get_analytics(active_season_for_filter) if season_ok else pd.DataFrame()
 
     # Season dropdown — dinamis dari DB, OCP compliant
     season_opts = [{"label": f"Musim {s}", "value": s} for s in seasons]
@@ -204,7 +211,7 @@ def make_sidebar(page, season, seasons, flt, use_demo=False):
             dcc.Dropdown(
                 id="dd-season",
                 options=season_opts,
-                value=season,
+                value=season[0] if isinstance(season, list) and len(season) > 0 else season,
                 clearable=False,
                 searchable=False,
                 placeholder="Pilih musim...",

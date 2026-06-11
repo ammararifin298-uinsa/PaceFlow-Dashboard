@@ -70,5 +70,8 @@ def layout(season: int):
                 config=dict(displayModeBar=False))), width=6),
         ], className="g-3"),
 
+        # Gauge consistency score — diisi callback
+        html.Div(id="h2h-gauges"),
+
         card(html.Div(id="h2h-table")),
     ])

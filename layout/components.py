@@ -118,7 +118,9 @@ def empty_state(title="Tidak ada data.", desc=""):
         )),
     ], style=dict(
         display="flex", flexDirection="column", alignItems="center",
-        justifyContent="center", padding="60px 20px", textAlign="center"
+        justifyContent="center", padding="60px 20px", textAlign="center",
+        background=C["surface"], border=f"1px solid {C['border']}",
+        borderRadius="10px", boxShadow="0 1px 4px rgba(15,23,42,0.06)"
     ))
 
 
@@ -158,7 +160,7 @@ def partial_badge(n_races, total=24):
     if n_races >= total:
         return html.Span()
     return html.Span(
-        f" DATA PARSIAL — {n_races} dari {total} race",
+        f" DATA PARSIAL ({n_races}/{total} Race)",
         style=dict(
             background=rgba(C["orange"], 0.12), color=C["orange"],
             fontSize="10px", fontWeight="700", padding="2px 10px",
