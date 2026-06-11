@@ -260,6 +260,10 @@ app.run(debug=False, host="0.0.0.0", port=8051)
 ```
 PaceFlow-Dashboard/
 ├── app.py                   # Presentation layer (Dash + Plotly)
+├── components/              # Komponen visual UI (charts, filters, dll)
+├── layout/                  # Layout utama dan sidebar navigasi
+├── pages/                   # Logika routing dan layout per halaman (9 halaman)
+├── services/                # Layer service untuk abstraksi data
 ├── config.py                # Konfigurasi terpusat dan konstanta
 ├── db.py                    # Database access layer (Repository Pattern)
 ├── demo_data.py             # Data provider untuk mode demo
@@ -307,7 +311,7 @@ PaceFlow-Dashboard/
                          │
 ┌────────────────────────▼────────────────────────────────────┐
 │  PRESENTATION LAYER — app.py (Dash + Plotly)                │
-│  Sidebar navigasi · Filter season · 7 halaman               │
+│  Sidebar navigasi · Filter season · 9 halaman               │
 │  Export CSV · Benchmark chart                               │
 └─────────────────────────────────────────────────────────────┘
 
