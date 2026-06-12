@@ -163,11 +163,13 @@ def layout():
         if not bench:
             return _no_data_layout("File benchmark kosong. Jalankan ulang benchmark.")
     except Exception as e:
+        print(f"Error reading benchmark results: {e}")
         return _no_data_layout(f"Gagal membaca benchmark_results.json: {e}")
 
     try:
         fig_b, fig_sp, trw, avg_sp, max_sp, max_idx, lb_short = _build_charts(bench)
     except Exception as e:
+        print(f"Error building charts: {e}")
         return _no_data_layout(f"Gagal memproses data benchmark: {e}")
 
     import datetime

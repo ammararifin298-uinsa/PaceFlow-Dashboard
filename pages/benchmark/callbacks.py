@@ -76,6 +76,7 @@ def _start_benchmark():
                 if proc.returncode != 0 and not _state["error"]:
                     _state["error"] = f"Proses selesai dengan kode: {proc.returncode}"
             except Exception as e:
+                print(f"Error in benchmark subprocess: {e}")
                 _state["error"] = str(e)
             finally:
                 _state["running"] = False

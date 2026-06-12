@@ -170,7 +170,7 @@ def layout():
             ], style=dict(marginBottom="8px"))
             for label, value in [
                 ("Versi",           "PaceFlow v1.0.0"),
-                ("Framework",       "Python Dash 4.1"),
+                ("Framework",       "Python Dash 2.x"),
                 ("Database",        "PostgreSQL 16"),
                 ("Arsitektur",      "Modular Monolith · SoC"),
                 ("Standar",         "ISO/IEC 25010"),

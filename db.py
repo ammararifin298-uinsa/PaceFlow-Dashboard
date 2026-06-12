@@ -45,6 +45,7 @@ def health_check() -> dict:
             "tables":     tables.to_dict("records"),
         }
     except Exception as e:
+        print(f"Error in health_check: {e}")
         return {"status": "error", "message": str(e)}
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -159,6 +160,7 @@ def get_etl_info() -> dict:
             "total_entries": int(row["total_entries"]),
         }
     except Exception as e:
+        print(f"Error in get_etl_info: {e}")
         return {"error": str(e)}
 
 def get_qualifying(season: int) -> pd.DataFrame:

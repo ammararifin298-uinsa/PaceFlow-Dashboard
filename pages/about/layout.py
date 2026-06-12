@@ -23,8 +23,8 @@ SUPERVISOR = [
 TECH = [
     ("lucide:database",    "PostgreSQL 16",    "Data layer — SQL Views, JOIN, indeks, agregasi", C["blue"]),
     ("lucide:code",        "Python 3.12+",     "Bahasa pemrograman utama seluruh sistem", C["orange"]),
-    ("lucide:layout",      "Dash 4.1",         "Web framework — presentation layer reaktif", C["teal"]),
-    ("lucide:bar-chart-2", "Plotly 5.22",      "Library visualisasi interaktif berbasis WebGL", "#7C3AED"),
+    ("lucide:layout",      "Dash 2.x",         "Web framework — presentation layer reaktif", C["teal"]),
+    ("lucide:bar-chart-2", "Plotly 5.22",      "Library visualisasi interaktif berbasis web", "#7C3AED"),
     ("lucide:link",        "SQLAlchemy 2.0",   "ORM, connection pooling, Repository Pattern", C["red"]),
     ("lucide:package",     "Pandas 2.2",       "Transformasi dan formatting data output", C["green"]),
     ("lucide:shield",      "Bootstrap 5",      "CSS framework — layout responsif komponen UI", C["blue"]),
@@ -115,7 +115,7 @@ def layout():
             dbc.Col(kpi_card("Konstruktor Unik", str(n_constructors), "Di Semua Musim", C["orange"], "lucide:shield"), width=3),
             dbc.Col(kpi_card("Pit Stop Records", f"{n_pit:,}", "Data Pit Stop", C["blue"], "lucide:clock"), width=3),
             dbc.Col(kpi_card("Qualifying", f"{n_quali:,}", "Hasil Kualifikasi", C["teal"], "lucide:zap"), width=3),
-            dbc.Col(kpi_card("Views Terindeks", "6", "PostgreSQL Views", C["red"], "lucide:database"), width=3),
+            dbc.Col(kpi_card("SQL Views", "6", "PostgreSQL Views", C["red"], "lucide:database"), width=3),
         ], className="g-3", style=dict(marginBottom="24px")),
 
         # ── TIM PENGEMBANG DAN DOSEN PEMBIMBING ────────────────────────────────
@@ -182,7 +182,7 @@ def layout():
                     fontSize="10px", fontWeight="800", color=C["red"],
                     letterSpacing="1px", fontFamily=F, marginBottom="8px"
                 )),
-                html.Div("PostgreSQL 16 · 8 Tabel Relasional · 6 Views Terindeks", style=dict(
+                html.Div("PostgreSQL 16 · 8 Tabel Relasional · 6 SQL Views", style=dict(
                     fontSize="11px", fontWeight="700", color=C["text"],
                     fontFamily=F, marginBottom="6px"
                 )),
@@ -210,7 +210,7 @@ def layout():
                     fontSize="10px", fontWeight="800", color=C["blue"],
                     letterSpacing="1px", fontFamily=F, marginBottom="8px"
                 )),
-                html.Div("Dash 4.1 · Plotly 5.22 · Bootstrap 5", style=dict(
+                html.Div("Dash 2.x · Plotly 5.22 · Bootstrap 5", style=dict(
                     fontSize="11px", fontWeight="700", color=C["text"],
                     fontFamily=F, marginBottom="6px"
                 )),

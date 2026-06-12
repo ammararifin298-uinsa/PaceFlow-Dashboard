@@ -87,6 +87,7 @@ def register_callbacks(app):
                 msg   = "✅ Beralih ke **PostgreSQL** — koneksi database aktif."
                 color = C["green"]
             except Exception as e:
+                print(f"Error in toggle_mode: {e}")
                 # Kalau gagal, balik ke demo lagi
                 set_demo_mode(True)
                 invalidate_cache()
@@ -150,6 +151,7 @@ def register_callbacks(app):
             else:
                 return info_box(f"❌ Error: {info.get('message', 'Unknown')}", C["red"])
         except Exception as e:
+            print(f"Error in check_health: {e}")
             return info_box(f"❌ Tidak dapat terhubung: {str(e)}", C["red"])
 
     # ── 3. Clear Cache ────────────────────────────────────────────────────────
@@ -169,6 +171,7 @@ def register_callbacks(app):
                 C["green"]
             )
         except Exception as e:
+            print(f"Error in clear_cache: {e}")
             return info_box(f"❌ Gagal clear cache: {str(e)}", C["red"])
 
     # ── 4. ETL dan Data Info ──────────────────────────────────────────────────
@@ -214,6 +217,7 @@ def register_callbacks(app):
                 _row("Total Entries", f"{info.get('total_entries', 0):,}"),
             ])
         except Exception as e:
+            print(f"Error in etl_info: {e}")
             return info_box(f"❌ Error: {str(e)}", C["red"])
 
 
@@ -290,6 +294,7 @@ def register_callbacks(app):
                     f"❌ **File CSV rusak / tidak valid**: {str(pe)}", C["red"]
                 )
         except Exception as e:
+            print(f"Error in handle_upload decode: {e}")
             return info_box(
                 f"❌ **Gagal mendekode file**: {str(e)}", C["red"]
             )
@@ -321,6 +326,7 @@ def register_callbacks(app):
             os.makedirs(data_dir, exist_ok=True)
             df.to_csv(os.path.join(data_dir, filename), index=False, encoding="utf-8")
         except Exception as e:
+            print(f"Error in handle_upload save: {e}")
             return info_box(
                 f"❌ **Gagal menyimpan file**: {str(e)}", C["red"]
             )
