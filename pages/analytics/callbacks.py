@@ -9,17 +9,10 @@ import plotly.graph_objects as go
 import pandas as pd
 import numpy as np
 from layout.design_tokens import C, CL, tc, MARKER_SYMBOLS
+from layout.components import BTN_ACTIVE, BTN_INACTIVE
+from layout.graph_utils import parse_restyle
 
 F = "Inter, -apple-system, sans-serif"
-
-BTN_ACTIVE   = dict(background=C["blue"], color="#FFF",
-                    border=f"1px solid {C['blue']}", borderRadius="6px",
-                    padding="4px 14px", fontSize="11px", fontWeight="600",
-                    fontFamily=F, cursor="pointer")
-BTN_INACTIVE = dict(background=C["surface"], color=C["muted"],
-                    border=f"1px solid {C['border']}", borderRadius="6px",
-                    padding="4px 14px", fontSize="11px", fontWeight="600",
-                    fontFamily=F, cursor="pointer")
 
 _LEGEND = dict(
     orientation="v", x=1.02, y=1,
@@ -45,55 +38,6 @@ _YAXIS = dict(
     showgrid=True,
 )
 
-
-def _parse_restyle(restyle_data, traces):
-    try:
-        style_updates = restyle_data[0]
-        trace_indices = restyle_data[1]
-        visibilities  = style_updates.get("visible", [])
-        if not visibilities:
-            return None
-
-        # Kasus 1: deteksi grup legenda mana saja yang diaktifkan (True)
-        if not isinstance(visibilities, list):
-            visibilities = [visibilities]
-
-        apply_single_val = (len(visibilities) == 1)
-        trues = set()
-
-        for j, idx in enumerate(trace_indices):
-            vis = visibilities[0] if apply_single_val else (visibilities[j] if j < len(visibilities) else None)
-            if idx < len(traces):
-                grp = traces[idx].get("legendgroup")
-                if grp and vis is True:
-                    trues.add(grp)
-
-        # Jika ada lebih dari satu grup diubah menjadi True -> reset/show-all
-        if len(trues) > 1:
-            return None
-
-        # Jika hanya ada tepat satu grup diubah menjadi True -> isolasi grup tersebut
-        if len(trues) == 1:
-            return list(trues)[0]
-
-        # Kasus 2: semua menjadi legendonly → temukan driver/tim aktif berdasarkan exclusion
-        is_all_legendonly = False
-        if apply_single_val and visibilities[0] == "legendonly":
-            is_all_legendonly = True
-        elif not apply_single_val and all(v == "legendonly" for v in visibilities):
-            is_all_legendonly = True
-
-        if is_all_legendonly:
-            hidden_set = set(trace_indices)
-            for i, trace in enumerate(traces):
-                if i not in hidden_set:
-                    grp   = trace.get("legendgroup")
-                    x_val = trace.get("x")
-                    if grp and x_val is not None and x_val != [None]:
-                        return grp
-        return None
-    except Exception:
-        return None
 
 
 def _build_speed_fig(sg, top_n=5, selected_team=None):
@@ -313,7 +257,7 @@ def register_callbacks(app):
         selected_team = None
 
         if "restyleData" in triggered_id and restyle_data and current_fig:
-            selected_team = _parse_restyle(restyle_data, current_fig["data"])
+            selected_team = parse_restyle(restyle_data, current_fig["data"])
 
         return _build_speed_fig(sg, top_n, selected_team)
 
@@ -373,6 +317,6 @@ def register_callbacks(app):
         selected_team = None
 
         if "restyleData" in triggered_id and restyle_data and current_fig:
-            selected_team = _parse_restyle(restyle_data, current_fig["data"])
+            selected_team = parse_restyle(restyle_data, current_fig["data"])
 
         return _build_qualifying_fig(qvr, top_n, selected_team)

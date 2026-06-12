@@ -195,7 +195,7 @@ def layout(season: int, flt: dict):
             xaxis=ax("Durasi Pit Tercepat (detik)"),
             yaxis=dict(gridcolor=C["grid"], linecolor=C["border"],
                        tickfont=dict(size=10, color=C["text"])),
-            margin=dict(l=140, r=60, t=10, b=30))
+            margin=dict(l=140, r=100, t=10, b=30))
 
     # Store data
     store_cols = ["season", "round", "race_name", "driver_name", "constructor",
@@ -356,7 +356,7 @@ def layout(season: int, flt: dict):
             if has_dnf else
             _placeholder("lucide:alert-circle", "Tidak Ada DNF",
                          "Tidak ada DNF yang tercatat di musim ini.", C["green"]),
-        ], width=6),
+        ], width=7),
         dbc.Col([
             _chart_label("Top Penyebab DNF"),
             html.Div([
@@ -381,7 +381,7 @@ def layout(season: int, flt: dict):
             html.Div("Semua pembalap finish.", style=dict(
                 color=C["green"], fontSize="12px", fontFamily=F,
                 padding="20px", textAlign="center")),
-        ], width=6),
+        ], width=5),
     ], className="g-3"))
 
     # ── Rakit halaman ─────────────────────────────────────────────────────────

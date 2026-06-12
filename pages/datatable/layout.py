@@ -96,33 +96,27 @@ def layout(season: int, flt: dict):
                     selected_style=dict(fontFamily=F, fontSize="12px",
                         fontWeight="700", color=C["blue"],
                         borderBottom=f"2px solid {C['blue']}")),
+                dcc.Tab(label="Kualifikasi", value="qua",
+                    style=dict(fontFamily=F, fontSize="12px"),
+                    selected_style=dict(fontFamily=F, fontSize="12px",
+                        fontWeight="700", color=C["blue"],
+                        borderBottom=f"2px solid {C['blue']}")),
+                dcc.Tab(label="Pit Stop", value="pit",
+                    style=dict(fontFamily=F, fontSize="12px"),
+                    selected_style=dict(fontFamily=F, fontSize="12px",
+                        fontWeight="700", color=C["blue"],
+                        borderBottom=f"2px solid {C['blue']}")),
             ],
             style=dict(marginBottom="16px")
         ),
 
-        # ── Panel: Driver Standings (callback mengisi konten) ────────────────
+        # ── Konten Tab Aktif ──────────────────────────────────────────────────
         html.Div([
             dcc.Loading(
-                html.Div(id="tbl-drv-content"),
+                html.Div(id="tab-content"),
                 type="dot", color=C["blue"]
             ),
-        ], id="tabel-drv", style=dict(display="block")),
-
-        # ── Panel: Constructor Standings ─────────────────────────────────────
-        html.Div([
-            dcc.Loading(
-                html.Div(id="tbl-con-content"),
-                type="dot", color=C["blue"]
-            ),
-        ], id="tabel-con", style=dict(display="none")),
-
-        # ── Panel: Race Calendar ─────────────────────────────────────────────
-        html.Div([
-            dcc.Loading(
-                html.Div(id="tbl-cal-content"),
-                type="dot", color=C["blue"]
-            ),
-        ], id="tabel-cal", style=dict(display="none")),
+        ], style=dict(display="block")),
 
         # Download button
         html.Div(

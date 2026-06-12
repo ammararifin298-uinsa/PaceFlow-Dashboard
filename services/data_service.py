@@ -7,6 +7,7 @@
 # =============================================================================
 
 import os, sys
+import threading
 from functools import lru_cache
 import pandas as pd
 
@@ -14,6 +15,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from config import DEMO_MODE
 
 _use_demo = DEMO_MODE
+_demo_lock = threading.Lock()
 if not _use_demo:
     try:
         import db
@@ -79,7 +81,9 @@ def invalidate_cache():
     get_dnf_causes.cache_clear()
     get_drivers_info.cache_clear()
     get_circuits.cache_clear()
-    print("[DataService] Cache cleared.")
+    get_qualifying.cache_clear()    # Fix K-3: was missing
+    get_pit_stops.cache_clear()     # Fix K-3: was missing
+    print("[DataService] Cache cleared (all 13 functions).")
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -137,6 +141,26 @@ def get_calendar() -> pd.DataFrame:
         print(f"[DataService] get_calendar() error: {e}")
         return pd.DataFrame()
 
+
+@lru_cache(maxsize=8)
+def get_qualifying(season: int) -> pd.DataFrame:
+    try:
+        if _use_demo:
+            return demo.get_qualifying(season)
+        return db.get_qualifying(season)
+    except Exception as e:
+        print(f"[DataService] get_qualifying({season}) error: {e}")
+        return pd.DataFrame()
+
+@lru_cache(maxsize=8)
+def get_pit_stops(season: int) -> pd.DataFrame:
+    try:
+        if _use_demo:
+            return demo.get_pit_stops(season)
+        return db.get_pit_stops(season)
+    except Exception as e:
+        print(f"[DataService] get_pit_stops({season}) error: {e}")
+        return pd.DataFrame()
 
 # ─────────────────────────────────────────────────────────────────────────────
 # NEW FUNCTIONS — view baru
@@ -211,7 +235,8 @@ def get_drivers_info() -> pd.DataFrame:
     """
     try:
         if _use_demo:
-            return pd.DataFrame()
+            csv_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Data", "drivers.csv")
+            return pd.read_csv(csv_path) if os.path.exists(csv_path) else pd.DataFrame()
         return db.get_drivers_info()
     except Exception as e:
         print(f"[DataService] get_drivers_info() error: {e}")
@@ -226,7 +251,8 @@ def get_circuits() -> pd.DataFrame:
     """
     try:
         if _use_demo:
-            return pd.DataFrame()
+            csv_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "Data", "circuits.csv")
+            return pd.read_csv(csv_path) if os.path.exists(csv_path) else pd.DataFrame()
         return db.get_circuits()
     except Exception as e:
         print(f"[DataService] get_circuits() error: {e}")
@@ -241,7 +267,8 @@ def is_demo_mode() -> bool:
 def set_demo_mode(value: bool):
     """Toggle demo mode dari Settings page — tanpa restart app."""
     global _use_demo
-    _use_demo = value
+    with _demo_lock:          # Fix K-4: thread-safe global mutation
+        _use_demo = value
     invalidate_cache()
     print(f"[DataService] Mode: {'Demo' if value else 'PostgreSQL'}")
 
@@ -308,7 +335,7 @@ def _demo_dnf_causes(season: int) -> pd.DataFrame:
     df = demo.get_analytics(season)
     if df.empty:
         return pd.DataFrame()
-    finished = {'Finished','+1 Lap','+2 Laps','+3 Laps','+4 Laps',
+    finished = {'Finished','Lapped','+1 Lap','+2 Laps','+3 Laps','+4 Laps',
                 '+5 Laps','+6 Laps','+7 Laps','+8 Laps','+9 Laps','+10 Laps'}
     dnf = df[~df["status"].isin(finished)].copy()
     if dnf.empty:

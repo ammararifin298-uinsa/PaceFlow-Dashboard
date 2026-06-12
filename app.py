@@ -33,9 +33,12 @@ from pages.home.callbacks      import register_callbacks as reg_home
 from pages.analytics.callbacks import register_callbacks as reg_analytics
 from pages.h2h.callbacks       import register_callbacks as reg_h2h
 from pages.datatable.callbacks import register_callbacks as reg_datatable
+from pages.standings.callbacks  import register_callbacks as reg_standings
 from pages.settings.callbacks   import register_callbacks as reg_settings
 from pages.comparison.callbacks import register_callbacks as reg_comparison
 from pages.benchmark.callbacks   import register_callbacks as reg_benchmark
+
+
 
 # ── App ──────────────────────────────────────────────────────────────────────
 app = Dash(
@@ -49,6 +52,113 @@ app = Dash(
 )
 
 SL = get_seasons()
+
+# ── Help Modal builder ───────────────────────────────────────────────
+# Selalu ada di semua halaman — tidak bergantung pada season/page
+def _help_modal():
+    from layout.components import ico
+    from layout.design_tokens import rgba
+
+    def _gloss(term, definition):
+        return html.Div([
+            html.Span(term, style=dict(
+                fontWeight="700", color=C["text"],
+                fontFamily=F, fontSize="12px", display="block", marginBottom="2px",
+            )),
+            html.Span(definition, style=dict(
+                color="#64748b", fontFamily=F, fontSize="11px",
+                lineHeight="1.6", display="block",
+            )),
+        ], style=dict(
+            paddingBottom="10px", marginBottom="10px",
+            borderBottom="1px solid #E2E8F0",
+        ))
+
+    def _feat(icon_name, title, desc):
+        return html.Div([
+            ico(icon_name, 14, C["blue"]),
+            html.Div([
+                html.Div(title, style=dict(
+                    fontWeight="700", color=C["text"],
+                    fontFamily=F, fontSize="12px",
+                )),
+                html.Div(desc, style=dict(
+                    color="#64748b", fontFamily=F, fontSize="11px",
+                    lineHeight="1.5",
+                )),
+            ], style=dict(marginLeft="8px")),
+        ], style=dict(display="flex", marginBottom="10px"))
+
+    return dbc.Modal([
+        dbc.ModalHeader(
+            html.Div([
+                html.Div("Panduan dan Glosarium F1", style=dict(
+                    fontWeight="800", fontSize="15px",
+                    color=C["text"], fontFamily=F,
+                )),
+                html.Div("PaceFlow — F1 Analytics Dashboard", style=dict(
+                    fontSize="11px", color="#64748b", fontFamily=F,
+                )),
+            ]),
+            close_button=True,
+        ),
+        dbc.ModalBody([
+            html.Div("FITUR DASBOR", style=dict(
+                fontSize="9px", fontWeight="700", letterSpacing="2px",
+                color="#64748b", fontFamily=F, marginBottom="10px",
+                textTransform="uppercase",
+            )),
+            _feat("lucide:home",        "Beranda",
+                  "Progres poin dan posisi championship musim berjalan. Toggle Top 5/10/Semua."),
+            _feat("lucide:trophy",      "Klasemen",
+                  "Tabel standings pembalap dan konstruktor, profil statistik driver."),
+            _feat("lucide:bar-chart-2", "Analitik",
+                  "Scatter plot speed vs konsistensi, violin plot DNF, kualifikasi dan pit stop."),
+            _feat("lucide:users",       "H2H (Duel)",
+                  "Perbandingan duel langsung antara dua pembalap pilihan Anda."),
+            _feat("lucide:git-compare", "Perbandingan Musim",
+                  "Bandingkan hingga 3 musim dalam satu grafik interaktif."),
+            _feat("lucide:zap",         "Benchmark",
+                  "Analisis kecepatan dan performa teknis rata-rata per sirkuit."),
+            html.Hr(style=dict(borderColor="#E2E8F0", margin="14px 0")),
+            html.Div("GLOSARIUM ISTILAH F1", style=dict(
+                fontSize="9px", fontWeight="700", letterSpacing="2px",
+                color="#64748b", fontFamily=F, marginBottom="10px",
+                textTransform="uppercase",
+            )),
+            _gloss("DNF (Did Not Finish)",
+                   "Pembalap yang tidak menyelesaikan balapan karena insiden teknis atau kecelakaan."),
+            _gloss("Pole Position",
+                   "Posisi start terdepan (P1) yang diraih melalui sesi kualifikasi tercepat."),
+            _gloss("Fastest Lap",
+                   "Lap time tercepat dalam satu balapan. Memberikan 1 poin bonus jika finis di Top 10."),
+            _gloss("Pit Stop",
+                   "Singgah ke pit lane untuk ganti ban dan/atau perbaikan komponen mobil."),
+            _gloss("Constructor",
+                   "Tim yang merancang dan memasok mobil F1 (contoh: Red Bull, Mercedes, Ferrari)."),
+            _gloss("Sprint Race",
+                   "Balapan pendek (~100 km) di beberapa sirkuit pilihan. Memberikan poin tambahan."),
+            _gloss("Poin Kumulatif",
+                   "Total poin yang terkumpul dari putaran pertama hingga putaran yang dipilih."),
+            _gloss("Consistency Score",
+                   "Skor 0–100 yang mencerminkan konsistensi pembalap meraih podium dan menyelesaikan balapan."),
+            _gloss("Gap P1 vs P2",
+                   "Selisih poin antara pemimpin klasemen dan runner-up setelah setiap putaran."),
+            _gloss("DNF Rate (%)",
+                   "Persentase balapan di mana pembalap atau tim tidak menyelesaikan balapan."),
+        ], style=dict(maxHeight="60vh", overflowY="auto")),
+        dbc.ModalFooter(
+            html.Span("Klik ✕ atau di luar modal untuk menutup", style=dict(
+                fontSize="10px", color="#94a3b8", fontFamily=F,
+            ))
+        ),
+    ],
+        id="help-modal",
+        is_open=False,
+        centered=True,
+        size="lg",
+        backdrop=True,
+    )
 
 # ── Layout ───────────────────────────────────────────────────────────────────
 app.layout = html.Div([
@@ -87,6 +197,28 @@ app.layout = html.Div([
                       borderTop=f"1px solid {C['border']}")),
     ], style=dict(marginLeft="220px", padding="20px 28px",
                   minHeight="100vh", background=C["bg"], fontFamily=F)),
+
+    # ── Floating Help Button [???] ──────────────────────────────────────────
+    html.Button(
+        "?",
+        id="btn-help-open",
+        n_clicks=0,
+        title="Panduan & Glosarium F1",
+        style=dict(
+            position="fixed", bottom="24px", right="24px",
+            width="44px", height="44px", borderRadius="50%",
+            background=f"linear-gradient(135deg, {C['blue']}, #7C3AED)",
+            color="#fff", border="none", cursor="pointer",
+            fontSize="18px", fontWeight="900", fontFamily=F,
+            boxShadow="0 4px 16px rgba(29,78,216,0.4)",
+            zIndex="9999",
+            lineHeight="44px", textAlign="center",
+        ),
+    ),
+
+    # ── Help Modal ────────────────────────────────────────────────────
+    _help_modal(),
+
 ], style=dict(background=C["bg"], minHeight="100vh", fontFamily=F))
 
 # ── Navigation callback ───────────────────────────────────────────────────────
@@ -108,6 +240,19 @@ def nav_click(*args):
         if f'"index":"{pid}"' in tid:
             return pid
     return args[-1]
+
+
+# ── Help Modal callback ───────────────────────────────────────────────────────
+@app.callback(
+    Output("help-modal", "is_open"),
+    Input("btn-help-open", "n_clicks"),
+    State("help-modal",   "is_open"),
+    prevent_initial_call=True,
+)
+def toggle_help(n, is_open):
+    if n:
+        return not is_open
+    return is_open
 
 
 # ── Season callback ───────────────────────────────────────────────────────────
@@ -234,14 +379,34 @@ def dl_analitik(n, data):
     return dict(content=pd.DataFrame(data).to_csv(index=False),
                 filename="paceflow_analitik.csv")
 
+from services.data_service import get_analytics, get_constructor_season, get_calendar, get_qualifying, get_pit_stops
+
 @app.callback(Output("dl-tabel", "data"),
     Input("btn-tabel", "n_clicks"),
-    State("store-tabel-data", "data"),
+    State("tabel-tabs", "value"),
+    State("tbl-year-filter", "value"),
     prevent_initial_call=True)
-def dl_tabel(n, data):
-    if not n or not data: return no_update
-    return dict(content=pd.DataFrame(data).to_csv(index=False),
-                filename="paceflow_tabel.csv")
+def dl_tabel(n, tab, year):
+    if not n or not year: return no_update
+    year = int(year)
+    if tab == "drv":
+        df = get_analytics(year)
+    elif tab == "con":
+        df = get_constructor_season(year)
+    elif tab == "cal":
+        cal = get_calendar()
+        df = cal[cal["season"] == year] if not cal.empty else pd.DataFrame()
+    elif tab == "qua":
+        df = get_qualifying(year)
+    elif tab == "pit":
+        df = get_pit_stops(year)
+    else:
+        df = pd.DataFrame()
+        
+    if df.empty: return no_update
+    
+    return dict(content=df.to_csv(index=False),
+                filename=f"paceflow_{tab}_{year}.csv")
 
 
 # ── Register callbacks dari pages ─────────────────────────────────────────────
@@ -250,6 +415,7 @@ reg_home(app)
 reg_analytics(app)
 reg_h2h(app)
 reg_datatable(app)
+reg_standings(app)
 reg_comparison(app)
 reg_benchmark(app)
 

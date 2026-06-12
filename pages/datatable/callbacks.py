@@ -16,7 +16,8 @@ from layout.components import (
 )
 from layout.design_tokens import C, F, rgba, tc
 from services.data_service import (
-    get_analytics, get_constructor_season, get_calendar, get_seasons
+    get_analytics, get_constructor_season, get_calendar, get_seasons,
+    get_qualifying, get_pit_stops
 )
 
 
@@ -184,25 +185,57 @@ def _build_calendar_rows(cal_s):
     return rows
 
 
+def _build_qualifying_rows(df):
+    if df.empty:
+        return []
+    rows = []
+    for i, (_, row) in enumerate(df.iterrows()):
+        rows.append(html.Tr([
+            html.Td(str(int(row["round"])), style=dict(color=C["muted"],
+                fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F)),
+            html.Td(html.B(row["race_name"], style=dict(color=C["text"],
+                fontFamily=F, fontSize="11px")), style=dict(padding="9px 8px")),
+            html.Td(str(int(row["position"])) if pd.notna(row["position"]) else "—", style=dict(color=C["blue"],
+                fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F, fontWeight="700")),
+            html.Td([
+                tbar(row.get("constructor", "")),
+                html.Span(row.get("driver_name", "—"), style=dict(color=C["text"], fontSize="11px", fontWeight="600", fontFamily=F))
+            ], style=dict(padding="9px 8px")),
+            html.Td(str(row.get("q1", "—")), style=dict(color=C["muted"], fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F)),
+            html.Td(str(row.get("q2", "—")), style=dict(color=C["muted"], fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F)),
+            html.Td(str(row.get("q3", "—")), style=dict(color=C["teal"], fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F, fontWeight="600")),
+        ], style=dict(
+            borderBottom=f"1px solid {C['border']}",
+            background=C["grid"] if i % 2 == 0 else C["surface"]
+        )))
+    return rows
+
+
+def _build_pitstop_rows(df):
+    if df.empty:
+        return []
+    rows = []
+    for i, (_, row) in enumerate(df.iterrows()):
+        rows.append(html.Tr([
+            html.Td(str(int(row["round"])), style=dict(color=C["muted"],
+                fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F)),
+            html.Td(html.B(row["race_name"], style=dict(color=C["text"],
+                fontFamily=F, fontSize="11px")), style=dict(padding="9px 8px")),
+            html.Td(html.Span(row.get("driver_name", "—"), style=dict(color=C["text"], fontSize="11px", fontWeight="600", fontFamily=F)), style=dict(padding="9px 8px")),
+            html.Td(str(int(row["stop"])) if pd.notna(row["stop"]) else "—", style=dict(color=C["blue"], fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F)),
+            html.Td(str(int(row["lap"])) if pd.notna(row["lap"]) else "—", style=dict(color=C["muted"], fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F)),
+            html.Td(str(row.get("stop_time", "—")), style=dict(color=C["muted"], fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F)),
+            html.Td(str(row.get("duration_s", "—")), style=dict(color=C["teal"], fontSize="11px", textAlign="center", padding="9px 6px", fontFamily=F, fontWeight="600")),
+        ], style=dict(
+            borderBottom=f"1px solid {C['border']}",
+            background=C["grid"] if i % 2 == 0 else C["surface"]
+        )))
+    return rows
+
 # ═══════════════════════════════════════════════════════════════════════════════
 def register_callbacks(app):
 
-    # ── 1. Switch tampilan panel berdasarkan tab aktif ─────────────────────
-    @app.callback(
-        Output("tabel-drv", "style"),
-        Output("tabel-con", "style"),
-        Output("tabel-cal", "style"),
-        Input("tabel-tabs", "value"),
-        prevent_initial_call=True,
-    )
-    def switch_tab(tab):
-        show = dict(display="block")
-        hide = dict(display="none")
-        if tab == "drv": return show, hide, hide
-        if tab == "con": return hide, show, hide
-        return hide, hide, show
-
-    # ── 2. Sinkronisasi tahun → store-season (allow_duplicate) ────────────
+    # ── 1. Sinkronisasi tahun → store-season (allow_duplicate) ────────────
     @app.callback(
         Output("store-season", "data", allow_duplicate=True),
         Input("tbl-year-filter", "value"),
@@ -213,8 +246,7 @@ def register_callbacks(app):
             return int(year)
         return no_update
 
-    # ── 3. Update opsi dropdown driver & constructor saat tahun berubah ────
-    #    Juga reset value filter driver & constructor
+    # ── 2. Update opsi dropdown driver & constructor saat tahun berubah ────
     @app.callback(
         Output("tbl-drv-filter", "options"),
         Output("tbl-drv-filter", "value"),
@@ -235,123 +267,143 @@ def register_callbacks(app):
                     for c in sorted(df["constructor"].dropna().unique())]
         return drv_opts, None, con_opts, None
 
-    # ── 4. Render konten Driver Standings ──────────────────────────────────
+    # ── 3. Render Konten Tab Aktif ─────────────────────────────────────────
     @app.callback(
-        Output("tbl-drv-content", "children"),
-        Output("store-tabel-data", "data"),
-        Input("tbl-year-filter",  "value"),
-        Input("tbl-drv-filter",   "value"),
-        Input("tbl-con-filter",   "value"),
-    )
-    def render_driver_tab(year, drv_filter, con_filter):
-        if not year:
-            return empty_state("Pilih tahun terlebih dahulu.", ""), []
-        df_r = get_analytics(int(year)).copy()
-        if df_r.empty:
-            return empty_state("Tidak ada data driver.", f"Season {year} belum tersedia."), []
-
-        # Terapkan filter driver
-        if drv_filter:
-            df_r = df_r[df_r["driver_name"].isin(
-                drv_filter if isinstance(drv_filter, list) else [drv_filter])]
-
-        # Terapkan filter konstruktor
-        if con_filter:
-            df_r = df_r[df_r["constructor"].isin(
-                con_filter if isinstance(con_filter, list) else [con_filter])]
-
-        if df_r.empty:
-            return empty_state("Tidak ada data.", "Coba ubah filter pembalap/konstruktor."), []
-
-        result = _build_driver_rows(df_r)
-        if not result:
-            return empty_state("Tidak ada data.", ""), []
-        drw, lat = result
-
-        content = html.Div([
-            html.Div(f"{len(lat)} pembalap · Season {year}",
-                style=dict(fontSize="11px", color=C["muted"],
-                           marginBottom="10px", fontFamily=F)),
-            card(html.Div([
-                html.Table([
-                    tbl_hdr("Pos", "Pembalap", "Tim", "Nat", "Pts",
-                            "W", "Pod", "Pole", "FL", "DNF"),
-                    html.Tbody(drw),
-                ], style=dict(width="100%", borderCollapse="collapse")),
-            ], style=dict(overflowX="auto", overflowY="auto", maxHeight="550px"))),
-        ])
-        return content, lat.to_dict("records")
-
-    # ── 5. Render konten Constructor Standings ─────────────────────────────
-    @app.callback(
-        Output("tbl-con-content", "children"),
+        Output("tab-content", "children"),
+        Input("tabel-tabs", "value"),
         Input("tbl-year-filter", "value"),
-        Input("tbl-con-filter",  "value"),
+        Input("tbl-drv-filter", "value"),
+        Input("tbl-con-filter", "value"),
     )
-    def render_constructor_tab(year, con_filter):
+    def render_active_tab(tab, year, drv_filter, con_filter):
         if not year:
             return empty_state("Pilih tahun terlebih dahulu.", "")
-        dc   = get_constructor_season(int(year)).copy()
-        df_r = get_analytics(int(year)).copy()
+            
+        y = int(year)
 
-        if dc.empty:
-            return empty_state("Tidak ada data konstruktor.", f"Season {year} belum tersedia.")
+        if tab == "drv":
+            df_r = get_analytics(y).copy()
+            if df_r.empty:
+                return empty_state("Tidak ada data driver.", f"Season {y} belum tersedia.")
+            if drv_filter:
+                df_r = df_r[df_r["driver_name"].isin(
+                    drv_filter if isinstance(drv_filter, list) else [drv_filter])]
+            if con_filter:
+                df_r = df_r[df_r["constructor"].isin(
+                    con_filter if isinstance(con_filter, list) else [con_filter])]
+            if df_r.empty:
+                return empty_state("Tidak ada data.", "Coba ubah filter pembalap/konstruktor.")
+            result = _build_driver_rows(df_r)
+            if not result:
+                return empty_state("Tidak ada data.", "")
+            drw, lat = result
+            return html.Div([
+                html.Div(f"{len(lat)} pembalap · Season {y}",
+                    style=dict(fontSize="11px", color=C["muted"],
+                               marginBottom="10px", fontFamily=F)),
+                card(html.Div([
+                    html.Table([
+                        tbl_hdr("Pos", "Pembalap", "Tim", "Nat", "Pts",
+                                "W", "Pod", "Pole", "FL", "DNF"),
+                        html.Tbody(drw),
+                    ], style=dict(width="100%", borderCollapse="collapse")),
+                ], style=dict(overflowX="auto", overflowY="auto", maxHeight="550px"))),
+            ])
 
-        # Terapkan filter konstruktor
-        if con_filter:
-            flt = con_filter if isinstance(con_filter, list) else [con_filter]
-            dc   = dc[dc["constructor"].isin(flt)]
-            df_r = df_r[df_r["constructor"].isin(flt)]
+        elif tab == "con":
+            dc   = get_constructor_season(y).copy()
+            df_r = get_analytics(y).copy()
+            if dc.empty:
+                return empty_state("Tidak ada data konstruktor.", f"Season {y} belum tersedia.")
+            if con_filter:
+                flt = con_filter if isinstance(con_filter, list) else [con_filter]
+                dc   = dc[dc["constructor"].isin(flt)]
+                df_r = df_r[df_r["constructor"].isin(flt)]
+            crw = _build_constructor_rows(dc, df_r)
+            if not crw:
+                return empty_state("Tidak ada data.", "Coba ubah filter konstruktor.")
+            return html.Div([
+                html.Div(f"{len(dc)} konstruktor · Season {y}",
+                    style=dict(fontSize="11px", color=C["muted"],
+                               marginBottom="10px", fontFamily=F)),
+                card(html.Table([
+                    tbl_hdr("Pos", "Konstruktor", "Pembalap", "Poin",
+                            "Menang", "Podium", "Speed"),
+                    html.Tbody(crw),
+                ], style=dict(width="100%", borderCollapse="collapse"))),
+            ])
 
-        crw = _build_constructor_rows(dc, df_r)
-        if not crw:
-            return empty_state("Tidak ada data.", "Coba ubah filter konstruktor.")
+        elif tab == "cal":
+            cal = get_calendar()
+            cal_s = (cal[cal["season"] == y].sort_values("round")
+                     .reset_index(drop=True)) if not cal.empty else pd.DataFrame()
+            if cal_s.empty:
+                return empty_state("Tidak ada kalender.", f"Season {y} tidak ditemukan.")
+            has_speed = cal_s["avg_speed_kph"].apply(_is_valid_speed).any() \
+                        if "avg_speed_kph" in cal_s.columns else False
+            cal_rows = _build_calendar_rows(cal_s)
+            n_done   = int((cal_s["status"] == "SELESAI").sum())
+            n_total  = len(cal_s)
+            return html.Div([
+                info_box("⚠️ Data kecepatan tidak tersedia untuk musim ini.", C["orange"])
+                    if not has_speed else html.Div(),
+                html.Div(f"{n_done} selesai dari {n_total} race · Season {y}",
+                    style=dict(fontSize="11px", color=C["muted"],
+                               marginBottom="10px", fontFamily=F)),
+                card(html.Div([
+                    html.Table([
+                        tbl_hdr("Rd", "Tanggal", "Grand Prix", "Sirkuit",
+                                "Lap", "Pemenang", "Fastest Lap", "Speed", "Status"),
+                        html.Tbody(cal_rows),
+                    ], style=dict(width="100%", borderCollapse="collapse")),
+                ], style=dict(overflowX="auto", overflowY="auto", maxHeight="550px"))),
+            ])
 
-        return html.Div([
-            html.Div(f"{len(dc)} konstruktor · Season {year}",
-                style=dict(fontSize="11px", color=C["muted"],
-                           marginBottom="10px", fontFamily=F)),
-            card(html.Table([
-                tbl_hdr("Pos", "Konstruktor", "Pembalap", "Poin",
-                        "Menang", "Podium", "Speed"),
-                html.Tbody(crw),
-            ], style=dict(width="100%", borderCollapse="collapse"))),
-        ])
+        elif tab == "qua":
+            qua = get_qualifying(y)
+            if qua.empty:
+                return empty_state("Tidak ada data kualifikasi.", f"Season {y} belum tersedia.")
+            if drv_filter:
+                flt = drv_filter if isinstance(drv_filter, list) else [drv_filter]
+                qua = qua[qua["driver_name"].isin(flt)]
+            if con_filter:
+                flt = con_filter if isinstance(con_filter, list) else [con_filter]
+                qua = qua[qua["constructor"].isin(flt)]
+            if qua.empty:
+                return empty_state("Tidak ada data.", "Coba ubah filter.")
+            qua_rows = _build_qualifying_rows(qua)
+            return html.Div([
+                html.Div(f"{len(qua)} rekor kualifikasi · Season {y}",
+                    style=dict(fontSize="11px", color=C["muted"],
+                               marginBottom="10px", fontFamily=F)),
+                card(html.Div([
+                    html.Table([
+                        tbl_hdr("Rd", "Grand Prix", "Pos", "Pembalap", "Q1", "Q2", "Q3"),
+                        html.Tbody(qua_rows),
+                    ], style=dict(width="100%", borderCollapse="collapse")),
+                ], style=dict(overflowX="auto", overflowY="auto", maxHeight="550px"))),
+            ])
 
-    # ── 6. Render konten Race Calendar ─────────────────────────────────────
-    @app.callback(
-        Output("tbl-cal-content", "children"),
-        Input("tbl-year-filter", "value"),
-    )
-    def render_calendar_tab(year):
-        if not year:
-            return empty_state("Pilih tahun terlebih dahulu.", "")
-        cal = get_calendar()
-        cal_s = (cal[cal["season"] == int(year)].sort_values("round")
-                 .reset_index(drop=True)) if not cal.empty else pd.DataFrame()
+        elif tab == "pit":
+            pit = get_pit_stops(y)
+            if pit.empty:
+                return empty_state("Tidak ada data pit stop.", f"Season {y} belum tersedia.")
+            if drv_filter:
+                flt = drv_filter if isinstance(drv_filter, list) else [drv_filter]
+                pit = pit[pit["driver_name"].isin(flt)]
+            if pit.empty:
+                return empty_state("Tidak ada data.", "Coba ubah filter.")
+            pit_rows = _build_pitstop_rows(pit)
+            return html.Div([
+                html.Div(f"{len(pit)} rekor pit stop · Season {y}",
+                    style=dict(fontSize="11px", color=C["muted"],
+                               marginBottom="10px", fontFamily=F)),
+                card(html.Div([
+                    html.Table([
+                        tbl_hdr("Rd", "Grand Prix", "Pembalap", "Stop", "Lap", "Time", "Duration (s)"),
+                        html.Tbody(pit_rows),
+                    ], style=dict(width="100%", borderCollapse="collapse")),
+                ], style=dict(overflowX="auto", overflowY="auto", maxHeight="550px"))),
+            ])
 
-        if cal_s.empty:
-            return empty_state("Tidak ada kalender.", f"Season {year} tidak ditemukan.")
-
-        # Deteksi otomatis ketersediaan data kecepatan
-        has_speed = cal_s["avg_speed_kph"].apply(_is_valid_speed).any() \
-                    if "avg_speed_kph" in cal_s.columns else False
-
-        cal_rows = _build_calendar_rows(cal_s)
-        n_done   = int((cal_s["status"] == "SELESAI").sum())
-        n_total  = len(cal_s)
-
-        return html.Div([
-            info_box("⚠️ Data kecepatan tidak tersedia untuk musim ini.", C["orange"])
-                if not has_speed else html.Div(),
-            html.Div(f"{n_done} selesai dari {n_total} race · Season {year}",
-                style=dict(fontSize="11px", color=C["muted"],
-                           marginBottom="10px", fontFamily=F)),
-            card(html.Div([
-                html.Table([
-                    tbl_hdr("Rd", "Tanggal", "Grand Prix", "Sirkuit",
-                            "Lap", "Pemenang", "Fastest Lap", "Speed", "Status"),
-                    html.Tbody(cal_rows),
-                ], style=dict(width="100%", borderCollapse="collapse")),
-            ], style=dict(overflowX="auto", overflowY="auto", maxHeight="550px"))),
-        ])
+        return empty_state("Tab tidak ditemukan.", "")

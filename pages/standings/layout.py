@@ -140,35 +140,18 @@ def layout(season: int, flt: dict):
             background=C["grid"] if i % 2 == 0 else C["surface"])))
 
     # ── Constructor Championship Progression (Line Chart) ────────────────────
-    from services.data_service import get_constructor_progression
-    prog_df = get_constructor_progression(season)
+    from layout.components import btn_toggle
 
-    fig_prog = go.Figure()
-    if not prog_df.empty:
-        for con in prog_df["constructor"].unique():
-            sub = prog_df[prog_df["constructor"] == con].sort_values("round")
-            fig_prog.add_trace(go.Scatter(
-                x=sub["round"],
-                y=sub["cumulative_points"],
-                mode="lines+markers",
-                name=con,
-                line=dict(color=tc(con), width=2.5),
-                marker=dict(size=5, color=tc(con)),
-                hovertemplate=(f"<b>{con}</b><br>Round %{{x}}<br>"
-                               "Poin: <b>%{y:.0f}</b><extra></extra>")
-            ))
-        fig_prog.update_layout(
-            **CL, height=320,
-            xaxis=ax("Round", dtick=1),
-            yaxis=ax("Poin Kumulatif"),
-            legend=dict(
-                orientation="h", y=-0.25, x=0,
-                bgcolor="rgba(0,0,0,0)",
-                font=dict(size=9, color=C["muted"])
-            ),
-            margin=dict(l=40, r=20, t=10, b=60),
-            hovermode="x unified",
-        )
+    con_prog_col = html.Div([
+        html.Div([
+            btn_toggle("btn-stnd-con-top5",   "Top 5",  True),
+            btn_toggle("btn-stnd-con-top10",  "Top 10", False),
+            btn_toggle("btn-stnd-con-topall", "Semua",  False),
+        ], style=dict(display="flex", gap="6px", marginBottom="10px")),
+        dcc.Graph(id="graph-stnd-con-prog", config=dict(displayModeBar=False)),
+        dcc.Store(id="store-stnd-con-topn", data=5),
+        dcc.Store(id="store-stnd-con-prog-data", data=season)
+    ])
 
     # ── Treemap Konstruktor ────────────────────────────────────────────────────
     import plotly.express as px
@@ -223,11 +206,7 @@ def layout(season: int, flt: dict):
         ], className="g-3"),
 
         sec("Progres Poin Konstruktor", "lucide:trending-up"),
-        card(dcc.Graph(figure=fig_prog, config=dict(displayModeBar=False)))
-        if not prog_df.empty else
-        html.Div("Data progres konstruktor belum tersedia.",
-            style=dict(color=C["muted"], fontSize="12px", fontFamily=F,
-                       padding="20px", textAlign="center")),
+        card(con_prog_col),
 
         sec("Distribusi Poin Konstruktor (Treemap)", "lucide:layout-grid"),
         card(dcc.Graph(figure=fig_tree, config=dict(displayModeBar=False)))

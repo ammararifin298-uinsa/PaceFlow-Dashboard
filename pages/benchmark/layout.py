@@ -114,7 +114,7 @@ def _build_charts(bench):
         annotation_font_color=C["red"], annotation_font_size=10)
     fig_sp.update_layout(
         **CL, height=260, showlegend=False,
-        yaxis=ax("Speedup (x lebih cepat)"),
+        yaxis={**ax("Speedup (x lebih cepat)"), "range": [0, max_sp * 1.25]},
         xaxis=ax(angle=-15),
         margin=dict(l=60, r=20, t=20, b=70)
     )

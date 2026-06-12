@@ -52,11 +52,3 @@ DEFAULT_TEAM_COLOR = "#888899"
 # ── Season defaults ───────────────────────────────────────────────────────────
 DEFAULT_SEASON = 2024
 
-# ── SUS Score thresholds (Bangor et al., 2008) ────────────────────────────────
-SUS_THRESHOLDS = {
-    "Excellent":    (90, 100, "#27AE60"),
-    "Good":         (80,  89, "#2ECC71"),
-    "Acceptable":   (68,  79, "#F39C12"),
-    "Marginal":     (51,  67, "#E67E22"),
-    "Unacceptable": ( 0,  50, "#E74C3C"),
-}

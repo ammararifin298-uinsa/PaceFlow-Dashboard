@@ -9,7 +9,7 @@ from dash import Input, Output, State, callback_context, no_update
 import plotly.graph_objects as go
 from dash import html, dcc
 import dash_bootstrap_components as dbc
-from layout.components import tbl_hdr, safe_col, card, sec
+from layout.components import tbl_hdr, safe_col, card, sec, ico
 from layout.design_tokens import C, F, CL, ax, rgba, tc
 from services.data_service import get_analytics, get_driver_season_summary
 
@@ -89,7 +89,7 @@ def register_callbacks(app):
 
         if len(pairs) < 2:
             msg = html.Div([
-                ico_("lucide:users", 36, C["border"]),
+                ico("lucide:users", 36, C["border"]),
                 html.Div("Pilih minimal 2 pembalap untuk membandingkan",
                     style=dict(color=C["muted"], fontSize="13px",
                                fontFamily=F, marginTop="12px")),
@@ -194,15 +194,17 @@ def register_callbacks(app):
 
         # ── Gauge consistency score ───────────────────────────────────────────
         gauge_cols = []
+        max_avg_pts = max((s["avg_pts"] for s in stats), default=1) or 1
         for i, s in enumerate(stats):
             score = _get_consistency(s["driver"], s["season"])
             color = DRIVER_COLORS[i % len(DRIVER_COLORS)]
             if score is None:
-                # Fallback hitung dari stats
+                # Fix T-4: gunakan rumus yang sama dengan SQL v_driver_season_summary
+                # (podium_rate*0.4) + ((100-dnf_rate)*0.3) + (avg_pts/max_avg_pts*30)
                 score = round(
                     s["pod_rate"] * 0.4 +
                     (100 - s["dnf_rate"]) * 0.3 +
-                    min(s["avg_pts"] * 2, 30),
+                    (s["avg_pts"] / max_avg_pts * 30),
                     1)
             score = max(0.0, min(100.0, score))
 
@@ -253,8 +255,4 @@ def register_callbacks(app):
         gauges_row = dbc.Row(gauge_cols, className="g-3") if gauge_cols else html.Div()
 
         return rf, bf, tbl, gauges_row
-
-
-def ico_(name, size=16, color=None):
-    from dash_iconify import DashIconify
-    return DashIconify(icon=name, width=size, height=size, color=color or C["muted"])
+

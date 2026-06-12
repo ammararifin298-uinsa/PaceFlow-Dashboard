@@ -109,7 +109,7 @@ def get_calendar() -> pd.DataFrame:
     """
     df = _load()
     races   = df[['season', 'round', 'race_name', 'race_date',
-                  'circuit_name', 'city', 'country']].drop_duplicates()
+                  'circuit_name', 'city', 'country', 'lat', 'lng']].drop_duplicates()
     winners = df[df['position'] == 1][[
         'season', 'round', 'driver_name', 'constructor',
         'laps', 'fastest_lap_time', 'avg_speed_kph'
@@ -129,3 +129,24 @@ def get_calendar() -> pd.DataFrame:
         lambda x: str(x) if x > 0 else '—')
 
     return cal.sort_values(['season', 'round']).reset_index(drop=True)
+
+def get_qualifying(season: int) -> pd.DataFrame:
+    try:
+        path = os.path.join(os.path.dirname(__file__), "Data", "qualifying.csv")
+        df = pd.read_csv(path)
+        return df[df["season"] == season].sort_values(["round", "position"]).reset_index(drop=True)
+    except Exception:
+        return pd.DataFrame()
+
+def get_pit_stops(season: int) -> pd.DataFrame:
+    try:
+        path = os.path.join(os.path.dirname(__file__), "Data", "pit_stops.csv")
+        df = pd.read_csv(path)
+        # Note: driver_name is not in pit_stops.csv! We need to join it or just use driver_id
+        # Actually, let's load drivers.csv and join if needed.
+        drivers_path = os.path.join(os.path.dirname(__file__), "Data", "drivers.csv")
+        drivers = pd.read_csv(drivers_path)[["driver_id", "driver_name"]]
+        df = df.merge(drivers, on="driver_id", how="left")
+        return df[df["season"] == season].sort_values(["round", "driver_name", "stop"]).reset_index(drop=True)
+    except Exception:
+        return pd.DataFrame()

@@ -178,20 +178,20 @@ SELECT
 
     -- FIX: is_finished — +1 Lap dst bukan DNF
     CASE WHEN rr.status IN (
-        'Finished','+1 Lap','+2 Laps','+3 Laps','+4 Laps',
+        'Finished','Lapped','+1 Lap','+2 Laps','+3 Laps','+4 Laps',
         '+5 Laps','+6 Laps','+7 Laps','+8 Laps','+9 Laps','+10 Laps'
     ) THEN TRUE ELSE FALSE END                          AS is_finished,
 
     -- FIX: is_dnf — hanya status yang benar-benar DNF
     CASE WHEN rr.status NOT IN (
-        'Finished','+1 Lap','+2 Laps','+3 Laps','+4 Laps',
+        'Finished','Lapped','+1 Lap','+2 Laps','+3 Laps','+4 Laps',
         '+5 Laps','+6 Laps','+7 Laps','+8 Laps','+9 Laps','+10 Laps'
     ) THEN TRUE ELSE FALSE END                          AS is_dnf,
 
-    -- Standings dari driver_standings
-    ds.points                                           AS cumulative_points,
+    -- Standings dari driver_standings (nullable — Fix T-1)
+    COALESCE(ds.points, 0)                              AS cumulative_points,
     ds.position                                         AS championship_pos,
-    ds.wins                                             AS cumulative_wins,
+    COALESCE(ds.wins, 0)                               AS cumulative_wins,
 
     -- FIX: season_cumulative_points — tidak bocor lintas season
     SUM(rr.points) OVER (
@@ -212,7 +212,7 @@ SELECT
 FROM race_results rr
 INNER JOIN races rc
     ON rr.season = rc.season AND rr.round = rc.round
-INNER JOIN driver_standings ds
+LEFT JOIN driver_standings ds    -- Fix T-1: was INNER JOIN, caused data loss when standings incomplete
     ON rr.season = ds.season AND rr.round = ds.round AND rr.driver_id = ds.driver_id
 LEFT JOIN (
     SELECT season, round, driver_id,
@@ -233,18 +233,24 @@ LEFT JOIN qualifying q
 
 -- View 1: Constructor per season
 CREATE OR REPLACE VIEW v_constructor_season AS
+WITH cons_points AS (
+    SELECT season, constructor_id, MAX(points) as final_points
+    FROM constructor_standings
+    GROUP BY season, constructor_id
+)
 SELECT
-    season,
-    constructor,
-    constructor_id,
-    COUNT(*) FILTER (WHERE is_win)              AS total_wins,
-    COUNT(*) FILTER (WHERE is_podium)           AS total_podiums,
-    SUM(race_points)                            AS total_points,
-    ROUND(AVG(avg_speed_kph)::NUMERIC, 3)       AS avg_speed_kph,
-    ROUND(AVG(avg_pit_duration_s)::NUMERIC, 3)  AS avg_pit_s
-FROM v_f1_analytics
-GROUP BY season, constructor, constructor_id
-ORDER BY season, total_points DESC;
+    v.season,
+    v.constructor,
+    v.constructor_id,
+    COUNT(*) FILTER (WHERE v.is_win)              AS total_wins,
+    COUNT(*) FILTER (WHERE v.is_podium)           AS total_podiums,
+    COALESCE(MAX(cp.final_points), 0)             AS total_points,
+    ROUND(AVG(v.avg_speed_kph)::NUMERIC, 3)       AS avg_speed_kph,
+    ROUND(AVG(v.avg_pit_duration_s)::NUMERIC, 3)  AS avg_pit_s
+FROM v_f1_analytics v
+LEFT JOIN cons_points cp ON v.season = cp.season AND v.constructor_id = cp.constructor_id
+GROUP BY v.season, v.constructor, v.constructor_id
+ORDER BY v.season, total_points DESC;
 
 -- View 2: KPI summary — FIX leader_constructor, is_dnf, latest_standing
 CREATE OR REPLACE VIEW v_kpi_summary AS
@@ -286,51 +292,77 @@ GROUP BY v.season, r.driver_name, r.points, r.constructor, sr.total_races_schedu
 
 -- View 3: Driver season summary — pure SQL agregasi, tidak perlu Pandas
 CREATE OR REPLACE VIEW v_driver_season_summary AS
+WITH latest_standing AS (
+    SELECT DISTINCT ON (season, driver_id)
+        season, driver_id, constructor, constructor_id,
+        championship_pos, cumulative_points, cumulative_wins
+    FROM v_f1_analytics
+    ORDER BY season, driver_id, round DESC
+),
+agg AS (
+    SELECT
+        v.season,
+        v.driver_id,
+        v.driver_name,
+        v.driver_nat,
+        v.driver_code,
+        COUNT(*)                                                        AS total_races,
+        COUNT(*) FILTER (WHERE v.is_win)                                  AS total_wins,
+        COUNT(*) FILTER (WHERE v.is_podium)                               AS total_podiums,
+        COUNT(*) FILTER (WHERE v.is_dnf)                                  AS total_dnf,
+        COUNT(*) FILTER (WHERE v.qualifying_pos = 1)                      AS total_poles,
+        COUNT(*) FILTER (WHERE v.fastest_lap_rank = 1)                    AS total_fl,
+        -- Rates
+        ROUND(COUNT(*) FILTER (WHERE v.is_win)::NUMERIC
+              / NULLIF(COUNT(*), 0) * 100, 1)                           AS win_rate,
+        ROUND(COUNT(*) FILTER (WHERE v.is_podium)::NUMERIC
+              / NULLIF(COUNT(*), 0) * 100, 1)                           AS podium_rate,
+        ROUND(COUNT(*) FILTER (WHERE v.is_dnf)::NUMERIC
+              / NULLIF(COUNT(*), 0) * 100, 1)                           AS dnf_rate,
+        ROUND(COUNT(*) FILTER (WHERE v.qualifying_pos = 1)::NUMERIC
+              / NULLIF(COUNT(*), 0) * 100, 1)                           AS pole_rate,
+        ROUND(COUNT(*) FILTER (WHERE v.fastest_lap_rank = 1)::NUMERIC
+              / NULLIF(COUNT(*), 0) * 100, 1)                           AS fl_rate
+    FROM v_f1_analytics v
+    GROUP BY v.season, v.driver_id, v.driver_name, v.driver_nat, v.driver_code
+)
 SELECT
-    season,
-    driver_id,
-    driver_name,
-    driver_nat,
-    driver_code,
-    constructor,
-    constructor_id,
-    MAX(championship_pos)                                           AS championship_pos,
-    MAX(cumulative_points)                                          AS cumulative_points,
-    MAX(cumulative_wins)                                            AS cumulative_wins,
-    SUM(race_points)                                                AS total_points,
-    COUNT(*)                                                        AS total_races,
-    ROUND(AVG(race_points)::NUMERIC, 2)                             AS avg_points_per_race,
-    COUNT(*) FILTER (WHERE is_win)                                  AS total_wins,
-    COUNT(*) FILTER (WHERE is_podium)                               AS total_podiums,
-    COUNT(*) FILTER (WHERE is_dnf)                                  AS total_dnf,
-    COUNT(*) FILTER (WHERE qualifying_pos = 1)                      AS total_poles,
-    COUNT(*) FILTER (WHERE fastest_lap_rank = 1)                    AS total_fl,
-    -- Rates — tidak perlu hitung di Python lagi
-    ROUND(COUNT(*) FILTER (WHERE is_win)::NUMERIC
-          / NULLIF(COUNT(*), 0) * 100, 1)                           AS win_rate,
-    ROUND(COUNT(*) FILTER (WHERE is_podium)::NUMERIC
-          / NULLIF(COUNT(*), 0) * 100, 1)                           AS podium_rate,
-    ROUND(COUNT(*) FILTER (WHERE is_dnf)::NUMERIC
-          / NULLIF(COUNT(*), 0) * 100, 1)                           AS dnf_rate,
-    ROUND(COUNT(*) FILTER (WHERE qualifying_pos = 1)::NUMERIC
-          / NULLIF(COUNT(*), 0) * 100, 1)                           AS pole_rate,
-    ROUND(COUNT(*) FILTER (WHERE fastest_lap_rank = 1)::NUMERIC
-          / NULLIF(COUNT(*), 0) * 100, 1)                           AS fl_rate,
-    -- Consistency Score — metrik unik PaceFlow (0-100)
+    a.season,
+    a.driver_id,
+    a.driver_name,
+    a.driver_nat,
+    a.driver_code,
+    ls.constructor,
+    ls.constructor_id,
+    ls.championship_pos,
+    ls.cumulative_points,
+    ls.cumulative_wins,
+    ls.cumulative_points                                                AS total_points,
+    a.total_races,
+    ROUND((ls.cumulative_points / NULLIF(a.total_races, 0))::NUMERIC, 2) AS avg_points_per_race,
+    a.total_wins,
+    a.total_podiums,
+    a.total_dnf,
+    a.total_poles,
+    a.total_fl,
+    a.win_rate,
+    a.podium_rate,
+    a.dnf_rate,
+    a.pole_rate,
+    a.fl_rate,
     ROUND(
         (
-            COALESCE(COUNT(*) FILTER (WHERE is_podium)::NUMERIC
-                / NULLIF(COUNT(*), 0) * 40, 0) +
-            COALESCE((1 - COUNT(*) FILTER (WHERE is_dnf)::NUMERIC
-                / NULLIF(COUNT(*), 0)) * 30, 0) +
-            COALESCE(AVG(race_points)::NUMERIC
-                / NULLIF(MAX(AVG(race_points)) OVER (PARTITION BY season), 0) * 30, 0)
+            (a.podium_rate / 100 * 40) +
+            ((100 - a.dnf_rate) / 100 * 30) +
+            COALESCE(
+                (ls.cumulative_points / NULLIF(a.total_races, 0))::NUMERIC
+                / NULLIF(MAX(ls.cumulative_points / NULLIF(a.total_races, 0)) OVER (PARTITION BY a.season), 0) * 30
+            , 0)
         )::NUMERIC, 1
-    )                                                               AS consistency_score
-FROM v_f1_analytics
-GROUP BY season, driver_id, driver_name, driver_nat, driver_code,
-         constructor, constructor_id
-ORDER BY season, championship_pos;
+    )                                                                   AS consistency_score
+FROM agg a
+JOIN latest_standing ls ON a.season = ls.season AND a.driver_id = ls.driver_id
+ORDER BY a.season, ls.championship_pos;
 
 -- View 4: Championship progression — per round per driver
 CREATE OR REPLACE VIEW v_championship_progression AS
@@ -379,7 +411,7 @@ SELECT
           / SUM(COUNT(*)) OVER (PARTITION BY season) * 100, 1) AS percentage
 FROM race_results
 WHERE status NOT IN (
-    'Finished','+1 Lap','+2 Laps','+3 Laps','+4 Laps',
+    'Finished','Lapped','+1 Lap','+2 Laps','+3 Laps','+4 Laps',
     '+5 Laps','+6 Laps','+7 Laps','+8 Laps','+9 Laps','+10 Laps'
 )
 GROUP BY season, status

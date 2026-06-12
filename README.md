@@ -20,8 +20,6 @@
 | ⚙️ Settings | Konfigurasi preferensi dashboard |
 | ℹ️ Tentang | Informasi tim, arsitektur, teknologi, dan referensi |
 
-> **Catatan:** Evaluasi usability menggunakan System Usability Scale (SUS) dijalankan secara terpisah melalui `sus_tool.py`. Lihat bagian [Evaluasi SUS](#evaluasi-sus-terpisah) di bawah.
-
 ---
 
 ## Prasyarat
@@ -29,9 +27,13 @@
 Pastikan sudah terinstall di laptop:
 
 - Python 3.10 atau lebih baru → https://www.python.org/downloads/
+- Git → https://git-scm.com/downloads
+
+**Opsional** (hanya jika ingin mode PostgreSQL penuh):
 - PostgreSQL 14 atau lebih baru → https://www.postgresql.org/download/
 - pgAdmin 4 → https://www.pgadmin.org/download/
-- Git → https://git-scm.com/downloads
+
+> **Jika hanya ingin mencoba dashboard, tidak perlu install PostgreSQL** — gunakan `setup.bat` dan pilih Demo Mode.
 
 ---
 
@@ -97,7 +99,7 @@ F1_DATA_DIR=./Data
 
 ### STEP 6 — Siapkan Data CSV
 
-Buat folder `Data` di dalam folder project, lalu masukkan 5 file CSV berikut:
+Buat folder `Data` di dalam folder project, lalu masukkan file CSV berikut:
 
 ```
 PaceFlow-Dashboard/
@@ -105,18 +107,24 @@ PaceFlow-Dashboard/
     ├── races.csv
     ├── race_results.csv
     ├── driver_standings.csv
+    ├── constructor_standings.csv
     ├── pit_stops.csv
-    └── qualifying.csv
+    ├── qualifying.csv
+    ├── drivers.csv
+    └── circuits.csv
 ```
 
-> Dataset dapat diunduh di Kaggle: **Formula 1 Live Tracker 2024-2026**  
-> Link: https://www.kaggle.com/datasets
+> Dataset dapat diunduh di Kaggle: **Formula 1 World Championship (1950–2024)**
 
-### STEP 7 — Jalankan ETL (Load CSV ke Database)
+### STEP 7 — Jalankan ETL (Load CSV ke Database + Buat Views)
 
 ```
 python etl_load.py
 ```
+
+ETL secara otomatis:
+1. Load semua CSV ke PostgreSQL
+2. **Membuat semua SQL Views** (tidak perlu buka pgAdmin lagi)
 
 Output yang diharapkan:
 
@@ -129,24 +137,19 @@ Dropping existing views and tables...
 Loading CSV data...
   [OK] races                     →    70 rows loaded
   [OK] race_results              →  1024 rows loaded
-  [OK] driver_standings          →  1083 rows loaded
-  [OK] pit_stops                 →  1726 rows loaded
-  [OK] qualifying                →  1021 rows loaded
+  ...
 Creating views...
-  [OK] Views created.
+  [OK] v_f1_analytics
+  [OK] v_constructor_season
+  [OK] v_kpi_summary
+  [OK] v_driver_season_summary
+  [OK] v_championship_progression
+  [OK] v_constructor_progression
+  [OK] v_dnf_causes
 ✅ ETL selesai. Jalankan: python app.py
 ```
 
-### STEP 8 — Buat SQL Views di pgAdmin
-
-1. Buka **pgAdmin**
-2. Klik database `f1_analytics`
-3. Klik **Tools** → **Query Tool**
-4. Buka file `schema_and_view.sql` dari folder project
-5. Klik tombol **Execute / Run (F5)**
-6. Pastikan muncul pesan `CREATE VIEW` tanpa error
-
-### STEP 9 — Jalankan Dashboard
+### STEP 8 — Jalankan Dashboard
 
 ```
 python app.py
@@ -162,14 +165,24 @@ Dashboard siap digunakan.
 
 ---
 
+## 🚀 Cara Cepat — Satu Klik (Windows)
+
+Cukup **double-click `setup.bat`** — script akan otomatis:
+1. Cek Python tersedia
+2. Buat `.env` dari template (default: Demo Mode)
+3. Install semua dependencies
+4. Jalankan dashboard
+
+---
+
 ## Cara Cepat — Mode Demo (Tanpa PostgreSQL)
 
-Jika tidak ingin setup PostgreSQL, gunakan mode demo yang menggunakan data yang sudah di-cache:
+Jika tidak ingin setup PostgreSQL, gunakan mode demo:
 
-**1. Buka file `.env`**, ubah baris ini:
+**1. Salin template `.env`:**
 
 ```
-F1_DEMO_MODE=true
+copy .env.example .env
 ```
 
 **2. Jalankan langsung:**
@@ -182,37 +195,7 @@ Buka browser di `http://localhost:8050` — selesai, tidak perlu database.
 
 > Mode demo menggunakan data real dari file `demo_cache.csv` yang sudah ada di repo.
 
----
 
-## Evaluasi SUS (Terpisah)
-
-Pengukuran usability menggunakan **System Usability Scale (SUS)** dijalankan sebagai tool terpisah, **tidak terintegrasi ke dalam dashboard utama** (`app.py`).
-
-### Cara Menjalankan SUS
-
-```
-python sus_tool.py
-```
-
-Tool ini akan:
-- Menampilkan 10 pernyataan kuesioner SUS standar (Brooke, 1996)
-- Menerima input skor 1–5 dari responden
-- Menghitung skor SUS akhir (0–100)
-- Menampilkan interpretasi berdasarkan threshold Bangor et al. (2008)
-
-### Interpretasi Skor SUS
-
-| Skor | Kategori |
-| --- | --- |
-| 90–100 | Excellent |
-| 80–89 | Good |
-| 68–79 | Acceptable |
-| 51–67 | Marginal |
-| 0–50 | Unacceptable |
-
-> SUS dijalankan terpisah agar pengumpulan data responden tidak bergantung pada koneksi database atau status server dashboard.
-
----
 
 ## Troubleshooting
 
@@ -259,30 +242,39 @@ app.run(debug=False, host="0.0.0.0", port=8051)
 
 ```
 PaceFlow-Dashboard/
-├── app.py                   # Presentation layer (Dash + Plotly)
-├── components/              # Komponen visual UI (charts, filters, dll)
-├── layout/                  # Layout utama dan sidebar navigasi
-├── pages/                   # Logika routing dan layout per halaman (9 halaman)
-├── services/                # Layer service untuk abstraksi data
-├── config.py                # Konfigurasi terpusat dan konstanta
-├── db.py                    # Database access layer (Repository Pattern)
-├── demo_data.py             # Data provider untuk mode demo
-├── etl_load.py              # ETL pipeline: CSV ke PostgreSQL
-├── benchmark.py             # Modul benchmark performa
-├── sus_tool.py              # Tool evaluasi SUS — dijalankan terpisah
-├── schema_and_view.sql      # DDL: CREATE TABLE, INDEX, dan VIEW
-├── demo_cache.csv           # Data cache untuk mode demo
-├── benchmark_results.json   # Hasil benchmark (auto-generated)
-├── benchmark_summary.csv    # Ringkasan benchmark untuk paper
+├── app.py                   # Entry point: layout utama, routing, global callbacks
+├── layout/                  # Design system: komponen, tokens, sidebar, graph utils
+├── pages/                   # 9 halaman: layout + callbacks per halaman
+│   ├── home/                # Beranda — championship progression
+│   ├── standings/           # Klasemen driver dan konstruktor
+│   ├── analytics/           # Pit stop, speed trend, qualifying scatter
+│   ├── h2h/                 # Head-to-Head radar chart (hingga 3 driver)
+│   ├── comparison/          # Perbandingan performa antar season
+│   ├── datatable/           # Tabel raw data dari SQL View
+│   ├── benchmark/           # Benchmark SQL View vs Pandas
+│   ├── settings/            # Konfigurasi preferensi
+│   └── about/               # Informasi proyek
+├── services/
+│   └── data_service.py      # Service layer: LRU cache, schema enforcement
+├── config.py                # Konfigurasi terpusat (env vars, team colors)
+├── db.py                    # DAL: parameterized queries via SQLAlchemy
+├── demo_data.py             # Data provider untuk mode demo (offline)
+├── etl_load.py              # ETL pipeline: CSV → PostgreSQL + create views
+├── schema_and_view.sql      # DDL: CREATE TABLE, INDEX, dan 6 SQL VIEW
+├── demo_cache.csv           # Data cache untuk mode demo (disertakan di repo)
 ├── requirements.txt         # Daftar dependencies Python
-├── .env.example             # Contoh konfigurasi (salin ke .env)
+├── setup.bat                # Script setup otomatis satu klik (Windows)
+├── .env.example             # Template konfigurasi (salin ke .env)
 ├── .gitignore               # File yang diabaikan Git
 └── Data/                    # Folder data CSV (tidak di-commit ke Git)
     ├── races.csv
     ├── race_results.csv
     ├── driver_standings.csv
+    ├── constructor_standings.csv
     ├── pit_stops.csv
-    └── qualifying.csv
+    ├── qualifying.csv
+    ├── drivers.csv
+    └── circuits.csv
 ```
 
 ---
@@ -294,45 +286,36 @@ PaceFlow-Dashboard/
 │  DATA LAYER — PostgreSQL                                    │
 │                                                             │
 │  races ──┐                                                  │
-│  race_results ──┬──► INNER JOIN ──► v_f1_analytics         │
-│  driver_standings ──┘               v_constructor_season    │
-│  pit_stops ──► agregasi             v_kpi_summary           │
-│  qualifying ──► LEFT JOIN                                   │
-│                                                             │
+│  race_results ──┬──► LEFT JOIN ──► v_f1_analytics           │
+│  driver_standings ──┘              v_constructor_season      │
+│  pit_stops ──► agregasi            v_kpi_summary             │
+│  qualifying ──► LEFT JOIN          v_driver_season_summary   │
+│                                    v_championship_progression│
 │  Index: season+round, driver_id, constructor_id             │
 └────────────────────────┬────────────────────────────────────┘
-                         │ SQLAlchemy (psycopg2 driver)
-                         │ lru_cache TTL = 600 detik
+                         │ SQLAlchemy (parameterized queries)
+                         │ LRU Cache (13 fungsi, TTL = 600 detik)
 ┌────────────────────────▼────────────────────────────────────┐
-│  MIDDLEWARE — db.py dan demo_data.py                        │
-│  Repository Pattern: app.py tidak menulis SQL secara langsung│
-│  Auto-fallback ke demo_data jika PostgreSQL tidak tersedia  │
+│  SERVICE LAYER — data_service.py                            │
+│  Single Source of Truth · enforce_schema() · invalidate()   │
+│  Auto-fallback ke demo_data.py jika PostgreSQL offline      │
 └────────────────────────┬────────────────────────────────────┘
                          │
 ┌────────────────────────▼────────────────────────────────────┐
 │  PRESENTATION LAYER — app.py (Dash + Plotly)                │
 │  Sidebar navigasi · Filter season · 9 halaman               │
-│  Export CSV · Benchmark chart                               │
-└─────────────────────────────────────────────────────────────┘
-
-┌─────────────────────────────────────────────────────────────┐
-│  EVALUASI USABILITY — sus_tool.py (Terpisah)                │
-│  Kuesioner SUS 10 item · Skor 0–100 · CLI-based             │
-│  Tidak bergantung pada database atau server dashboard       │
+│  Export CSV · Benchmark chart · Help modal                  │
 └─────────────────────────────────────────────────────────────┘
 ```
 
 **Prinsip:** Separation of Concerns (SoC) sesuai ISO/IEC 25010  
 Komputasi berat (JOIN, agregasi) dieksekusi di PostgreSQL.  
 Dash hanya bertugas merender data yang sudah matang.  
-Evaluasi SUS berjalan independen sebagai tool CLI terpisah.
 
 ---
 
 ## Referensi Akademis
 
-- Brooke, J. (1996). SUS: A quick and dirty usability scale. *Usability Evaluation in Industry*, 189(194), 4–7.
-- Bangor, A., Kortum, P. T., dan Miller, J. T. (2008). An empirical evaluation of the System Usability Scale. *International Journal of Human-Computer Interaction*, 24(6), 574–594.
 - Hevner, A. R., March, S. T., Park, J., dan Ram, S. (2004). Design science in information systems research. *MIS Quarterly*, 28(1), 75–105.
 - Kleppmann, M. (2017). *Designing Data-Intensive Applications*. O'Reilly Media.
 - ISO/IEC 25010:2011. Systems and software Quality Requirements and Evaluation (SQuaRE).

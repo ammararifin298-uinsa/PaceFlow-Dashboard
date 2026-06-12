@@ -2,11 +2,12 @@
 # pages/comparison/layout.py — Halaman Perbandingan Musim PaceFlow
 # Berisi: multi-select season, championship progression, DNF trend,
 #         WDC/WCC per season, gap tracker
+# Update: Top N toggle (Top5/10/Semua) + pakai global btn_toggle dari components
 # =============================================================================
 
 from dash import html, dcc
 import dash_bootstrap_components as dbc
-from layout.components import ico, card, sec, info_box
+from layout.components import ico, card, sec, info_box, btn_toggle
 from layout.design_tokens import C, F, rgba
 from services.data_service import get_seasons
 
@@ -30,7 +31,7 @@ def layout():
             dcc.Dropdown(
                 id="cmp-season-select",
                 options=season_opts,
-                value=seasons[:2] if len(seasons) >= 2 else seasons,
+                value=[],
                 multi=True,
                 placeholder="Pilih musim...",
                 style=dict(fontSize="12px"),
@@ -41,18 +42,19 @@ def layout():
         html.Div(id="cmp-champions-row"),
         sec("Perkembangan Poin Pembalap", "lucide:line-chart"),
         card(html.Div([
+            # Baris kontrol: Mode (Poin/Posisi) + Top N (Top 5/10/Semua)
             html.Div([
-                html.Button("Poin Kumulatif", id="btn-cmp-poin", n_clicks=0,
-                    style=dict(background=C["blue"], color="#FFF",
-                               border=f"1px solid {C['blue']}", borderRadius="6px",
-                               padding="4px 14px", fontSize="11px", fontWeight="600",
-                               fontFamily=F, cursor="pointer")),
-                html.Button("Posisi Championship", id="btn-cmp-posisi", n_clicks=0,
-                    style=dict(background=C["surface"], color=C["muted"],
-                               border=f"1px solid {C['border']}", borderRadius="6px",
-                               padding="4px 14px", fontSize="11px", fontWeight="600",
-                               fontFamily=F, cursor="pointer")),
-            ], style=dict(display="flex", gap="6px", marginBottom="12px")),
+                html.Div([
+                    btn_toggle("btn-cmp-poin",   "Poin Kumulatif",       True),
+                    btn_toggle("btn-cmp-posisi", "Posisi Championship", False),
+                ], style=dict(display="flex", gap="6px")),
+                html.Div([
+                    btn_toggle("btn-cmp-top5",   "Top 5",  True),
+                    btn_toggle("btn-cmp-top10",  "Top 10", False),
+                    btn_toggle("btn-cmp-topall", "Semua",  False),
+                ], style=dict(display="flex", gap="6px")),
+            ], style=dict(display="flex", justifyContent="space-between",
+                          marginBottom="12px")),
             dcc.Graph(id="cmp-progression-chart", config=dict(displayModeBar=False)),
         ])),
         sec("Poin Konstruktor", "lucide:shield"),
@@ -61,5 +63,6 @@ def layout():
         card(dcc.Graph(id="cmp-dnf-chart", config=dict(displayModeBar=False))),
         sec("Gap Poin P1 vs P2 per Round", "lucide:trending-up"),
         card(dcc.Graph(id="cmp-gap-chart", config=dict(displayModeBar=False))),
-        dcc.Store(id="store-cmp-mode", data="poin"),
+        dcc.Store(id="store-cmp-mode",  data="poin"),
+        dcc.Store(id="store-cmp-topn",  data=5),
     ])

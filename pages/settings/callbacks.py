@@ -94,8 +94,16 @@ def register_callbacks(app):
                 color = C["red"]
 
         # Kembalikan season yang sama → memicu update_mode_indicator + render_sidebar
-        # Gunakan 0 sebagai fallback aman jika belum ada season dipilih
-        return info_box(msg, color), (current_season if current_season else 0)
+        # FIX: Jangan fallback ke 0. Cari season terbaru yang valid dari database.
+        safe_season = current_season
+        if not safe_season:
+            try:
+                from services.data_service import get_seasons as _gs
+                avail = _gs()
+                safe_season = avail[0] if avail else None
+            except Exception:
+                safe_season = None
+        return info_box(msg, color), safe_season
 
     # ── 2. DB Health Check ────────────────────────────────────────────────────
     @app.callback(
@@ -208,9 +216,41 @@ def register_callbacks(app):
         except Exception as e:
             return info_box(f"❌ Error: {str(e)}", C["red"])
 
-    # ── 5. Upload CSV ─────────────────────────────────────────────────────────
-    # Input: dcc.Upload "contents" — bukan button, tidak perlu guard n_clicks
-    # Tapi tetap guard jika contents None
+
+    # ── 5. Upload CSV — Production-Grade Schema Validator ─────────────────────
+    # Whitelist: hanya file bernama sesuai skema F1 yang diperbolehkan
+    # Schema: dicek per-file sebelum disimpan ke disk
+    CSV_SCHEMA = {
+        "races.csv": [
+            "season", "round", "race_name", "circuit_id", "circuit_name",
+            "city", "country",
+        ],
+        "results.csv": [
+            "season", "round", "driver_id", "points",
+        ],
+        "race_results.csv": [
+            "season", "round", "driver_id", "points",
+        ],
+        "driver_standings.csv": [
+            "season", "round", "driver_id", "points", "position",
+        ],
+        "constructor_standings.csv": [
+            "season", "round", "constructor_id", "points", "position",
+        ],
+        "pit_stops.csv": [
+            "season", "round", "driver_id",
+        ],
+        "qualifying.csv": [
+            "season", "round", "driver_id", "position",
+        ],
+        "drivers.csv": [
+            "driverRef",
+        ],
+        "circuits.csv": [
+            "circuitRef",
+        ],
+    }
+
     @app.callback(
         Output("upload-csv-result", "children"),
         Input("upload-csv", "contents"),
@@ -220,8 +260,24 @@ def register_callbacks(app):
     def handle_upload(contents, filename):
         if not contents or not filename:
             return no_update
+
+        # ── Guard 1: Ekstensi wajib .csv ──────────────────────────────────────
         if not filename.lower().endswith(".csv"):
-            return info_box("❌ Hanya file CSV yang diterima.", C["red"])
+            return info_box(
+                f"❌ **Ekstensi tidak valid**: '{filename}' bukan file CSV."
+                " Hanya file `.csv` yang diterima.", C["red"]
+            )
+
+        # ── Guard 2: Nama file harus ada di whitelist resmi ───────────────────
+        allowed_names = set(CSV_SCHEMA.keys())
+        if filename.lower() not in allowed_names:
+            return info_box(
+                f"❌ **File tidak dikenali**: `{filename}` bukan bagian dari skema F1 PaceFlow. "
+                f"File yang diizinkan: `{'`, `'.join(sorted(allowed_names))}`.",
+                C["red"]
+            )
+
+        # ── Parse CSV di memori (belum disimpan) ──────────────────────────────
         try:
             _, content_string = contents.split(",", 1)
             decoded = base64.b64decode(content_string)
@@ -230,25 +286,49 @@ def register_callbacks(app):
             except UnicodeDecodeError:
                 df = pd.read_csv(io.StringIO(decoded.decode("latin-1")))
             except pd.errors.ParserError as pe:
-                return info_box(f"❌ File CSV tidak valid: {str(pe)}", C["red"])
+                return info_box(
+                    f"❌ **File CSV rusak / tidak valid**: {str(pe)}", C["red"]
+                )
+        except Exception as e:
+            return info_box(
+                f"❌ **Gagal mendekode file**: {str(e)}", C["red"]
+            )
 
-            if df.empty:
-                return info_box("⚠️ File CSV kosong atau tidak punya baris data.", C["orange"])
+        if df.empty:
+            return info_box(
+                "⚠️ **File CSV kosong** — tidak ada baris data di dalam file.",
+                C["orange"]
+            )
 
-            # Simpan ke ./Data/{filename}
+        # ── Guard 3: Validasi kolom wajib (schema check) ──────────────────────
+        required_cols = CSV_SCHEMA.get(filename.lower(), [])
+        missing = [c for c in required_cols if c not in df.columns]
+        if missing:
+            return info_box(
+                f"❌ **Skema tidak cocok** untuk `{filename}`. "
+                f"Kolom wajib yang hilang: `{'`, `'.join(missing)}`. "
+                f"Kolom ditemukan: `{'`, `'.join(df.columns.tolist()[:8])}` ...",
+                C["red"]
+            )
+
+        # ── Simpan ke ./Data/{filename} (hanya jika semua validasi lolos) ─────
+        try:
             data_dir = os.path.join(
                 os.path.dirname(os.path.dirname(os.path.dirname(
                     os.path.abspath(__file__)))),
                 "Data"
             )
             os.makedirs(data_dir, exist_ok=True)
-            df.to_csv(os.path.join(data_dir, filename), index=False)
-
-            return info_box(
-                f"✅ **{filename}** berhasil disimpan ke `Data/{filename}` — "
-                f"{len(df):,} baris, {len(df.columns)} kolom. "
-                f"Jalankan ETL dari terminal untuk update database.",
-                C["green"]
-            )
+            df.to_csv(os.path.join(data_dir, filename), index=False, encoding="utf-8")
         except Exception as e:
-            return info_box(f"❌ Gagal memproses file: {str(e)}", C["red"])
+            return info_box(
+                f"❌ **Gagal menyimpan file**: {str(e)}", C["red"]
+            )
+
+        return info_box(
+            f"✅ **{filename}** berhasil divalidasi dan disimpan ke `Data/{filename}` — "
+            f"{len(df):,} baris, {len(df.columns)} kolom. "
+            f"Tekan **DB Health** lalu jalankan ETL dari terminal untuk update database.",
+            C["green"]
+        )
+

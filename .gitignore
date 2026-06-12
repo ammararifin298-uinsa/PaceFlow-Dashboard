@@ -41,3 +41,10 @@ desktop.ini
 dist/
 build/
 *.egg-info/
+
+# ── Scratch / Temp dev files ─────────────────────────────────────────────────
+scratch_*.py
+
+# ── Benchmark results (bukan bagian source) ──────────────────────────────────
+benchmark_results.json
+benchmark_summary.csv

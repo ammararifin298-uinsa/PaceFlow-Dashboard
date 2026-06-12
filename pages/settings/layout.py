@@ -119,6 +119,22 @@ def layout():
                 html.Div(id="upload-csv-result"),
                 type="dot", color=C["blue"],
             ),
+            html.Div([
+                html.Button([
+                    ico("lucide:database", 13, "#FFF"),
+                    html.Span(" Jalankan Sinkronisasi Database (ETL)", style=dict(marginLeft="6px")),
+                ], id="btn-run-etl", n_clicks=0,
+                style=dict(display="flex", alignItems="center",
+                           background=C["green"], color="#FFF",
+                           border="none", borderRadius="6px",
+                           padding="8px 16px", fontSize="11px",
+                           fontWeight="600", fontFamily=F,
+                           cursor="pointer", marginTop="12px")),
+                dcc.Loading(
+                    html.Div(id="run-etl-result", style=dict(marginTop="12px")),
+                    type="dot", color=C["green"],
+                ),
+            ], style=dict(borderTop=f"1px solid {C['border']}", paddingTop="12px", marginTop="12px")),
         ])),
 
         # ── ETL dan Data Info ────────────────────────────────────────────────
