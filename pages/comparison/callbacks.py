@@ -288,7 +288,12 @@ def register_callbacks(app):
             ))
 
         fig.update_layout(
-            **CL, height=300, legend=_LEGEND,
+            **CL, height=300,
+            legend=dict(
+                orientation="h", y=-0.25, x=0,
+                bgcolor="rgba(0,0,0,0)",
+                font=dict(size=10, color=C["muted"])
+            ),
             xaxis={**_XAXIS, "title_text": "Putaran", "dtick": 2},
             yaxis={**_YAXIS, "title_text": "Gap Poin P1 vs P2"},
             hovermode="closest",
