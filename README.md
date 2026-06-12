@@ -114,7 +114,7 @@ PaceFlow-Dashboard/
     └── circuits.csv
 ```
 
-> Dataset dapat diunduh di Kaggle: **Formula 1 World Championship (1950–2024)**
+> Dataset dapat diunduh di Kaggle: **Formula 1 World Championship (2024–2026)**
 
 ### STEP 7 — Jalankan ETL (Load CSV ke Database + Buat Views)
 
